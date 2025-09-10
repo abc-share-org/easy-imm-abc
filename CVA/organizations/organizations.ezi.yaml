@@ -14,8 +14,8 @@
 ABC:
   create_organization: true
   description: ABC org
- resource_groups:
-   - name: ABC_RG
+  resource_groups:
+    - name: ABC_RG
 #  #     resources:
 #  #       sub_targets:
 #  #         chassis:
