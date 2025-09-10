@@ -1,16 +1,16 @@
 # Server pool qualification will not be used in this design
 
-System:
+ABC:
  policies:
    server_pool_qualification:
     - name: none
       description: none
 
-Infrastructure:
- policies:
-   server_pool_qualification:
-    - name: none2
-      description: none2
+# Infrastructure:
+#  policies:
+#    server_pool_qualification:
+#     - name: none2
+#       description: none2
 
 # System:
 #  policies:

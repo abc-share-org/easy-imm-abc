@@ -2,7 +2,7 @@
 #=======================================
 #   Policies -> Storage - Variables
 #=======================================
-System:
+ABC:
   policies:
     storage:
       - m2_raid_configuration:
@@ -23,6 +23,8 @@ System:
         name: Raid1
         unused_disks_state: Jbod
         use_jbod_for_vd_creation: true
+
+
 # Infrastructure:
 #   policies:
 #     drive_security:

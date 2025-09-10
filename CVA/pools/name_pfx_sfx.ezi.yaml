@@ -3,7 +3,7 @@
 #   Pools -> Name Pfx Sfx - Variables
 #=========================================
 # If a prefix/suffix policy is undefined default will be used
-System:
+ABC:
   pools:
     name_prefix:
       default: ''

@@ -2,7 +2,7 @@
 #========================================
 #   Policies -> Ethernet - Variables
 #========================================
-System:
+ABC:
   policies:
     ethernet_adapter:
       - adapter_template: Win-AzureStack
@@ -71,56 +71,56 @@ System:
         priority: Silver
 
 
-Infrastructure:
-  policies:
-    adapter_configuration:
-      - add_vic_adapter_configuration:
-          - dce_interface_settings:
-              dce_interface_1_fec_mode: cl91
-              dce_interface_2_fec_mode: cl91
-              dce_interface_3_fec_mode: cl91
-              dce_interface_4_fec_mode: cl91
-            enable_fip: true
-            enable_lldp: true
-            enable_physical_nic_mode: false
-            enable_port_channel: true
-            pci_slot: MLOM
-        description: adapter Adapter Configuration Policy
-        name: adapter
-    ethernet_network:
-      - default_vlan: 4
-        description: network Ethernet Network Policy
-        name: network
-        vlan_mode: ACCESS
-    ethernet_network_control:
-      - cdp_enable: true
-        description: cdp Ethernet Network Control Policy
-        name: cdp
-    ethernet_network_group:
-      - allowed_vlans: "15"
-        name: iSCSI-VLG-A
-        native_vlan: 15
-      - allowed_vlans: "16"
-        name: iSCSI-VLG-B
-        native_vlan: 16
-    iscsi_adapter:
-      - description: adapter iSCSI Adapter Policy
-        dhcp_timeout: 60
-        lun_busy_retry_count: 15
-        name: adapter
-        tcp_connection_timeout: 15
-    iscsi_boot:
-      - authentication: none
-        description: boot iSCSI Boot Policy
-        initiator_ip_source: DHCP
-        iscsi_adapter_policy: adapter
-        name: boot
-        primary_target_policy: target
-        target_source_type: Static
-    iscsi_static_target:
-      - description: target iSCSI Static Target Policy
-        ip_address: 198.18.32.60
-        lun_id: 0
-        name: target
-        port: 3260
-        target_name: iqn.1984-12.com.cisco:lnx1
+# Infrastructure:
+#   policies:
+#     adapter_configuration:
+#       - add_vic_adapter_configuration:
+#           - dce_interface_settings:
+#               dce_interface_1_fec_mode: cl91
+#               dce_interface_2_fec_mode: cl91
+#               dce_interface_3_fec_mode: cl91
+#               dce_interface_4_fec_mode: cl91
+#             enable_fip: true
+#             enable_lldp: true
+#             enable_physical_nic_mode: false
+#             enable_port_channel: true
+#             pci_slot: MLOM
+#         description: adapter Adapter Configuration Policy
+#         name: adapter
+#     ethernet_network:
+#       - default_vlan: 4
+#         description: network Ethernet Network Policy
+#         name: network
+#         vlan_mode: ACCESS
+#     ethernet_network_control:
+#       - cdp_enable: true
+#         description: cdp Ethernet Network Control Policy
+#         name: cdp
+#     ethernet_network_group:
+#       - allowed_vlans: "15"
+#         name: iSCSI-VLG-A
+#         native_vlan: 15
+#       - allowed_vlans: "16"
+#         name: iSCSI-VLG-B
+#         native_vlan: 16
+#     iscsi_adapter:
+#       - description: adapter iSCSI Adapter Policy
+#         dhcp_timeout: 60
+#         lun_busy_retry_count: 15
+#         name: adapter
+#         tcp_connection_timeout: 15
+#     iscsi_boot:
+#       - authentication: none
+#         description: boot iSCSI Boot Policy
+#         initiator_ip_source: DHCP
+#         iscsi_adapter_policy: adapter
+#         name: boot
+#         primary_target_policy: target
+#         target_source_type: Static
+#     iscsi_static_target:
+#       - description: target iSCSI Static Target Policy
+#         ip_address: 198.18.32.60
+#         lun_id: 0
+#         name: target
+#         port: 3260
+#         target_name: iqn.1984-12.com.cisco:lnx1

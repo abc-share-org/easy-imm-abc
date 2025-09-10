@@ -2,7 +2,7 @@
 #==========================================
 #   Policies -> Management - Variables
 #==========================================
-System:
+ABC:
   policies:
     imc_access:
       - description: aci-kvm IMC Access Policy
@@ -101,66 +101,66 @@ System:
         enable_video_encryption: true
         name: vkvm
         remote_port: 2068
-Infrastructure:
-  policies:
-    device_connector:
-      - configuration_from_intersight_only: false
-        description: devcon Device Connector Policy
-        name: devcon
-    network_connectivity:
-      - description: dns_with_v6 Network Connectivity Policy
-        dns_servers_v4:
-          - 208.67.220.220
-          - 208.67.222.222
-        dns_servers_v6:
-          - 2620:119:35::35
-          - 2620:119:53::53
-        name: dns_with_v6
-    smtp:
-      - description: smtp SMTP Policy
-        mail_alert_recipients:
-          - admin@example.com
-          - infra-ops@example.com
-        minimum_severity: critical
-        name: smtp
-        smtp_alert_sender_address: intersight@example.com
-        smtp_port: 25
-        smtp_server_address: mail.example.com
-    snmp:
-      - description: snmp SNMP Policy
-        name: snmp
-        snmp_port: 161
-        snmp_trap_destinations:
-          - destination_address: 198.18.1.61
-            port: 162
-            user: snmpadmin
-        snmp_users:
-          - auth_password: 1
-            auth_type: SHA
-            name: snmpadmin
-            privacy_password: 1
-            privacy_type: AES
-            security_level: AuthPriv
-        system_contact: admin@example.com
-        system_location: Example Corporation
-    ssh:
-      - description: ssh SSH Policy
-        name: ssh
-        ssh_port: 22
-        ssh_timeout: 1800
-    syslog:
-      - description: syslog Syslog Policy
-        local_logging:
-          minimum_severity: warning
-        name: syslog
-        remote_logging:
-          - enable: true
-            hostname: 198.18.5.14
-            minimum_severity: warning
-            port: 514
-            protocol: udp
-          - enable: true
-            hostname: 198.18.5.15
-            minimum_severity: warning
-            port: 514
-            protocol: udp
+# Infrastructure:
+#   policies:
+#     device_connector:
+#       - configuration_from_intersight_only: false
+#         description: devcon Device Connector Policy
+#         name: devcon
+#     network_connectivity:
+#       - description: dns_with_v6 Network Connectivity Policy
+#         dns_servers_v4:
+#           - 208.67.220.220
+#           - 208.67.222.222
+#         dns_servers_v6:
+#           - 2620:119:35::35
+#           - 2620:119:53::53
+#         name: dns_with_v6
+#     smtp:
+#       - description: smtp SMTP Policy
+#         mail_alert_recipients:
+#           - admin@example.com
+#           - infra-ops@example.com
+#         minimum_severity: critical
+#         name: smtp
+#         smtp_alert_sender_address: intersight@example.com
+#         smtp_port: 25
+#         smtp_server_address: mail.example.com
+#     snmp:
+#       - description: snmp SNMP Policy
+#         name: snmp
+#         snmp_port: 161
+#         snmp_trap_destinations:
+#           - destination_address: 198.18.1.61
+#             port: 162
+#             user: snmpadmin
+#         snmp_users:
+#           - auth_password: 1
+#             auth_type: SHA
+#             name: snmpadmin
+#             privacy_password: 1
+#             privacy_type: AES
+#             security_level: AuthPriv
+#         system_contact: admin@example.com
+#         system_location: Example Corporation
+#     ssh:
+#       - description: ssh SSH Policy
+#         name: ssh
+#         ssh_port: 22
+#         ssh_timeout: 1800
+#     syslog:
+#       - description: syslog Syslog Policy
+#         local_logging:
+#           minimum_severity: warning
+#         name: syslog
+#         remote_logging:
+#           - enable: true
+#             hostname: 198.18.5.14
+#             minimum_severity: warning
+#             port: 514
+#             protocol: udp
+#           - enable: true
+#             hostname: 198.18.5.15
+#             minimum_severity: warning
+#             port: 514
+#             protocol: udp

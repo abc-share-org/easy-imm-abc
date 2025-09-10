@@ -2,7 +2,7 @@
 #==================================
 #   Pools -> Pools - Variables
 #==================================
-System:
+ABC:
   pools:
     ip:
       - ipv4_blocks:
@@ -87,14 +87,14 @@ System:
           - from: 20:00:00:25:B5:C1:B0:00
             size: 255
         name: wwpn-b
-Infrastructure:
-  pools:
-    iqn:
-      - assignment_order: sequential
-        description: default
-        iqn_blocks:
-          - from: 0
-            size: 255
-            suffix: ucs-host
-        name: default
-        prefix: iqn.1984-12.com.cisco
+# Infrastructure:
+#   pools:
+#     iqn:
+#       - assignment_order: sequential
+#         description: default
+#         iqn_blocks:
+#           - from: 0
+#             size: 255
+#             suffix: ucs-host
+#         name: default
+#         prefix: iqn.1984-12.com.cisco

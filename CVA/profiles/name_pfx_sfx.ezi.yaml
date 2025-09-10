@@ -3,7 +3,7 @@
 #   Profiles -> Name Pfx Sfx - Variables
 #============================================
 # If a prefix/suffix policy is undefined default will be used
-System:
+ABC:
   profiles:
     name_prefix:
       chassis: ''
