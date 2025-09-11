@@ -10,11 +10,11 @@ ABC:
         name: aci-lcp
         target_platform: FIAttached
         vnics:
-          - ethernet_adapter_policy: VMware
-            ethernet_network_control_policy: both
+          - ethernet_adapter_policy: Pol_eth_adapter_VMware
+            ethernet_network_control_policy: Pol_eth_net_ctrl_both
             ethernet_network_group_policies:
-              - aci-mgmt
-            ethernet_qos_policy: silver
+              - Pol_eth_net_group_aci-mgmt
+            ethernet_qos_policy: Pol_eth_qos_silver
             mac_address_pools:
               - mgmt-a
               - mgmt-b
@@ -25,11 +25,11 @@ ABC:
               pci_order:
                 - 2
                 - 3
-          - ethernet_adapter_policy: VMware
-            ethernet_network_control_policy: both
+          - ethernet_adapter_policy: Pol_eth_adapter_VMware
+            ethernet_network_control_policy: Pol_eth_net_ctrl_both
             ethernet_network_group_policies:
-              - aci-migration
-            ethernet_qos_policy: bronze
+              - Pol_eth_net_group_aci-migration
+            ethernet_qos_policy: Pol_eth_qos_bronze
             mac_address_pools:
               - migration-a
               - migration-b
@@ -40,11 +40,11 @@ ABC:
               pci_order:
                 - 4
                 - 5
-          - ethernet_adapter_policy: VMware
-            ethernet_network_control_policy: both
+          - ethernet_adapter_policy: Pol_eth_adapter_VMware
+            ethernet_network_control_policy: Pol_eth_net_ctrl_both
             ethernet_network_group_policies:
-              - aci-storage
-            ethernet_qos_policy: platinum
+              - Pol_eth_net_group_aci-storage
+            ethernet_qos_policy: Pol_eth_qos_platinum
             mac_address_pools:
               - storage-a
               - storage-b
@@ -55,11 +55,11 @@ ABC:
               pci_order:
                 - 6
                 - 7
-          - ethernet_adapter_policy: VMware
-            ethernet_network_control_policy: both
+          - ethernet_adapter_policy: Pol_eth_adapter_VMware
+            ethernet_network_control_policy: Pol_eth_net_ctrl_both
             ethernet_network_group_policies:
-              - aci-dvs
-            ethernet_qos_policy: gold
+              - Pol_eth_net_group_aci-dvs
+            ethernet_qos_policy: Pol_eth_qos_gold
             mac_address_pools:
               - dvs-a
               - dvs-b

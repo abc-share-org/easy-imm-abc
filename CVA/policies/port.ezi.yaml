@@ -12,7 +12,7 @@ ABC:
         port_channel_ethernet_uplinks:
           - admin_speed: Auto
             ethernet_network_group_policies:
-              - aci-uplink
+              - Pol_eth_net_group_aci-uplink
             flow_control_policy: Pol_flow-ctrl
             interfaces:
               - port_id: 53
@@ -64,7 +64,7 @@ ABC:
 #               - 8
 #         port_role_appliances:
 #           - admin_speed: Auto
-#             ethernet_network_control_policy: cdp
+#             ethernet_network_control_policy: Pol_eth_net_ctrl_cdp
 #             ethernet_network_group_policy: iSCSI-VLG-A
 #             mode: access
 #             port_list: "2"
@@ -91,7 +91,7 @@ ABC:
 #               - 8
 #         port_role_appliances:
 #           - admin_speed: Auto
-#             ethernet_network_control_policy: cdp
+#             ethernet_network_control_policy: Pol_eth_net_ctrl_cdp
 #             ethernet_network_group_policy: iSCSI-VLG-B
 #             mode: access
 #             port_list: "2"
