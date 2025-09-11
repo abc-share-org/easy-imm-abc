@@ -4,9 +4,9 @@ ABC:
     vhba_template:
       - allow_override: true
         description: vHBA Template
-        fibre_channel_adapter_policy: Initiator
-        fibre_channel_network_policy: vsan-a
-        fibre_channel_qos_policy: fc-qos
+        fibre_channel_adapter_policy: Pol_fc_adapter_Initiator
+        fibre_channel_network_policy: Pol_fc_net_vsan-a
+        fibre_channel_qos_policy: Pol_fc_qos_fc-qos
         name: vHBA
         persistent_lun_bindings: false
         placement_switch_id: A
