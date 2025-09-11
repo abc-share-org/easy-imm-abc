@@ -19,5 +19,5 @@ ABC:
         vlan_policies:
           - Pol_vlan_aci-vlans
         vsan_policies:
-          - vsan-a
-          - vsan-b
+          - Pol_vsan_vsan-a
+          - Pol_vsan_vsan-b

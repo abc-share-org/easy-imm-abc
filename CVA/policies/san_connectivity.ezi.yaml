@@ -11,8 +11,8 @@ ABC:
         vhbas:
           - fibre_channel_adapter_policy: Pol_fc_adapter_Initiator
             fibre_channel_network_policies:
-              - vsan-a
-              - vsan-b
+              - Pol_fc_net_vsan-a
+              - Pol_fc_net_vsan-b
             fibre_channel_qos_policy: Pol_fc_qos_fc-qos
             names:
               - vhba-a
