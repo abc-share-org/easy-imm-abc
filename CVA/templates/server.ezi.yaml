@@ -19,7 +19,7 @@ ABC:
         san_connectivity_policy: Pol_SAN_connectivity_scp
         serial_over_lan_policy: Pol_Serial_Over_LAN_sol
         snmp_policy: Pol_SNMP_snmp
-        storage_policy: M2-Raid
+        storage_policy: Pol_Storage_M2-Raid
         target_platform: FIAttached
         thermal_policy: Pol_Thermal_server
         uuid_pool: uuid
@@ -39,7 +39,7 @@ ABC:
         san_connectivity_policy: Pol_SAN_connectivity_scp
         serial_over_lan_policy: Pol_Serial_Over_LAN_sol
         snmp_policy: Pol_SNMP_snmp
-        storage_policy: M2-Raid
+        storage_policy: Pol_Storage_M2-Raid
         target_platform: FIAttached
         thermal_policy: Pol_Thermal_server
         uuid_pool: uuid
@@ -61,7 +61,7 @@ ABC:
         scrub_policy: Pol_scrub_default
         serial_over_lan_policy: Pol_Serial_Over_LAN_sol
         snmp_policy: Pol_SNMP_snmp
-        storage_policy: M2-Raid
+        storage_policy: Pol_Storage_M2-Raid
         target_platform: FIAttached
         thermal_policy: Pol_Thermal_server
         uuid_pool: uuid

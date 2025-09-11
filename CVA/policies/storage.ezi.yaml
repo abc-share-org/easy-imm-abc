@@ -7,7 +7,7 @@ ABC:
     storage:
       - m2_raid_configuration:
           slot: MSTOR-RAID-1
-        name: M2-Raid
+        name: Pol_Storage_M2-Raid
         use_jbod_for_vd_creation: true
       - description: Raid1 Storage Policy
         drive_groups:
@@ -20,7 +20,7 @@ ABC:
               - boot_drive: true
                 expand_to_available: true
                 name: vd0
-        name: Raid1
+        name: Pol_Storage_Raid1
         unused_disks_state: Jbod
         use_jbod_for_vd_creation: true
 
