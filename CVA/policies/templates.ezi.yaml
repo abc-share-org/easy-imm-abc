@@ -7,7 +7,7 @@ ABC:
         fibre_channel_adapter_policy: Pol_fc_adapter_Initiator
         fibre_channel_network_policy: Pol_fc_net_vsan-a
         fibre_channel_qos_policy: Pol_fc_qos_fc-qos
-        name: vHBA
+        name: Pol_template_vHBA
         persistent_lun_bindings: false
         placement_switch_id: A
         vhba_type: fc-initiator
@@ -22,7 +22,7 @@ ABC:
           - Pol_eth_net_group_aci-mgmt
         ethernet_qos_policy: Pol_eth_qos_best-effort
         mac_address_pool: dual-fabric
-        name: vnic0
+        name: Pol_template_vnic0
         placement_switch_id: A
         sriov:
           completion_queue_count_per_vf: 5
