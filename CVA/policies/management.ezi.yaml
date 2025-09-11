@@ -9,11 +9,11 @@ ABC:
         inband_ip_pool: aci-kvm-inband
         inband_vlan_id: 101
         ipv4_address_configuration: true
-        name: aci-kvm
+        name: Pol_mgmt_IMC_access_aci-kvm
         out_of_band_ip_pool: kvm-ooband
     ipmi_over_lan:
       - description: ipmi IPMI over LAN Policy
-        name: ipmi
+        name: Pol_IPMI_over_LAN_ipmi
         privilege: admin
     ldap:
       - base_settings:
@@ -34,7 +34,7 @@ ABC:
           - port: 389
             server: 10.101.128.16
             vendor: MSAD
-        name: RICH
+        name: Pol_LDAP_RICH
         nested_group_search_depth: 128
         search_parameters:
           attribute: memberof
@@ -43,7 +43,7 @@ ABC:
         user_search_precedence: LocalUserDb
     local_user:
       - description: users Local User Policy
-        name: users
+        name: Pol_local_user_users
         password_properties:
           always_send_user_password: false
           enable_password_expiry: true
@@ -62,11 +62,11 @@ ABC:
         dns_servers_v4:
           - 10.101.128.15
           - 10.101.128.16
-        name: dns
+        name: Pol_net_connectivity_dns
     ntp:
       - description: ntp NTP Policy
         enabled: true
-        name: ntp
+        name: Pol_NTP_ntp
         ntp_servers:
           - 10.101.128.15
           - 10.101.128.16
@@ -75,11 +75,11 @@ ABC:
       - baud_rate: 115200
         com_port: com0
         description: sol Serial over LAN Policy
-        name: sol
+        name: Pol_Serial_Over_LAN_sol
         ssh_port: 2400
     snmp:
       - description: snmp SNMP Policy
-        name: snmp
+        name: Pol_SNMP_snmp
         snmp_port: 161
         snmp_trap_destinations:
           - destination_address: 10.101.128.25 #rich lab linux host
@@ -99,7 +99,7 @@ ABC:
         description: vkvm Virtual KVM Policy
         enable_local_server_video: true
         enable_video_encryption: true
-        name: vkvm
+        name: Pol_Virtual_kvm_vkvm
         remote_port: 2068
 # Infrastructure:
 #   policies:

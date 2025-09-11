@@ -6,9 +6,9 @@ ABC:
   profiles:
     chassis:
       - action: No-op
-        imc_access_policy: aci-kvm
+        imc_access_policy: Pol_mgmt_IMC_access_aci-kvm
         power_policy: Pol_power_9508
-        snmp_policy: snmp
+        snmp_policy: Pol_SNMP_snmp
         targets:
           - description: r143e-1-1 UCS Chassis Profile
             name: r143e-1-1
