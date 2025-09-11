@@ -139,6 +139,6 @@ ABC:
             name: dummy-vl_1016
             vlan_list: '1016'
           - auto_allow_on_uplinks: false
-            multicast_policy: common/mcast
+            multicast_policy: mcast
             name: dummy_1017
             vlan_list: '1017'
