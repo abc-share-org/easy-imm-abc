@@ -7,7 +7,7 @@ ABC:
     lan_connectivity:
       - description: aci-lcp LAN Connectivity Policy
         enable_azure_stack_host_qos: false
-        name: aci-lcp
+        name: Pol_lan_con_aci-lcp
         target_platform: FIAttached
         vnics:
           - ethernet_adapter_policy: Pol_eth_adapter_VMware
