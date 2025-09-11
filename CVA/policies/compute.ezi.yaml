@@ -11,7 +11,7 @@ ABC:
         boot_performance_mode: Max Performance
         console_redirection: com-0
         description: M5-intel-virtual BIOS Policy
-        name: M5-intel-virtual
+        name: Pol_BIOS_M5-intel-virtual
         serial_port_aenable: enabled
         terminal_type: vt100
         txt_support: enabled
@@ -20,7 +20,7 @@ ABC:
         boot_performance_mode: Max Performance
         console_redirection: com-0
         description: M5-intel-virtual-tpm BIOS Policy
-        name: M5-intel-virtual-tpm
+        name: Pol_BIOS_M5-intel-virtual-tpm
         serial_port_aenable: enabled
         terminal_type: vt100
         txt_support: enabled
@@ -29,7 +29,7 @@ ABC:
         boot_performance_mode: Max Performance
         console_redirection: com-0
         description: M6-intel-virtual-tpm BIOS Policy
-        name: M6-intel-virtual-tpm
+        name: Pol_BIOS_M6-intel-virtual-tpm
         serial_port_aenable: enabled
         terminal_type: vt100
         txt_support: enabled
@@ -49,7 +49,7 @@ ABC:
             device_type: uefi_shell
         boot_mode: Uefi
         enable_secure_boot: true
-        name: M2-pxe
+        name: Pol_Boot_M2-pxe
     firmware:
       - description: fw-domain-servers Firmware Policy
         model_bundle_version:
@@ -62,23 +62,23 @@ ABC:
           - firmware_version: 4.3(2.240009)
             server_models:
               - UCSC-C240-M5
-        name: fw-domain-servers
+        name: Pol_Firmware_fw-domain-servers
         target_platform: FIAttached
     firmware_authenticate:
        cco_password: 1
        cco_user: 1
     memory:
       - dimm_blocklisting: false
-        name: memory_default
+        name: Pol_memory_default
     scrub:
       - bios: false
         disk: false
-        name: scrub_default
+        name: Pol_scrub_default
     virtual_media:
       - description: vmedia Virtual Media Policy
         enable_low_power_usb: true
         enable_virtual_media_encryption: true
-        name: vmedia
+        name: Pol_media_vmedia
 # Infrastructure:
 #   policies:
 #     boot_order:
