@@ -9,6 +9,6 @@ ABC:
         description: 9508 Chassis Profile Template
         imc_access_policy: aci-kvm
         name: '9508'
-        power_policy: '9508'
+        power_policy: 'Pol_power_9508'
         snmp_policy: snmp
-        thermal_policy: '9508'
+        thermal_policy: 'Pol_Thermal_9508'

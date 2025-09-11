@@ -15,13 +15,13 @@ ABC:
         lan_connectivity_policy: aci-lcp
         local_user_policy: users
         name: aci-M5-intel-virtual-M2-pxe
-        power_policy: server
+        power_policy: Pol_power_server
         san_connectivity_policy: scp
         serial_over_lan_policy: sol
         snmp_policy: snmp
         storage_policy: M2-Raid
         target_platform: FIAttached
-        thermal_policy: server
+        thermal_policy: Pol_Thermal_server
         uuid_pool: uuid
         virtual_kvm_policy: vkvm
         virtual_media_policy: Pol_media_vmedia
@@ -35,13 +35,13 @@ ABC:
         lan_connectivity_policy: aci-lcp
         local_user_policy: users
         name: aci-M5-intel-virtual-tpm-M2-pxe
-        power_policy: server
+        power_policy: Pol_power_server
         san_connectivity_policy: scp
         serial_over_lan_policy: sol
         snmp_policy: snmp
         storage_policy: M2-Raid
         target_platform: FIAttached
-        thermal_policy: server
+        thermal_policy: Pol_Thermal_server
         uuid_pool: uuid
         virtual_kvm_policy: vkvm
         virtual_media_policy: Pol_media_vmedia
@@ -56,14 +56,14 @@ ABC:
         local_user_policy: users
         memory_policy: Pol_memory_default
         name: aci-M6-intel-virtual-tpm-M2-pxe
-        power_policy: server
+        power_policy: Pol_power_server
         san_connectivity_policy: scp
         scrub_policy: Pol_scrub_default
         serial_over_lan_policy: sol
         snmp_policy: snmp
         storage_policy: M2-Raid
         target_platform: FIAttached
-        thermal_policy: server
+        thermal_policy: Pol_Thermal_server
         uuid_pool: uuid
         virtual_kvm_policy: vkvm
         virtual_media_policy: Pol_media_vmedia
