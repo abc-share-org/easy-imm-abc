@@ -14,8 +14,8 @@ ABC:
           - r143e-1-a
           - r143e-1-b
         snmp_policy: snmp
-        switch_control_policy: sw-ctrl
-        system_qos_policy: qos
+        switch_control_policy: Pol_sw-ctrl
+        system_qos_policy: Pol_qos
         vlan_policies:
           - aci-vlans
         vsan_policies:

@@ -13,12 +13,12 @@ ABC:
           - admin_speed: Auto
             ethernet_network_group_policies:
               - aci-uplink
-            flow_control_policy: flow-ctrl
+            flow_control_policy: Pol_flow-ctrl
             interfaces:
               - port_id: 53
               - port_id: 54
-            link_aggregation_policy: link-agg
-            link_control_policy: link-ctrl
+            link_aggregation_policy: Pol_link-agg
+            link_control_policy: Pol_link-ctrl
             pc_ids:
               - 53
               - 53
