@@ -38,7 +38,7 @@ ABC:
           - unknown
           - unknown
         snmp_policy: Pol_SNMP_snmp
-        switch_control_policy: sw-ctrl
+        switch_control_policy: Pol_sw-ctrl
         system_qos_policy: Pol_qos
         vlan_policies:
           - Pol_vlan_aci-vlans
