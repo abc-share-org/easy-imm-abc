@@ -7,67 +7,67 @@ ABC:
     ethernet_adapter:
       - adapter_template: Win-AzureStack
         description: Win-AzureStack Ethernet Adapter
-        name: Win-AzureStack
+        name: Pol_eth_adapter_Win-AzureStack
       - adapter_template: VMware
         description: VMware Ethernet Adapter
-        name: VMware
+        name: Pol_eth_adapter_VMware
     ethernet_network_control:
       - cdp_enable: true
         description: cdp Ethernet Network Control Policy
         lldp_enable_receive: true
         lldp_enable_transmit: true
-        name: both
+        name: Pol_eth_net_ctrl_both
       - cdp_enable: true
         description: cdp Ethernet Network Control Policy
-        name: cdp
+        name: Pol_eth_net_ctrl_cdp
       - description: lldp Ethernet Network Control Policy
         lldp_enable_receive: true
         lldp_enable_transmit: true
-        name: lldp
+        name: Pol_eth_net_ctrl_lldp
     ethernet_network_group:
       - allowed_vlans: 101-103,1000-1199
-        name: aci-uplink
+        name: Pol_eth_net_group_aci-uplink
       - allowed_vlans: '101'
-        name: aci-mgmt
+        name: Pol_eth_net_group_aci-mgmt
         native_vlan: 101
       - allowed_vlans: '102'
-        name: aci-migration
+        name: Pol_eth_net_group_aci-migration
         native_vlan: 102
       - allowed_vlans: '103'
-        name: aci-storage
+        name: Pol_eth_net_group_aci-storage
         native_vlan: 103
       - allowed_vlans: 101-103,1000-1199
-        name: aci-dvs
+        name: Pol_eth_net_group_aci-dvs
         native_vlan: 1
 # r143c
       - allowed_vlans: 125-131,1000-1002,1013-1015
         description: all_vlans Ethernet Network Group Policy
-        name: all_vlans
+        name: Pol_eth_net_group_all_vlans
         native_vlan: 1
       - allowed_vlans: '1001'
         description: mgmt Ethernet Network Group Policy
-        name: mgmt
+        name: Pol_eth_net_group_mgmt
         native_vlan: 1001
     ethernet_qos:
       - description: Best Effort Ethernet QoS Policy
         mtu: 9000
-        name: best-effort
+        name: Pol_eth_qos_best-effort
         priority: Best Effort
       - description: Bronze Ethernet QoS Policy
         mtu: 9000
-        name: bronze
+        name: Pol_eth_qos_bronze
         priority: Bronze
       - description: Gold Ethernet QoS Policy
         mtu: 9000
-        name: gold
+        name: Pol_eth_qos_gold
         priority: Gold
       - description: Platinum Ethernet QoS Policy
         mtu: 9000
-        name: platinum
+        name: Pol_eth_qos_platinum
         priority: Platinum
       - description: Silver Ethernet QoS Policy
         mtu: 9000
-        name: silver
+        name: Pol_eth_qos_silver
         priority: Silver
 
 

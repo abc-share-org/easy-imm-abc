@@ -26,11 +26,22 @@ ABC:
       #     - vsan-a
       #     - vsan-b
       - action: No-op
-        description: ucsdom1-1 UCS Domain Profile
-        ldap_policy: RICH
-        name: ucsdom2
-        attach_template: true
-        ucs_domain_profile_template: 'DPT_ucsdom1'
+        description: r143e-1 UCS Domain Profile
+        ldap_policy: Pol_LDAP_RICH
+        name: r143e-1
+        network_connectivity_policy: Pol_net_connectivity_dns
+        ntp_policy: Pol_NTP_ntp
+        port_policies:
+          - Pol_port_r143e-1-a
+          - Pol_port_r143e-1-b
         serial_numbers:
           - unknown
-
+          - unknown
+        snmp_policy: snmp
+        switch_control_policy: sw-ctrl
+        system_qos_policy: qos
+        vlan_policies:
+          - aci-vlans
+        vsan_policies:
+          - vsan-a
+          - vsan-b

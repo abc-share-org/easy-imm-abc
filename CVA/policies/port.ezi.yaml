@@ -7,18 +7,18 @@ ABC:
     port:
       - device_model: UCS-FI-6454
         names:
-          - ucsdom1-1-a
-          - ucsdom1-1-b
+          - Pol_port_ucsdom1-1-a
+          - Pol_port_ucsdom1-1-b
         port_channel_ethernet_uplinks:
           - admin_speed: Auto
             ethernet_network_group_policies:
-              - aci-uplink
-            flow_control_policy: flow-ctrl
+              - Pol_eth_net_group_aci-uplink
+            flow_control_policy: Pol_flow-ctrl
             interfaces:
               - port_id: 53
               - port_id: 54
-            link_aggregation_policy: link-agg
-            link_control_policy: link-ctrl
+            link_aggregation_policy: Pol_link-agg
+            link_control_policy: Pol_link-ctrl
             pc_ids:
               - 53
               - 53
@@ -64,7 +64,7 @@ ABC:
 #               - 8
 #         port_role_appliances:
 #           - admin_speed: Auto
-#             ethernet_network_control_policy: cdp
+#             ethernet_network_control_policy: Pol_eth_net_ctrl_cdp
 #             ethernet_network_group_policy: iSCSI-VLG-A
 #             mode: access
 #             port_list: "2"
@@ -91,7 +91,7 @@ ABC:
 #               - 8
 #         port_role_appliances:
 #           - admin_speed: Auto
-#             ethernet_network_control_policy: cdp
+#             ethernet_network_control_policy: Pol_eth_net_ctrl_cdp
 #             ethernet_network_group_policy: iSCSI-VLG-B
 #             mode: access
 #             port_list: "2"

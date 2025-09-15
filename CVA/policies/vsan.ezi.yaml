@@ -5,18 +5,18 @@
 ABC:
   policies:
     vsan:
-      - name: vsan-a
+      - name: Pol_vsan_vsan-a
         vsans:
           - fcoe_vlan_id: 100
             name: vsan-a
             vsan_id: 100
-      - name: vsan-b
+      - name: Pol_vsan_vsan-b
         vsans:
           - name: vsan-b
             vsan_id: 200
 # ucsdom2 policies
       - description: vsan-100 VSAN Policy
-        name: vsan-100
+        name: Pol_vsan_vsan-100
         uplink_trunking: false
         vsans:
           - fcoe_vlan_id: 100
@@ -24,7 +24,7 @@ ABC:
             vsan_id: 100
             vsan_scope: Storage
       - description: vsan-200 VSAN Policy
-        name: vsan-200
+        name: Pol_vsan_vsan-200
         uplink_trunking: false
         vsans:
           - fcoe_vlan_id: 200

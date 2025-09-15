@@ -33,25 +33,25 @@ ABC:
 #ucsdom2 policies from SaaS Rich
     flow_control:
       - description: flow-ctrl Flow Control Policy
-        name: flow-ctrl
+        name: Pol_flow-ctrl
         priority: auto
         receive: Disabled
         send: Disabled
     link_aggregation:
       - description: link-agg Link Aggregation Policy
         lacp_rate: normal
-        name: link-agg
+        name: Pol_link-agg
         suspend_individual: false
     link_control:
       - admin_state: Enabled
         description: link-ctrl Link Control Policy
         mode: normal
-        name: link-ctrl
+        name: Pol_link-ctrl
     switch_control:
       - description: fc-switch Switch Control Policy
         fabric_port_channel_vhba_reset: Disabled
         mac_address_table_aging: Default
-        name: fc-switch
+        name: Pol_fc-switch
         reserved_vlan_start_id: 3915
         switching_mode_ethernet: end-host
         switching_mode_fc: switch
@@ -62,7 +62,7 @@ ABC:
       - description: sw-ctrl Switch Control Policy
         fabric_port_channel_vhba_reset: Disabled
         mac_address_table_aging: Default
-        name: sw-ctrl
+        name: Pol_sw-ctrl
         reserved_vlan_start_id: 3915
         switching_mode_ethernet: end-host
         switching_mode_fc: end-host
@@ -104,7 +104,7 @@ ABC:
             weight: 8
         description: qos System QoS Policy
         jumbo_mtu: true
-        name: qos
+        name: Pol_qos
 
 # Infrastructure:
 #   policies:

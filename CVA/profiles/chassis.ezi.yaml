@@ -15,10 +15,11 @@ ABC:
       #       serial_number: unknown
       #   thermal_policy: 'TP_9508'
       - action: No-op
-        attach_template: true
-        ucs_chassis_profile_template: 'CPT_9508'
+        imc_access_policy: Pol_mgmt_IMC_access_aci-kvm
+        power_policy: Pol_power_9508
+        snmp_policy: Pol_SNMP_snmp
         targets:
           - description: ucsdom1-1-2 UCS Chassis Profile
             name: ucsdom2
             serial_number: unknown
-
+        thermal_policy: 9508
