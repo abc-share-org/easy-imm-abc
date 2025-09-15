@@ -79,7 +79,7 @@ ABC:
         ssh_port: 2400
     snmp:
       - description: snmp SNMP Policy
-        name: Pol_SNMP_snmp
+        name: 'Pol_SNMP_snmp'
         snmp_port: 161
         snmp_trap_destinations:
           - destination_address: 10.101.128.25 #rich lab linux host
