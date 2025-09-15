@@ -10,11 +10,11 @@ ABC:
       - name: Pol_vlan_aci-vlans
         vlans:
           - auto_allow_on_uplinks: true
-            multicast_policy: mcast
+            multicast_policy: Pol_vlan_multicast_mcast
             name: vlan-native
             native_vlan: true
             vlan_list: '1'
-          - multicast_policy: mcast
+          - multicast_policy: Pol_vlan_multicast_mcast
             name: vlan-tenants1
             vlan_list: 101-103,1000-1199
 # r142c policies
