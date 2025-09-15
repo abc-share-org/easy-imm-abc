@@ -21,7 +21,7 @@ ABC:
         ethernet_network_group_policies:
           - Pol_eth_net_group_aci-mgmt
         ethernet_qos_policy: Pol_eth_qos_best-effort
-        mac_address_pool: dual-fabric
+        mac_address_pool: Pool_mac_dual-fabric
         name: Pol_template_vnic0
         placement_switch_id: A
         sriov:

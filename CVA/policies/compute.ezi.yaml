@@ -43,7 +43,7 @@ ABC:
             slot: MSTOR-RAID
           - device_name: PXE
             device_type: pxe_boot
-            interface_name: mgmt-a
+            interface_name: Pool_mac_mgmt-a
             slot: MLOM
           - device_name: UEFI
             device_type: uefi_shell
@@ -91,7 +91,7 @@ ABC:
 #             slot: MRAID
 #           - device_name: 2_PXE
 #             device_type: pxe_boot
-#             interface_name: MGMT-A
+#             interface_name: Pool_mac_mgmt-a
 #             slot: MLOM
 #         boot_mode: Uefi
 #         enable_secure_boot: false
@@ -111,7 +111,7 @@ ABC:
 #             slot: MRAID
 #           - device_name: 04_PXE
 #             device_type: pxe_boot
-#             interface_name: MGMT-A
+#             interface_name: Pool_mac_mgmt-a
 #             slot: MLOM
 #           - device_name: 05_iSCSI
 #             device_type: iscsi_boot
