@@ -7,8 +7,8 @@ ABC:
     port:
       - device_model: UCS-FI-6454
         names:
-          - r143e-1-a
-          - r143e-1-b
+          - ucsdom1-1-a
+          - ucsdom1-1-b
         port_channel_ethernet_uplinks:
           - admin_speed: Auto
             ethernet_network_group_policies:

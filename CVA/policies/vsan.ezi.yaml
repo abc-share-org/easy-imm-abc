@@ -14,7 +14,7 @@ ABC:
         vsans:
           - name: vsan-b
             vsan_id: 200
-# r142c policies
+# ucsdom2 policies
       - description: vsan-100 VSAN Policy
         name: vsan-100
         uplink_trunking: false

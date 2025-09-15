@@ -7,25 +7,25 @@ ABC:
     server:
       - action: No-op
         attach_template: true
-        domain_name: r143e-1
+        domain_name: ucsdom1-1
         target_platform: FIAttached
         targets:
-          - name: r143e-1-1-1
+          - name: ucsdom1-1-1-1
             pre_assign:
               chassis_id: 1
               slot_id: 1
-          - name: r143e-1-1-2
+          - name: ucsdom1-1-1-2
             pre_assign:
               chassis_id: 1
               slot_id: 2
-          - name: r143e-1-1-3
+          - name: ucsdom1-1-1-3
             pre_assign:
               chassis_id: 1
               slot_id: 3
-          - name: r143e-1-1-5
+          - name: ucsdom1-1-1-5
             serial_number: unknown
-          - name: r143e-1-1-7
+          - name: ucsdom1-1-1-7
             serial_number: unknown
-          - name: r143e-1-1-8
+          - name: ucsdom1-1-1-8
             serial_number: unknown
         ucs_server_profile_template: aci-M6-intel-virtual-tpm-M2-pxe

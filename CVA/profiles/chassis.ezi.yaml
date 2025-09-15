@@ -5,12 +5,20 @@
 ABC:
   profiles:
     chassis:
+      # - action: No-op
+      #   imc_access_policy: aci-kvm
+      #   power_policy: 'PP_9508'
+      #   snmp_policy: snmp
+      #   targets:
+      #     - description: ucsdom1-1-1 UCS Chassis Profile
+      #       name: ucsdom1-1-1
+      #       serial_number: unknown
+      #   thermal_policy: 'TP_9508'
       - action: No-op
-        imc_access_policy: aci-kvm
-        power_policy: 9508
-        snmp_policy: snmp
+        attach_template: true
+        ucs_chassis_profile_template: 'CPT_9508'
         targets:
-          - description: r143e-1-1 UCS Chassis Profile
-            name: r143e-1-1
+          - description: ucsdom1-1-2 UCS Chassis Profile
+            name: ucsdom2
             serial_number: unknown
-        thermal_policy: 9508
+

@@ -7,12 +7,12 @@ ABC:
     domain:
       - create_template: true
         description: UCS Domain Profile Template
-        name: r143e
+        name: 'DPT_ucsdom1'
         network_connectivity_policy: dns
         ntp_policy: ntp
         port_policies:
-          - r143e-1-a
-          - r143e-1-b
+          - ucsdom1-1-a
+          - ucsdom1-1-b
         snmp_policy: snmp
         switch_control_policy: sw-ctrl
         system_qos_policy: qos

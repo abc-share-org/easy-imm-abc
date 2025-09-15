@@ -11,14 +11,13 @@ ABC:
         vlans:
           - auto_allow_on_uplinks: true
             multicast_policy: mcast
-            name: vlan
+            name: vlan-native
             native_vlan: true
             vlan_list: '1'
           - multicast_policy: mcast
-            name: vlan
+            name: vlans-tenants1
             vlan_list: 101-103,1000-1199
-# r142c policies
-      - name: r142c-vlans
+      - name: vlans-tenants2
         description: vlans VLAN Policy
         vlans:
           - auto_allow_on_uplinks: true
@@ -142,3 +141,4 @@ ABC:
             multicast_policy: mcast
             name: dummy_1017
             vlan_list: '1017'
+

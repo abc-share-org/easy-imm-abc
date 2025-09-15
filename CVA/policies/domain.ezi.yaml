@@ -4,7 +4,7 @@
 #======================================
 ABC:
   policies:
-    # r143e original policies
+    # ucsdom1 original policies
     # flow_control:
     #   - description: flow-ctrl Flow Control Policy
     #     name: flow-ctrl
@@ -30,7 +30,7 @@ ABC:
     #     description: qos System QoS Policy
     #     jumbo_mtu: true
     #     name: qos
-#r142c policies from SaaS Rich
+#ucsdom2 policies from SaaS Rich
     flow_control:
       - description: flow-ctrl Flow Control Policy
         name: flow-ctrl
