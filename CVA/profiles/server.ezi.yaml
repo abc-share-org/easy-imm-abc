@@ -28,4 +28,4 @@ ABC:
             serial_number: unknown
           - name: Prof_serv_ucsdom1-1-1-8
             serial_number: unknown
-        ucs_server_profile_template: aci-M6-intel-virtual-tpm-M2-pxe
+        ucs_server_profile_template: Templ_Serv_aci-M6-intel-virtual-tpm-M2-pxe
