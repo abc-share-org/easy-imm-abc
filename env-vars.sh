@@ -28,3 +28,7 @@ export TF_VAR_binding_parameters_password="cisco123" # my LDAP user pass
 # # bash would be like this:  TF_VAR_cco_password=$(read -s)
 # export TF_VAR_cco_password
 # # do not put more vars below here
+
+### temporary CCO
+export TF_VAR_cco_user="romoss@cisco.com" # my CCO user
+export TF_VAR_cco_password="foobar123"
