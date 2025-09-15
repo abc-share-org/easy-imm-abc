@@ -28,7 +28,7 @@ ABC:
       - action: No-op
         description: r143e-1 UCS Domain Profile
         ldap_policy: Pol_LDAP_RICH
-        name: r143e-1
+        name: Prof_Dom_r143e-1
         network_connectivity_policy: Pol_net_connectivity_dns
         ntp_policy: Pol_NTP_ntp
         port_policies:
