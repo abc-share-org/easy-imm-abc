@@ -18,7 +18,7 @@ ABC:
             name: vlan-tenants1
             vlan_list: 101-103,1000-1199
 # r142c policies
-      - name: r142c-vlans
+      - name: Pol_vlan_r142c-vlans
         description: vlans VLAN Policy
         vlans:
           - auto_allow_on_uplinks: true
