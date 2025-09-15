@@ -45,7 +45,7 @@ ABC:
         uuid_pool: uuid
         virtual_kvm_policy: Pol_Virtual_kvm_vkvm
         virtual_media_policy: Pol_media_vmedia
-      - bios_policy: M6-intel-virtual-tpm
+      - bios_policy: Pol_BIOS_M6-intel-virtual-tpm
         boot_order_policy: Pol_Boot_M2-pxe
         create_template: true
         description: aci-M6-intel-virtual-tpm-M2-pxe Server Profile Template
