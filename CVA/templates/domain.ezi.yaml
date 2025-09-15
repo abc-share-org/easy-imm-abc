@@ -7,7 +7,7 @@ ABC:
     domain:
       - create_template: true
         description: UCS Domain Profile Template
-        name: r143e
+        name: Templ_Dom_r143e
         network_connectivity_policy: Pol_net_connectivity_dns
         ntp_policy: Pol_NTP_ntp
         port_policies:
