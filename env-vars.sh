@@ -14,7 +14,12 @@ export TF_VAR_local_user_password_1="cisco123"
 export TF_VAR_snmp_auth_password_1="snmppasswd"
 export TF_VAR_snmp_privacy_password_1="snmppasswd"
 export TF_VAR_binding_parameters_password="cisco123" # my LDAP user pass
-export TF_VAR_cco_user="romoss@cisco.com" # my CCO user
+
+
+
+##############
+# For the CCO and firmware components
+#export TF_VAR_cco_user="romoss@cisco.com" # my CCO user
 #
 # Reading in CCO password so it's not in plain text in env-vars.sh
 echo "Enter CCO password for $TF_VAR_cco_user:"

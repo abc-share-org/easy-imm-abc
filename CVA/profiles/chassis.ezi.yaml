@@ -22,4 +22,4 @@ ABC:
           - description: ucsdom1-1-2 UCS Chassis Profile
             name: ucsdom2
             serial_number: unknown
-        thermal_policy: 9508
+        thermal_policy: 'Pol_Thermal_9508'

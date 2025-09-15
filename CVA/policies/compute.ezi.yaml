@@ -64,9 +64,9 @@ ABC:
               - UCSC-C240-M5
         name: Pol_Firmware_fw-domain-servers
         target_platform: FIAttached
-    firmware_authenticate:
-       cco_password: 1
-       cco_user: 1
+    # firmware_authenticate:
+    #    cco_password: 1
+    #    cco_user: 1
     memory:
       - dimm_blocklisting: false
         name: Pol_memory_default
