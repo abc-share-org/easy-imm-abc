@@ -14,7 +14,7 @@ ABC:
         ipmi_over_lan_policy: Pol_IPMI_over_LAN_ipmi
         lan_connectivity_policy: Pol_lan_con_aci-lcp
         local_user_policy: Pol_local_user_users
-        name: aci-M5-intel-virtual-M2-pxe
+        name: Templ_Serv_aci-M5-intel-virtual-M2-pxe
         power_policy: Pol_power_server
         san_connectivity_policy: Pol_SAN_connectivity_scp
         serial_over_lan_policy: Pol_Serial_Over_LAN_sol
@@ -34,7 +34,7 @@ ABC:
         ipmi_over_lan_policy: Pol_IPMI_over_LAN_ipmi
         lan_connectivity_policy: Pol_lan_con_aci-lcp
         local_user_policy: Pol_local_user_users
-        name: aci-M5-intel-virtual-tpm-M2-pxe
+        name: Templ_Serv_aci-M5-intel-virtual-tpm-M2-pxe
         power_policy: Pol_power_server
         san_connectivity_policy: Pol_SAN_connectivity_scp
         serial_over_lan_policy: Pol_Serial_Over_LAN_sol
@@ -55,7 +55,7 @@ ABC:
         lan_connectivity_policy: Pol_lan_con_aci-lcp
         local_user_policy: Pol_local_user_users
         memory_policy: Pol_memory_default
-        name: aci-M6-intel-virtual-tpm-M2-pxe
+        name: Templ_Serv_aci-M6-intel-virtual-tpm-M2-pxe
         power_policy: Pol_power_server
         san_connectivity_policy: Pol_SAN_connectivity_scp
         scrub_policy: Pol_scrub_default
