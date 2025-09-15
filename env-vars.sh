@@ -18,13 +18,13 @@ export TF_VAR_binding_parameters_password="cisco123" # my LDAP user pass
 
 
 ##############
-# For the CCO and firmware components
-#export TF_VAR_cco_user="romoss@cisco.com" # my CCO user
-#
-# Reading in CCO password so it's not in plain text in env-vars.sh
-echo "Enter CCO password for $TF_VAR_cco_user:"
-# this is how ZSH does it: read -s TF_VAR_cco_password
-read -s TF_VAR_cco_password
-# bash would be like this:  TF_VAR_cco_password=$(read -s)
-export TF_VAR_cco_password
-# do not put more vars below here
+# # For the CCO and firmware components
+# export TF_VAR_cco_user="romoss@cisco.com" # my CCO user
+# #
+# # Reading in CCO password so it's not in plain text in env-vars.sh
+# echo "Enter CCO password for $TF_VAR_cco_user:"
+# # this is how ZSH does it: read -s TF_VAR_cco_password
+# read -s TF_VAR_cco_password
+# # bash would be like this:  TF_VAR_cco_password=$(read -s)
+# export TF_VAR_cco_password
+# # do not put more vars below here
