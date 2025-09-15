@@ -22,7 +22,7 @@ ABC:
         storage_policy: Pol_Storage_M2-Raid
         target_platform: FIAttached
         thermal_policy: Pol_Thermal_server
-        uuid_pool: uuid
+        uuid_pool: Pool_uuid
         virtual_kvm_policy: Pol_Virtual_kvm_vkvm
         virtual_media_policy: Pol_media_vmedia
       - bios_policy: Pol_BIOS_M5-intel-virtual-tpm
@@ -42,7 +42,7 @@ ABC:
         storage_policy: Pol_Storage_M2-Raid
         target_platform: FIAttached
         thermal_policy: Pol_Thermal_server
-        uuid_pool: uuid
+        uuid_pool: Pool_uuid
         virtual_kvm_policy: Pol_Virtual_kvm_vkvm
         virtual_media_policy: Pol_media_vmedia
       - bios_policy: Pol_BIOS_M6-intel-virtual-tpm
@@ -64,6 +64,6 @@ ABC:
         storage_policy: Pol_Storage_M2-Raid
         target_platform: FIAttached
         thermal_policy: Pol_Thermal_server
-        uuid_pool: uuid
+        uuid_pool: Pool_uuid
         virtual_kvm_policy: Pol_Virtual_kvm_vkvm
         virtual_media_policy: Pol_media_vmedia

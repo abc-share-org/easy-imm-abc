@@ -11,7 +11,7 @@ ABC:
         persistent_lun_bindings: false
         placement_switch_id: A
         vhba_type: fc-initiator
-        wwpn_pool: wwpn-a
+        wwpn_pool: Pool_wwpn-a
     vnic_template:
       - allow_override: true
         description: vnic0 template

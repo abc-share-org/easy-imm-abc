@@ -68,7 +68,7 @@ ABC:
     #     target_platform: FIAttached
     uuid:
       - description: uuid UUID Pool
-        name: uuid
+        name: Pool_uuid
         prefix: 000025B5-C15C-0000
         uuid_blocks:
           - from: 25B5-000000000000
@@ -77,16 +77,16 @@ ABC:
       - id_blocks:
           - from: 20:00:00:25:B5:C1:00:00
             size: 255
-        name: wwnn
+        name: Pool_wwnn
     wwpn:
       - id_blocks:
           - from: 20:00:00:25:B5:C1:A0:00
             size: 255
-        name: wwpn-a
+        name: Pool_wwpn-a
       - id_blocks:
           - from: 20:00:00:25:B5:C1:B0:00
             size: 255
-        name: wwpn-b
+        name: Pool_wwpn-b
 # Infrastructure:
 #   pools:
 #     iqn:
