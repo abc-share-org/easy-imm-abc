@@ -50,20 +50,20 @@ ABC:
         boot_mode: Uefi
         enable_secure_boot: true
         name: Pol_Boot_M2-pxe
-    # firmware:
-    #   - description: fw-domain-servers Firmware Policy
-    #     model_bundle_version:
-    #       - firmware_version: 5.2(2.240053)
-    #         server_models:
-    #           - UCSX-210C-M6
-    #       - firmware_version: 5.2(0.230127)
-    #         server_models:
-    #           - UCSB-B200-M5
-    #       - firmware_version: 4.3(2.240009)
-    #         server_models:
-    #           - UCSC-C240-M5
-    #     name: Pol_Firmware_fw-domain-servers
-    #     target_platform: FIAttached
+    firmware:
+      - description: fw-domain-servers Firmware Policy
+        model_bundle_version:
+          - firmware_version: 5.2(2.240053)
+            server_models:
+              - UCSX-210C-M6
+          - firmware_version: 5.2(0.230127)
+            server_models:
+              - UCSB-B200-M5
+          - firmware_version: 4.3(2.240009)
+            server_models:
+              - UCSC-C240-M5
+        name: Pol_Firmware_fw-domain-servers
+        target_platform: FIAttached
     # firmware_authenticate:
     #    cco_password: 1
     #    cco_user: 1
