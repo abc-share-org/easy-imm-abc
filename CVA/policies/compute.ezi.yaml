@@ -4,7 +4,56 @@
 #=======================================
 ABC:
   policies:
+    scrub:
+      - bios: false
+        disk: false                             # ABC set this to true
+        name: Pol_scrub_default                 # ABC this is the policy name
+    boot_order:
+      - name: Pol_Boot_M2-pxe
+        boot_devices:
+          - device_name: KVM-DVD
+            device_type: virtual_media
+            subtype: kvm-mapped-dvd
+          - device_name: M2
+            device_type: local_disk
+            slot: MSTOR-RAID
+          - device_name: PXE
+            device_type: pxe_boot
+            interface_name: Pool_mac_mgmt-a
+            slot: MLOM
+          - device_name: UEFI
+            device_type: uefi_shell
+        boot_mode: Uefi
+        enable_secure_boot: true
+    firmware:
+      - name: Pol_Firmware_fw-domain-servers
+        description: fw-domain-servers Firmware Policy
+        model_bundle_version:
+          - firmware_version: 5.2(2.240053)
+            server_models:
+              - UCSX-210C-M6
+          - firmware_version: 5.2(0.230127)
+            server_models:
+              - UCSB-B200-M5
+          - firmware_version: 4.3(2.240009)
+            server_models:
+              - UCSC-C240-M5
+        target_platform: FIAttached
+    # firmware_authenticate:
+    #    cco_password: 1
+    #    cco_user: 1
+# Policies below here can be left as is with default values
     bios:
+      - baud_rate: '115200'
+        name: Pol_BIOS_example                            # ABC this is the policy name
+        latency_optimized_mode: enabled
+        bios_template: M5-intel-virtual                   # ABC these are predefined templates in Intersight
+        boot_performance_mode: Max Performance
+        console_redirection: com-0
+        description: M5-intel-virtual BIOS Policy
+        serial_port_aenable: enabled
+        terminal_type: vt100
+        txt_support: enabled
       - baud_rate: '115200'
         latency_optimized_mode: enabled
         bios_template: M5-intel-virtual
@@ -33,47 +82,10 @@ ABC:
         serial_port_aenable: enabled
         terminal_type: vt100
         txt_support: enabled
-    boot_order:
-      - boot_devices:
-          - device_name: KVM-DVD
-            device_type: virtual_media
-            subtype: kvm-mapped-dvd
-          - device_name: M2
-            device_type: local_disk
-            slot: MSTOR-RAID
-          - device_name: PXE
-            device_type: pxe_boot
-            interface_name: Pool_mac_mgmt-a
-            slot: MLOM
-          - device_name: UEFI
-            device_type: uefi_shell
-        boot_mode: Uefi
-        enable_secure_boot: true
-        name: Pol_Boot_M2-pxe
-    firmware:
-      - description: fw-domain-servers Firmware Policy
-        model_bundle_version:
-          - firmware_version: 5.2(2.240053)
-            server_models:
-              - UCSX-210C-M6
-          - firmware_version: 5.2(0.230127)
-            server_models:
-              - UCSB-B200-M5
-          - firmware_version: 4.3(2.240009)
-            server_models:
-              - UCSC-C240-M5
-        name: Pol_Firmware_fw-domain-servers
-        target_platform: FIAttached
-    # firmware_authenticate:
-    #    cco_password: 1
-    #    cco_user: 1
+
     memory:
       - dimm_blocklisting: false
         name: Pol_Mem_default
-    scrub:
-      - bios: false
-        disk: false
-        name: Pol_scrub_default
     virtual_media:
       - description: vmedia Virtual Media Policy
         enable_low_power_usb: true

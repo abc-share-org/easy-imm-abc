@@ -13,11 +13,11 @@ ABC:
         vlans:
           - auto_allow_on_uplinks: true
             multicast_policy: Pol_Multicast_mcast
-            name: vlan-native
+            name: vlan-native                       # Update this name for ABC
             native_vlan: true
-            vlan_list: '1'
+            vlan_list: '1'                      
           - multicast_policy: Pol_Multicast_mcast
-            name: vlan-tenants1
+            name: vlan-tenants1                     # Update this name for ABC
             vlan_list: 101-103,900-999
 # DC1 example with some shared VLANs and some different from DC2
       - name: Pol_vlan_dc1-vlans

@@ -11,9 +11,9 @@
 #     - ConsumerOrg2
 
 
-ABC:
+ABC:                                      # ABC Change this name to your org name
   create_organization: true
-  description: ABC org
+  description: ABC org                    # ABC Change this name to your org description
   # resource_groups:
   #   - name: ABC_RG
   #     resources:
