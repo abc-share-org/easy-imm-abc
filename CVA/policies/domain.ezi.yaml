@@ -32,26 +32,26 @@ ABC:
     #     name: qos
 #ucsdom2 policies from SaaS Rich
     flow_control:
-      - description: flow-ctrl Flow Control Policy
-        name: Pol_FlowCtl_flow-ctrl
+      - description: flow-ctrl Flow Control Policy # ABC this is the description
+        name: Pol_FlowCtl_flow-ctrl # ABC this is the name of the policy
         priority: auto
         receive: Disabled
         send: Disabled
     link_aggregation:
-      - description: link-agg Link Aggregation Policy
+      - description: link-agg Link Aggregation Policy # ABC this is the description
         lacp_rate: normal
-        name: Pol_LinkAgg_link-agg
+        name: Pol_LinkAgg_link-agg  # ABC this is the name of the policy
         suspend_individual: false
     link_control:
       - admin_state: Enabled
-        description: link-ctrl Link Control Policy
+        description: link-ctrl Link Control Policy # ABC this is the description
         mode: normal
-        name: Pol_LinkCtl_link-ctrl
+        name: Pol_LinkCtl_link-ctrl # ABC this is the name of the policy
     switch_control:
-      - description: fc-switch Switch Control Policy
+      - description: fc-switch Switch Control Policy # ABC this is the description
         fabric_port_channel_vhba_reset: Disabled
         mac_address_table_aging: Default
-        name: Pol_FCSwCtl_fc-switch
+        name: Pol_FCSwCtl_fc-switch # ABC this is the name of the policy
         reserved_vlan_start_id: 3915
         switching_mode_ethernet: end-host
         switching_mode_fc: switch
@@ -59,10 +59,10 @@ ABC:
           message_interval: 15
           recovery_action: reset
         vlan_port_count_optimization: false
-      - description: sw-ctrl Switch Control Policy
+      - description: sw-ctrl Switch Control Policy # ABC this is the description
         fabric_port_channel_vhba_reset: Disabled
         mac_address_table_aging: Default
-        name: Pol_SwCtl_sw-ctrl
+        name: Pol_SwCtl_sw-ctrl # ABC this is the name of the policy
         reserved_vlan_start_id: 3915
         switching_mode_ethernet: end-host
         switching_mode_fc: end-host
@@ -102,9 +102,9 @@ ABC:
             priority: Silver
             state: Enabled
             weight: 8
-        description: qos System QoS Policy
+        description: qos System QoS Policy # ABC this is the description
         jumbo_mtu: true
-        name: Pol_QOS_qos
+        name: Pol_QOS_qos # ABC this is the name of the policy
 
 # Infrastructure:
 #   policies:

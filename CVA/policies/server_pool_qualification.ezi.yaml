@@ -1,7 +1,7 @@
 # Server pool qualification will not be used in this design
-
-ABC:
- policies:
-   server_pool_qualification:
-    - name: none
-      description: none
+#
+# ABC:
+#  policies:
+#    server_pool_qualification:
+#     - name: none
+#       description: none
