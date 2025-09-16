@@ -10,12 +10,12 @@
 ABC:                                            # ABC replace with your organization name 
   policies:
     scrub:
-      - bios: false                             # ABC disk scrub policy: set this to true
-        disk: false                             # ABC disk scrub policy: set this to true
-        name: Pol_scrub_default                 # ABC this is the policy name
+      - bios: true                             # ABC disk scrub policy: set this to true
+        disk: true                             # ABC disk scrub policy: set this to true
+        name: Pol_scrub_default                # ABC this is the policy name
     boot_order:
       - name: Pol_Boot_M2-pxe
-        boot_devices:
+        boot_devices:                          # ABC change the boot devices as needed by adding device_name entries
           - device_name: KVM-DVD
             device_type: virtual_media
             subtype: kvm-mapped-dvd
@@ -31,19 +31,16 @@ ABC:                                            # ABC replace with your organiza
         boot_mode: Uefi
         enable_secure_boot: true
     firmware:
-      - name: Pol_Firmware_fw-domain-servers           # ABC this is the policy name
-        description: fw-domain-servers Firmware Policy # ABC this is the description
+      - name: Pol_Firmware_fw-domain-servers           # ABC this is the policy name. This example uses a single Firmware Policy for all servers.
+        description: Firmware Policy for all servers   # ABC this is the description
+        target_platform: FIAttached
         model_bundle_version:
-          - firmware_version: 5.2(2.240053)
+          - firmware_version: 5.2(2.240053)            # ABC change this to your desired firmware version
             server_models:
               - UCSX-210C-M6
-          - firmware_version: 5.2(0.230127)
+          - firmware_version: 5.2(2.240053)            # ABC change this to your desired firmware version
             server_models:
-              - UCSB-B200-M5
-          - firmware_version: 4.3(2.240009)
-            server_models:
-              - UCSC-C240-M5
-        target_platform: FIAttached
+              - UCSX-210C-M7
     # firmware_authenticate:
     #    cco_password: 1
     #    cco_user: 1
@@ -65,42 +62,31 @@ ABC:                                            # ABC replace with your organiza
         cdn_support: enabled
         intel_vt_for_directed_io: enabled
       - baud_rate: '115200'
-        latency_optimized_mode: enabled
-        bios_template: M5-intel-virtual                  # ABC these are predefined templates in Intersight
+        bios_template: M6-intel-virtual-tpm             # ABC these are predefined templates in Intersight
         boot_performance_mode: Max Performance
         console_redirection: com-0
-        description: M5-intel-virtual BIOS Policy        # ABC this is the description
-        name: Pol_BIOS_M5-intel-virtual                  # ABC this is the name of the policy
+        description: M6-intel-virtual-tpm BIOS Policy   # ABC this is the description
+        name: Pol_BIOS_M6-intel-virtual-tpm             # ABC this is the name of the policy
         serial_port_aenable: enabled
         terminal_type: vt100
         txt_support: enabled
-      - baud_rate: '115200'
-        bios_template: M5-intel-virtual-tpm           # ABC these are predefined templates in Intersight
-        boot_performance_mode: Max Performance
-        console_redirection: com-0
-        description: M5-intel-virtual-tpm BIOS Policy # ABC this is the description
-        name: Pol_BIOS_M5-intel-virtual-tpm      # ABC this is the name of the policy
-        serial_port_aenable: enabled
-        terminal_type: vt100
-        txt_support: enabled
-      - baud_rate: '115200'
-        bios_template: M6-intel-virtual-tpm          # ABC these are predefined templates in Intersight
-        boot_performance_mode: Max Performance
-        console_redirection: com-0
-        description: M6-intel-virtual-tpm BIOS Policy # ABC this is the description
-        name: Pol_BIOS_M6-intel-virtual-tpm     # ABC this is the name of the policy
-        serial_port_aenable: enabled
-        terminal_type: vt100
-        txt_support: enabled
-
     memory:
       - dimm_blocklisting: false
-        name: Pol_Mem_default              # ABC this is the policy name
+        name: Pol_Mem_default                           # ABC this is the policy name
     virtual_media:
-      - description: vmedia Virtual Media Policy # ABC this is the description
+      - description: vmedia Virtual Media Policy        # ABC this is the description
         enable_low_power_usb: true
         enable_virtual_media_encryption: true
-        name: Pol_media_vmedia              # ABC this is the name of the policy
+        name: Pol_media_vmedia                          # ABC this is the name of the policy
+#############
+# Example Policies - policies below are examples only
+# These can be copied and modified as needed
+#
+# The policies below boot from different devices:
+# * Boot Policy:   Raid-pxe - boots from KVM, Local Disk, then PXE
+# * Boot Policy:   examples - example with all boot device types including SAN Boot
+# * vMedia Policy: vmedia - boots from https virtual media using the blade CIMC, different to http_boot
+#
 # Infrastructure:
 #   policies:
 #     boot_order:
