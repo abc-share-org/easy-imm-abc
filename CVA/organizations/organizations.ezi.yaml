@@ -14,8 +14,31 @@
 ABC:
   create_organization: true
   description: ABC org
-  resource_groups:
-    - name: ABC_RG
+  # resource_groups:
+  #   - name: ABC_RG
+  #     resources:
+  #       targets:
+  #           - ucsdom1-1
+  #           - ucsdom2-1
+  #           - ucsdom1-A
+  #           - ucsdom1-B
+#  #         blades:
+#  #           - FCH213271VU #ucsdom2-3
+#  #           - FCH222974YZ #ucsdom2-4
+#  #           - FLM250803J8 #ucsdom2-6
+#  #         # service_profiles:
+#  #         #   - sp-test-01
+#  #         #   - sp-test-02
+#  #         #   - sp-test-03
+#  #         #   - sp-test-04
+#  #         #   - sp-test-05
+#  #         #   - sp-test-06
+#  #         #   - sp-test-07
+#  #         #   - sp-test-08
+#  #         #   - sp-test-09
+#  #         #   - sp-test-10
+
+
 #  #     resources:
 #  #       sub_targets:
 #  #         chassis:

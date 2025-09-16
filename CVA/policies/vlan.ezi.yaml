@@ -7,7 +7,20 @@ ABC:
     multicast:
       - name: Pol_Multicast_mcast
     vlan:
-      - name: Pol_vlan_aci-vlans
+# Group of VLANs definned in vlan_list that can be shared across all UCS Domains
+# VLANs in a range in vlan_list will not be named in Intersight
+      - name: Pol_vlan_shared-vlans
+        vlans:
+          - auto_allow_on_uplinks: true
+            multicast_policy: Pol_Multicast_mcast
+            name: vlan-native
+            native_vlan: true
+            vlan_list: '1'
+          - multicast_policy: Pol_Multicast_mcast
+            name: vlan-tenants1
+            vlan_list: 101-103,900-999
+# DC1 example with some shared VLANs and some different from DC2
+      - name: Pol_vlan_dc1-vlans
         vlans:
           - auto_allow_on_uplinks: true
             multicast_policy: Pol_Multicast_mcast
@@ -17,8 +30,20 @@ ABC:
           - multicast_policy: Pol_Multicast_mcast
             name: vlan-tenants1
             vlan_list: 101-103,1000-1199
-# r142c policies
-      - name: Pol_vlan_r142c-vlans
+# DC1 example with some shared VLANs and some different from DC1
+      - name: Pol_vlan_dc2-vlans
+        vlans:
+          - auto_allow_on_uplinks: true
+            multicast_policy: Pol_Multicast_mcast
+            name: vlan-native
+            native_vlan: true
+            vlan_list: '1'
+          - multicast_policy: Pol_Multicast_mcast
+            name: vlan-tenants1
+            vlan_list: 101-103,2000-2199
+# Example detailed VLAN policy for specific use case
+# Naming each VLAN ID in a list
+      - name: Pol_vlan_named-vlans
         description: vlans VLAN Policy
         vlans:
           - auto_allow_on_uplinks: true
@@ -30,6 +55,10 @@ ABC:
             multicast_policy: Pol_Multicast_mcast
             name: OOB-MGMT
             vlan_list: '64'
+          - auto_allow_on_uplinks: false
+            multicast_policy: Pol_Multicast_mcast
+            name: OOB-MGMT
+            vlan_list: '1000'
           - auto_allow_on_uplinks: false
             multicast_policy: Pol_Multicast_mcast
             name: IB-MGMT
@@ -130,16 +159,4 @@ ABC:
             multicast_policy: Pol_Multicast_mcast
             name: vm-data-vl0131
             vlan_list: '131'
-          - auto_allow_on_uplinks: false
-            multicast_policy: Pol_Multicast_mcast
-            name: OOB-MGMT
-            vlan_list: '1000'
-          - auto_allow_on_uplinks: false
-            multicast_policy: Pol_Multicast_mcast
-            name: dummy-vl_1016
-            vlan_list: '1016'
-          - auto_allow_on_uplinks: false
-            multicast_policy: Pol_Multicast_mcast
-            name: dummy_1017
-            vlan_list: '1017'
-
+ 

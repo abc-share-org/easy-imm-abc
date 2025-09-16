@@ -17,7 +17,7 @@ ABC:
         switch_control_policy: Pol_SwCtl_sw-ctrl
         system_qos_policy: Pol_QOS_qos
         vlan_policies:
-          - Pol_vlan_aci-vlans
+          - Pol_vlan_shared-vlans
         vsan_policies:
           - Pol_vsan_vsan-a
           - Pol_vsan_vsan-b
