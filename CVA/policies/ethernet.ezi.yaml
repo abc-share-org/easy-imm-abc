@@ -51,23 +51,23 @@ ABC:
     ethernet_qos:
       - description: Best Effort Ethernet QoS Policy
         mtu: 9000
-        name: Pol_eth_qos_best-effort
+        name: Pol_EthQoS_best-effort
         priority: Best Effort
       - description: Bronze Ethernet QoS Policy
         mtu: 9000
-        name: Pol_eth_qos_bronze
+        name: Pol_EthQoS_bronze
         priority: Bronze
       - description: Gold Ethernet QoS Policy
         mtu: 9000
-        name: Pol_eth_qos_gold
+        name: Pol_EthQoS_gold
         priority: Gold
       - description: Platinum Ethernet QoS Policy
         mtu: 9000
-        name: Pol_eth_qos_platinum
+        name: Pol_EthQoS_platinum
         priority: Platinum
       - description: Silver Ethernet QoS Policy
         mtu: 9000
-        name: Pol_eth_qos_silver
+        name: Pol_EthQoS_silver
         priority: Silver
 
 

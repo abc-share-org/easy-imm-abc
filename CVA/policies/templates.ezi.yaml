@@ -4,9 +4,9 @@ ABC:
     vhba_template:
       - allow_override: true
         description: vHBA Template
-        fibre_channel_adapter_policy: Pol_fc_adapter_Initiator
-        fibre_channel_network_policy: Pol_fc_net_vsan-a
-        fibre_channel_qos_policy: Pol_fc_qos_fc-qos
+        fibre_channel_adapter_policy: Pol_FCIniAdap_fc-adapter-Initiator
+        fibre_channel_network_policy: Pol_FCNetw_vsan-a
+        fibre_channel_qos_policy: Pol_FCQoS_fc-qos
         name: Pol_template_vHBA
         persistent_lun_bindings: false
         placement_switch_id: A
@@ -20,7 +20,7 @@ ABC:
         ethernet_network_control_policy: Pol_eth_net_ctrl_both
         ethernet_network_group_policies:
           - Pol_eth_net_group_aci-mgmt
-        ethernet_qos_policy: Pol_eth_qos_best-effort
+        ethernet_qos_policy: Pol_EthQoS_best-effort
         mac_address_pool: Pool_mac_dual-fabric
         name: Pol_template_vnic0
         placement_switch_id: A

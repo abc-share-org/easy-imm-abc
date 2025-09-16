@@ -33,7 +33,7 @@ ABC:
 #ucsdom2 policies from SaaS Rich
     flow_control:
       - description: flow-ctrl Flow Control Policy
-        name: Pol_flow-ctrl
+        name: Pol_FlowCtl_flow-ctrl
         priority: auto
         receive: Disabled
         send: Disabled

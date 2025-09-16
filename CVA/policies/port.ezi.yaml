@@ -14,7 +14,7 @@ ABC:
           - admin_speed: Auto
             ethernet_network_group_policies:
               - Pol_EthNetGroup_aci-uplink
-            flow_control_policy: Pol_flow-ctrl
+            flow_control_policy: Pol_FlowCtl_flow-ctrl
             interfaces:
               - port_id: 53
               - port_id: 54
@@ -51,7 +51,7 @@ ABC:
           - admin_speed: Auto
             ethernet_network_group_policies:
               - Pol_EthNetGroup_aci-uplink
-            flow_control_policy: Pol_flow-ctrl
+            flow_control_policy: Pol_FlowCtl_flow-ctrl
             interfaces:
               - port_id: 53
               - port_id: 54

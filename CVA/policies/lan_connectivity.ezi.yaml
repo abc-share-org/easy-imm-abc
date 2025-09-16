@@ -14,7 +14,7 @@ ABC:
             ethernet_network_control_policy: Pol_eth_net_ctrl_both
             ethernet_network_group_policies:
               - Pol_eth_net_group_aci-mgmt
-            ethernet_qos_policy: Pol_eth_qos_silver
+            ethernet_qos_policy: Pol_EthQoS_silver
             mac_address_pools:
               - Pool_mac_mgmt-a
               - Pool_mac_mgmt-b
@@ -29,7 +29,7 @@ ABC:
             ethernet_network_control_policy: Pol_eth_net_ctrl_both
             ethernet_network_group_policies:
               - Pol_eth_net_group_aci-migration
-            ethernet_qos_policy: Pol_eth_qos_bronze
+            ethernet_qos_policy: Pol_EthQoS_bronze
             mac_address_pools:
               - Pool_mac_migration-a
               - Pool_mac_migration-b
@@ -44,7 +44,7 @@ ABC:
             ethernet_network_control_policy: Pol_eth_net_ctrl_both
             ethernet_network_group_policies:
               - Pol_eth_net_group_aci-storage
-            ethernet_qos_policy: Pol_eth_qos_platinum
+            ethernet_qos_policy: Pol_EthQoS_platinum
             mac_address_pools:
               - Pool_mac_storage-a
               - Pool_mac_storage-b
@@ -59,7 +59,7 @@ ABC:
             ethernet_network_control_policy: Pol_eth_net_ctrl_both
             ethernet_network_group_policies:
               - Pol_eth_net_group_aci-dvs
-            ethernet_qos_policy: Pol_eth_qos_gold
+            ethernet_qos_policy: Pol_EthQoS_gold
             mac_address_pools:
               - Pool_mac_dvs-a
               - Pool_mac_dvs-b
