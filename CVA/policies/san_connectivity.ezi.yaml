@@ -23,6 +23,6 @@ ABC:
                 - 1
             vhba_type: fc-initiator
             wwpn_pools:
-              - Pool_wwpn-a
-              - Pool_wwpn-b
-        wwnn_pool: Pool_wwnn
+              - Pool_wwpn_wwpn-a
+              - Pool_wwpn_wwpn-b
+        wwnn_pool: Pool_wwnn_wwnn

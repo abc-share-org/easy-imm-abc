@@ -6,14 +6,14 @@ ABC:
   policies:
     imc_access:
       - description: aci-kvm IMC Access Policy
-        inband_ip_pool: Pool_ipv4ib_aci-kvm-inband
+        inband_ip_pool: Pool_ip_inband
         inband_vlan_id: 101
         ipv4_address_configuration: true
         name: Pol_mgmt_IMC_access_aci-kvm
-        out_of_band_ip_pool: Pool_ipv4oob_kvm-ooband
+        out_of_band_ip_pool: Pool_ip_kvm-ooband
     ipmi_over_lan:
       - description: ipmi IPMI over LAN Policy
-        name: Pol_IPMI_over_LAN_ipmi
+        name: Pol_IPMI_ipmi
         privilege: admin
     ldap:
       - base_settings:
@@ -43,7 +43,7 @@ ABC:
         user_search_precedence: LocalUserDb
     local_user:
       - description: users Local User Policy
-        name: Pol_local_user_users
+        name: Pol_LocalUser_users
         password_properties:
           always_send_user_password: false
           enable_password_expiry: true
@@ -62,7 +62,7 @@ ABC:
         dns_servers_v4:
           - 10.101.128.15
           - 10.101.128.16
-        name: Pol_net_connectivity_dns
+        name: Pol_NetCon_dns
     ntp:
       - description: ntp NTP Policy
         enabled: true
@@ -75,7 +75,7 @@ ABC:
       - baud_rate: 115200
         com_port: com0
         description: sol Serial over LAN Policy
-        name: Pol_Serial_Over_LAN_sol
+        name: Pol_SerialOverLAN_sol
         ssh_port: 2400
     snmp:
       - description: snmp SNMP Policy
@@ -99,8 +99,35 @@ ABC:
         description: vkvm Virtual KVM Policy
         enable_local_server_video: true
         enable_video_encryption: true
-        name: Pol_Virtual_kvm_vkvm
+        name: Pol_VirtualKVM_vkvm
         remote_port: 2068
+    ssh:
+      - description: ssh SSH Policy
+        name: ssh
+        ssh_port: 22
+        ssh_timeout: 1800
+    syslog:
+      - description: syslog Syslog Policy
+        local_logging:
+          minimum_severity: warning
+        name: Pol_Syslog_syslog
+        remote_logging:
+          - enable: true
+            hostname: 198.18.5.14
+            minimum_severity: warning
+            port: 514
+            protocol: udp
+          - enable: true
+            hostname: 198.18.5.15
+            minimum_severity: warning
+            port: 514
+            protocol: udp
+    device_connector:
+      - configuration_from_intersight_only: false
+        description: devcon Device Connector Policy
+        name: Pol_DevCon_devcon
+
+
 # Infrastructure:
 #   policies:
 #     device_connector:

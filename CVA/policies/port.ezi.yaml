@@ -12,7 +12,7 @@ ABC:
         port_channel_ethernet_uplinks:
           - admin_speed: Auto
             ethernet_network_group_policies:
-              - Pol_eth_net_group_aci-uplink
+              - Pol_EthNetGroup_aci-uplink
             flow_control_policy: Pol_flow-ctrl
             interfaces:
               - port_id: 53

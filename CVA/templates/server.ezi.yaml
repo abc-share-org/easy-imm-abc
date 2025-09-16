@@ -11,19 +11,19 @@ ABC:
         description: aci-M5-intel-virtual-M2-pxe Server Profile Template
         firmware_policy: Pol_Firmware_fw-domain-servers
         imc_access_policy: Pol_mgmt_IMC_access_aci-kvm
-        ipmi_over_lan_policy: Pol_IPMI_over_LAN_ipmi
+        ipmi_over_lan_policy: Pol_IPMI_ipmi
         lan_connectivity_policy: Pol_lan_con_aci-lcp
-        local_user_policy: Pol_local_user_users
+        local_user_policy: Pol_LocalUser_users
         name: Templ_Serv_aci-M5-intel-virtual-M2-pxe
         power_policy: Pol_power_server
         san_connectivity_policy: Pol_SAN_connectivity_scp
-        serial_over_lan_policy: Pol_Serial_Over_LAN_sol
+        serial_over_lan_policy: Pol_SerialOverLAN_sol
         snmp_policy: Pol_SNMP_snmp
         storage_policy: Pol_Storage_M2-Raid
         target_platform: FIAttached
         thermal_policy: Pol_Thermal_server
-        uuid_pool: Pool_uuid
-        virtual_kvm_policy: Pol_Virtual_kvm_vkvm
+        uuid_pool: Pool_uuid_uuid
+        virtual_kvm_policy: Pol_VirtualKVM_vkvm
         virtual_media_policy: Pol_media_vmedia
       - bios_policy: Pol_BIOS_M5-intel-virtual-tpm
         boot_order_policy: Pol_Boot_M2-pxe
@@ -31,19 +31,19 @@ ABC:
         description: aci-M5-intel-virtual-tpm-M2-pxe Server Profile Template
         firmware_policy: Pol_Firmware_fw-domain-servers
         imc_access_policy: Pol_mgmt_IMC_access_aci-kvm
-        ipmi_over_lan_policy: Pol_IPMI_over_LAN_ipmi
+        ipmi_over_lan_policy: Pol_IPMI_ipmi
         lan_connectivity_policy: Pol_lan_con_aci-lcp
-        local_user_policy: Pol_local_user_users
+        local_user_policy: Pol_LocalUser_users
         name: Templ_Serv_aci-M5-intel-virtual-tpm-M2-pxe
         power_policy: Pol_power_server
         san_connectivity_policy: Pol_SAN_connectivity_scp
-        serial_over_lan_policy: Pol_Serial_Over_LAN_sol
+        serial_over_lan_policy: Pol_SerialOverLAN_sol
         snmp_policy: Pol_SNMP_snmp
         storage_policy: Pol_Storage_M2-Raid
         target_platform: FIAttached
         thermal_policy: Pol_Thermal_server
-        uuid_pool: Pool_uuid
-        virtual_kvm_policy: Pol_Virtual_kvm_vkvm
+        uuid_pool: Pool_uuid_uuid
+        virtual_kvm_policy: Pol_VirtualKVM_vkvm
         virtual_media_policy: Pol_media_vmedia
       - bios_policy: Pol_BIOS_M6-intel-virtual-tpm
         boot_order_policy: Pol_Boot_M2-pxe
@@ -51,19 +51,19 @@ ABC:
         description: aci-M6-intel-virtual-tpm-M2-pxe Server Profile Template
         firmware_policy: Pol_Firmware_fw-domain-servers
         imc_access_policy: Pol_mgmt_IMC_access_aci-kvm
-        ipmi_over_lan_policy: Pol_IPMI_over_LAN_ipmi
+        ipmi_over_lan_policy: Pol_IPMI_ipmi
         lan_connectivity_policy: Pol_lan_con_aci-lcp
-        local_user_policy: Pol_local_user_users
+        local_user_policy: Pol_LocalUser_users
         memory_policy: Pol_memory_default
         name: Templ_Serv_aci-M6-intel-virtual-tpm-M2-pxe
         power_policy: Pol_power_server
         san_connectivity_policy: Pol_SAN_connectivity_scp
         scrub_policy: Pol_scrub_default
-        serial_over_lan_policy: Pol_Serial_Over_LAN_sol
+        serial_over_lan_policy: Pol_SerialOverLAN_sol
         snmp_policy: Pol_SNMP_snmp
         storage_policy: Pol_Storage_M2-Raid
         target_platform: FIAttached
         thermal_policy: Pol_Thermal_server
-        uuid_pool: Pool_uuid
-        virtual_kvm_policy: Pol_Virtual_kvm_vkvm
+        uuid_pool: Pool_uuid_uuid
+        virtual_kvm_policy: Pol_VirtualKVM_vkvm
         virtual_media_policy: Pol_media_vmedia

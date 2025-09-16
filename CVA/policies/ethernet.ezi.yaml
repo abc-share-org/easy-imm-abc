@@ -26,7 +26,7 @@ ABC:
         name: Pol_eth_net_ctrl_lldp
     ethernet_network_group:
       - allowed_vlans: 101-103,1000-1199
-        name: Pol_eth_net_group_aci-uplink
+        name: Pol_EthNetGroup_aci-uplink
       - allowed_vlans: '101'
         name: Pol_eth_net_group_aci-mgmt
         native_vlan: 101

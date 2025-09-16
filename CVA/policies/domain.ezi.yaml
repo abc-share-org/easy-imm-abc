@@ -62,7 +62,7 @@ ABC:
       - description: sw-ctrl Switch Control Policy
         fabric_port_channel_vhba_reset: Disabled
         mac_address_table_aging: Default
-        name: Pol_sw-ctrl
+        name: Pol_SwCtl_sw-ctrl
         reserved_vlan_start_id: 3915
         switching_mode_ethernet: end-host
         switching_mode_fc: end-host
@@ -104,7 +104,7 @@ ABC:
             weight: 8
         description: qos System QoS Policy
         jumbo_mtu: true
-        name: Pol_qos
+        name: Pol_QOS_qos
 
 # Infrastructure:
 #   policies:
