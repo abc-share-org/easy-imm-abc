@@ -10,9 +10,9 @@ ABC:
         create_template: true
         description: aci-M5-intel-virtual-M2-pxe Server Profile Template
         firmware_policy: Pol_Firmware_fw-domain-servers
-        imc_access_policy: Pol_mgmt_IMC_access_aci-kvm
+        imc_access_policy: Pol_IMCAccess_aci-kvm
         ipmi_over_lan_policy: Pol_IPMI_ipmi
-        lan_connectivity_policy: Pol_lan_con_aci-lcp
+        lan_connectivity_policy: Pol_LanConn_aci-lcp
         local_user_policy: Pol_LocalUser_users
         name: Templ_Serv_aci-M5-intel-virtual-M2-pxe
         power_policy: Pol_power_server
@@ -30,9 +30,9 @@ ABC:
         create_template: true
         description: aci-M5-intel-virtual-tpm-M2-pxe Server Profile Template
         firmware_policy: Pol_Firmware_fw-domain-servers
-        imc_access_policy: Pol_mgmt_IMC_access_aci-kvm
+        imc_access_policy: Pol_IMCAccess_aci-kvm
         ipmi_over_lan_policy: Pol_IPMI_ipmi
-        lan_connectivity_policy: Pol_lan_con_aci-lcp
+        lan_connectivity_policy: Pol_LanConn_aci-lcp
         local_user_policy: Pol_LocalUser_users
         name: Templ_Serv_aci-M5-intel-virtual-tpm-M2-pxe
         power_policy: Pol_power_server
@@ -50,9 +50,9 @@ ABC:
         create_template: true
         description: aci-M6-intel-virtual-tpm-M2-pxe Server Profile Template
         firmware_policy: Pol_Firmware_fw-domain-servers
-        imc_access_policy: Pol_mgmt_IMC_access_aci-kvm
+        imc_access_policy: Pol_IMCAccess_aci-kvm
         ipmi_over_lan_policy: Pol_IPMI_ipmi
-        lan_connectivity_policy: Pol_lan_con_aci-lcp
+        lan_connectivity_policy: Pol_LanConn_aci-lcp
         local_user_policy: Pol_LocalUser_users
         memory_policy: Pol_memory_default
         name: Templ_Serv_aci-M6-intel-virtual-tpm-M2-pxe

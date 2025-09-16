@@ -18,8 +18,8 @@ ABC:
             interfaces:
               - port_id: 53
               - port_id: 54
-            link_aggregation_policy: Pol_link-agg
-            link_control_policy: Pol_link-ctrl
+            link_aggregation_policy: Pol_LinkAgg_link-agg
+            link_control_policy: Pol_LinkCtl_link-ctrl
             pc_ids:
               - 53
               - 53
@@ -55,8 +55,8 @@ ABC:
             interfaces:
               - port_id: 53
               - port_id: 54
-            link_aggregation_policy: Pol_link-agg
-            link_control_policy: Pol_link-ctrl
+            link_aggregation_policy: Pol_LinkAgg_link-agg
+            link_control_policy: Pol_LinkCtl_link-ctrl
             pc_ids:
               - 53
               - 53

@@ -40,13 +40,13 @@ ABC:
     link_aggregation:
       - description: link-agg Link Aggregation Policy
         lacp_rate: normal
-        name: Pol_link-agg
+        name: Pol_LinkAgg_link-agg
         suspend_individual: false
     link_control:
       - admin_state: Enabled
         description: link-ctrl Link Control Policy
         mode: normal
-        name: Pol_link-ctrl
+        name: Pol_LinkCtl_link-ctrl
     switch_control:
       - description: fc-switch Switch Control Policy
         fabric_port_channel_vhba_reset: Disabled
