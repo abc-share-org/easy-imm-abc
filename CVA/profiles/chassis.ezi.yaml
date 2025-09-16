@@ -5,15 +5,6 @@
 ABC:
   profiles:
     chassis:
-      # - action: No-op
-      #   imc_access_policy: aci-kvm
-      #   power_policy: 'PP_9508'
-      #   snmp_policy: snmp
-      #   targets:
-      #     - description: ucsdom1-1 UCS Chassis Profile
-      #       name: ucsdom1-1
-      #       serial_number: unknown
-      #   thermal_policy: 'TP_9508'
 # DC1 chassis
       - action: No-op
         imc_access_policy: Pol_mgmt_IMC_access_aci-kvm
