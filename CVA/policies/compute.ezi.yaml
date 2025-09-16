@@ -56,7 +56,7 @@ ABC:                                            # ABC replace with your organiza
         serial_port_aenable: enabled
         terminal_type: vt100
         txt_support: enabled
-        boot_option_num_retry: 5
+        boot_option_num_retry: '5'
         network_stack: platform-default
         pop_support: platform-default
         cdn_support: enabled
