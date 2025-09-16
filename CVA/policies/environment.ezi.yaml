@@ -7,21 +7,21 @@ ABC:
       # - description: 5108 Power Policy
       #   name: '5108'
       #   power_redundancy: Grid
-      - description: 9508 Power Policy
-        name: 'Pol_power_9508'
+      - description: 9508 Power Policy # ABC this is the description
+        name: 'Pol_power_9508' # ABC this is the name of the policy
         power_allocation: 5600
         power_redundancy: Grid
-      - description: server Power Policy
-        name: 'Pol_power_server'
+      - description: server Power Policy # ABC this is the description
+        name: 'Pol_power_server' # ABC this is the name of the policy
         power_redundancy: Grid
         power_restore: LastState
     thermal:
       # - description: 5108 Thermal Policy
       #   fan_control_mode: Balanced
       #   name: '5108'
-      - description: 9508 Thermal Policy
+      - description: 9508 Thermal Policy # ABC this is the description
         fan_control_mode: Balanced
-        name: 'Pol_Thermal_9508'
-      - description: server Thermal Policy
+        name: 'Pol_Thermal_9508' # ABC this is the name of the policy
+      - description: server Thermal Policy # ABC this is the description
         fan_control_mode: Balanced
-        name: 'Pol_Thermal_server'
+        name: 'Pol_Thermal_server' # ABC this is the name of the policy

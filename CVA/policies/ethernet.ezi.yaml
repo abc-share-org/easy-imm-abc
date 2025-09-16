@@ -6,68 +6,68 @@ ABC:
   policies:
     ethernet_adapter:
       - adapter_template: Win-AzureStack
-        description: Win-AzureStack Ethernet Adapter
-        name: Pol_EthAdapt_Win-AzureStack
+        description: Win-AzureStack Ethernet Adapter # ABC this is the description
+        name: Pol_EthAdapt_Win-AzureStack # ABC this is the name of the policy
       - adapter_template: VMware
-        description: VMware Ethernet Adapter
-        name: Pol_EthAdapt_VMware
+        description: VMware Ethernet Adapter # ABC this is the description
+        name: Pol_EthAdapt_VMware # ABC this is the name of the policy 
     ethernet_network_control:
       - cdp_enable: true
-        description: cdp Ethernet Network Control Policy
+        description: cdp Ethernet Network Control Policy # ABC this is the description
         lldp_enable_receive: true
         lldp_enable_transmit: true
-        name: Pol_EthNetCtl_both
+        name: Pol_EthNetCtl_both # ABC this is the name of the policy
       - cdp_enable: true
-        description: cdp Ethernet Network Control Policy
-        name: Pol_EthNetCtl_cdp
+        description: cdp Ethernet Network Control Policy # ABC this is the description  
+        name: Pol_EthNetCtl_cdp # ABC this is the name of the policy
       - description: lldp Ethernet Network Control Policy
         lldp_enable_receive: true
         lldp_enable_transmit: true
-        name: Pol_EthNetCtl_lldp
+        name: Pol_EthNetCtl_lldp # ABC this is the name of the policy
     ethernet_network_group:
       - allowed_vlans: 101-103,1000-1199
-        name: Pol_EthNetGroup_aci-uplink
+        name: Pol_EthNetGroup_aci-uplink # ABC this is the name of the policy
       - allowed_vlans: '101'
-        name: Pol_EthNetGrp_aci-mgmt
+        name: Pol_EthNetGrp_aci-mgmt # ABC this is the name of the policy
         native_vlan: 101
       - allowed_vlans: '102'
-        name: Pol_EthNetGrp_aci-migration
+        name: Pol_EthNetGrp_aci-migration # ABC this is the name of the policy
         native_vlan: 102
       - allowed_vlans: '103'
-        name: Pol_EthNetGrp_aci-storage
+        name: Pol_EthNetGrp_aci-storage # ABC this is the name of the policy
         native_vlan: 103
       - allowed_vlans: 101-103,1000-1199
-        name: Pol_EthNetGrp_aci-dvs
+        name: Pol_EthNetGrp_aci-dvs # ABC this is the name of the policy
         native_vlan: 1
 # r143c
       - allowed_vlans: 125-131,1000-1002,1013-1015
-        description: all_vlans Ethernet Network Group Policy
-        name: Pol_EthNetGrp_all_vlans
+        description: all_vlans Ethernet Network Group Policy # ABC this is the description
+        name: Pol_EthNetGrp_all_vlans # ABC this is the name of the policy
         native_vlan: 1
       - allowed_vlans: '1001'
-        description: mgmt Ethernet Network Group Policy
-        name: Pol_EthNetGrp_mgmt
+        description: mgmt Ethernet Network Group Policy # ABC this is the description
+        name: Pol_EthNetGrp_mgmt # ABC this is the name of the policy
         native_vlan: 1001
     ethernet_qos:
-      - description: Best Effort Ethernet QoS Policy
+      - description: Best Effort Ethernet QoS Policy # ABC this is the description
         mtu: 9000
-        name: Pol_EthQoS_best-effort
+        name: Pol_EthQoS_best-effort # ABC this is the name of the policy
         priority: Best Effort
-      - description: Bronze Ethernet QoS Policy
+      - description: Bronze Ethernet QoS Policy # ABC this is the description
         mtu: 9000
-        name: Pol_EthQoS_bronze
+        name: Pol_EthQoS_bronze # ABC this is the name of the policy
         priority: Bronze
-      - description: Gold Ethernet QoS Policy
+      - description: Gold Ethernet QoS Policy # ABC this is the description
         mtu: 9000
-        name: Pol_EthQoS_gold
+        name: Pol_EthQoS_gold # ABC this is the name of the policy
         priority: Gold
-      - description: Platinum Ethernet QoS Policy
+      - description: Platinum Ethernet QoS Policy # ABC this is the description
         mtu: 9000
-        name: Pol_EthQoS_platinum
+        name: Pol_EthQoS_platinum # ABC this is the name of the policy
         priority: Platinum
-      - description: Silver Ethernet QoS Policy
+      - description: Silver Ethernet QoS Policy # ABC this is the description
         mtu: 9000
-        name: Pol_EthQoS_silver
+        name: Pol_EthQoS_silver # ABC this is the name of the policy
         priority: Silver
 
 

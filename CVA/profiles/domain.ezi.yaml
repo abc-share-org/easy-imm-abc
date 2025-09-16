@@ -6,8 +6,8 @@ ABC:
   profiles:
     domain:
 # UCS Domain #1 at DC1
-      - name: Prof_Dom_ucsdom1
-        description: dom1 UCS Domain Profile
+      - name: Prof_Dom_ucsdom1                            # ABC this is a domain profile name 
+        description: dom1 UCS Domain Profile              # ABC this is a description of the domain profile
         action: No-op
         ldap_policy: Pol_LDAP_RICH
         network_connectivity_policy: Pol_NetCon_dns
@@ -27,8 +27,8 @@ ABC:
           - Pol_vsan_vsan-a
           - Pol_vsan_vsan-b
 # UCS Domain #2 at DC2
-      - name: Prof_Dom_ucsdom2
-        description: dom2 UCS Domain Profile
+      - name: Prof_Dom_ucsdom2                            # ABC this is a domain profile name 
+        description: dom2 UCS Domain Profile              # ABC this is a description of the domain profile
         action: No-op
         ldap_policy: Pol_LDAP_RICH
         network_connectivity_policy: Pol_NetCon_dns
