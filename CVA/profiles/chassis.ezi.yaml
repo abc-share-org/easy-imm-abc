@@ -12,7 +12,7 @@ ABC:
         snmp_policy: Pol_SNMP_snmp
         targets:
           - description: ucsdom1-1 UCS Chassis Profile
-            name: Prof_chass_ucsdom1-1
+            name: Prof_chass_ucsdom1-1        # ABC this is the chassis profile name  
             serial_number: unknown
         thermal_policy: 'Pol_Thermal_9508'
 # DC2 Chassis
@@ -22,6 +22,6 @@ ABC:
         snmp_policy: Pol_SNMP_snmp
         targets:
           - description: ucsdom2-1 UCS Chassis Profile
-            name: Prof_chass_ucsdom2-1
+            name: Prof_chass_ucsdom2-1        # ABC this is the chassis profile name
             serial_number: unknown
         thermal_policy: 'Pol_Thermal_9508'
