@@ -13,7 +13,7 @@ ABC:
           netmask: 255.255.255.0
           primary_dns: 10.101.128.15
           secondary_dns: 10.101.128.16
-        name: Pool_ip_inband
+        name: Pool_ip_inband          # ABC this is the IP Pool name
       - ipv4_blocks:
           - from: 192.168.64.160
             size: 64
@@ -22,44 +22,44 @@ ABC:
           netmask: 255.255.254.0
           primary_dns: 10.101.128.15
           secondary_dns: 10.101.128.16
-        name: Pool_ip_kvm-ooband
+        name: Pool_ip_kvm-ooband  
     mac:
       - mac_blocks:
           - from: 00:25:B5:C1:10:00
             size: 255
-        name: Pool_mac_dvs-a
+        name: Pool_mac_dvs-a        # ABC this is the MAC Pool name
       - mac_blocks:
           - from: 00:25:B5:C1:20:00
             size: 255
-        name: Pool_mac_dvs-b
+        name: Pool_mac_dvs-b        # ABC this is the MAC Pool name 
       - mac_blocks:
           - from: 00:25:B5:C1:A0:00
             size: 255
-        name: Pool_mac_mgmt-a
+        name: Pool_mac_mgmt-a       # ABC this is the MAC Pool name
       - mac_blocks:
           - from: 00:25:B5:C1:B0:00
             size: 255
-        name: Pool_mac_mgmt-b
+        name: Pool_mac_mgmt-b      # ABC this is the MAC Pool name
       - mac_blocks:
           - from: 00:25:B5:C1:C0:00
             size: 255
-        name: Pool_mac_migration-a
+        name: Pool_mac_migration-a  # ABC this is the MAC Pool name
       - mac_blocks:
           - from: 00:25:B5:C1:D0:00
             size: 255
-        name: Pool_mac_migration-b
+        name: Pool_mac_migration-b  # ABC this is the MAC Pool name
       - mac_blocks:
           - from: 00:25:B5:C1:E0:00
             size: 255
-        name: Pool_mac_storage-a
+        name: Pool_mac_storage-a     # ABC this is the MAC Pool name  
       - mac_blocks:
           - from: 00:25:B5:C1:F0:00
             size: 255
-        name: Pool_mac_storage-b
+        name: Pool_mac_storage-b    # ABC this is the MAC Pool name 
       - mac_blocks:
           - from: 00:25:B5:C1:00:00
             size: 255
-        name: Pool_mac_dual-fabric
+        name: Pool_mac_dual-fabric  # ABC this is the MAC Pool name
     # resource:
     #   - description: SPQ-Blade
     #     name: SPQ-Blade
@@ -67,8 +67,8 @@ ABC:
     #       - SPQ-Blade
     #     target_platform: FIAttached
     uuid:
-      - description: uuid UUID Pool
-        name: Pool_uuid_uuid
+      - description: uuid UUID Pool   # ABC this is a description of the UUID Pool
+        name: Pool_uuid_uuid          # ABC this is the UUID Pool name
         prefix: 000025B5-C15C-0000
         uuid_blocks:
           - from: 25B5-000000000000
@@ -77,13 +77,13 @@ ABC:
       - id_blocks:
           - from: 20:00:00:25:B5:C1:00:00
             size: 255
-        name: Pool_wwnn_wwnn
+        name: Pool_wwnn_wwnn          # ABC this is the WWNN Pool name
     wwpn:
       - id_blocks:
           - from: 20:00:00:25:B5:C1:A0:00
             size: 255
-        name: Pool_wwpn_wwpn-a
+        name: Pool_wwpn_wwpn-a       # ABC this is the WWPN Pool name
       - id_blocks:
           - from: 20:00:00:25:B5:C1:B0:00
             size: 255
-        name: Pool_wwpn_wwpn-b
+        name: Pool_wwpn_wwpn-b       # ABC this is the WWPN Pool name
