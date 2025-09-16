@@ -2,11 +2,16 @@
 #=======================================
 #   Policies -> Compute - Variables
 #=======================================
-ABC:
+#
+# Most of the policies below can be left as is with default values
+# Nutanix will create most of these policies when the server(s) are added to a cluster
+# The policies below are provided as examples and can be modified as needed
+#
+ABC:                                            # ABC replace with your organization name 
   policies:
     scrub:
-      - bios: false
-        disk: false                             # ABC set this to true
+      - bios: false                             # ABC disk scrub policy: set this to true
+        disk: false                             # ABC disk scrub policy: set this to true
         name: Pol_scrub_default                 # ABC this is the policy name
     boot_order:
       - name: Pol_Boot_M2-pxe
@@ -46,14 +51,19 @@ ABC:
     bios:
       - baud_rate: '115200'
         name: Pol_BIOS_example                            # ABC this is the policy name
+        description: M5-intel-virtual BIOS Policy with policy overrides
         latency_optimized_mode: enabled
         bios_template: M5-intel-virtual                   # ABC these are predefined templates in Intersight
         boot_performance_mode: Max Performance
         console_redirection: com-0
-        description: M5-intel-virtual BIOS Policy
         serial_port_aenable: enabled
         terminal_type: vt100
         txt_support: enabled
+        boot_option_num_retry: 5
+        network_stack: platform-default
+        pop_support: platform-default
+        cdn_support: enabled
+        intel_vt_for_directed_io: enabled
       - baud_rate: '115200'
         latency_optimized_mode: enabled
         bios_template: M5-intel-virtual
