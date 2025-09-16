@@ -51,7 +51,7 @@ ABC:
       - description: fc-switch Switch Control Policy
         fabric_port_channel_vhba_reset: Disabled
         mac_address_table_aging: Default
-        name: Pol_fc-switch
+        name: Pol_FCSwCtl_fc-switch
         reserved_vlan_start_id: 3915
         switching_mode_ethernet: end-host
         switching_mode_fc: switch
