@@ -210,6 +210,16 @@ The important point is that if you need more than is added by default you can ex
 ### IMPORTANT: 
 
 ALL EXAMPLES BELOW ASSUME USING `tfenv` in LINUX
+If you are not using `tfenv` then you must add TF_VAR_ to the beginning of your env vars, ie ```intersight_api_key_id``` becomes ```TF_VAR_intersight_api_key_id```
+
+
+
+#### Linux - without tfenv
+
+```bash
+export TF_VAR_intersight_api_key_id="<your-api-key>"
+export TF_VAR_intersight_secret_key="<secret-key-file-location>"
+```
 
 #### Linux - with tfenv
 
@@ -279,21 +289,21 @@ $env:TF_VAR_drive_security_server_ca_certificate='<drive_security_server_ca_cert
   * `cco_user`: If Configuring Firmware Policies, the CCO User for Firmware Downloads.
   * `cco_password`: If Configuring Firmware Policies, the CCO Password for Firmware Downloads.
 
-#### Linux - with tfenv
+#### Linux - without tfenv
+```bash
+export TF_VAR_cco_user='<cco_user>'
+export TF_VAR_cco_password='<cco_password>'
+```
 
+#### Linux - with tfenv
 ```bash
 export cco_user='<cco_user>'
-```
-```bash
 export cco_password='<cco_password>'
 ```
 
 #### Windows
-
 ```powershell
 $env:TF_VAR_cco_user='<cco_user>'
-```
-```powershell
 $env:TF_VAR_cco_password='<cco_password>'
 ```
 
