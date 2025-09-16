@@ -10,8 +10,8 @@ ABC:
       #   power_policy: 'PP_9508'
       #   snmp_policy: snmp
       #   targets:
-      #     - description: ucsdom1-1-1 UCS Chassis Profile
-      #       name: ucsdom1-1-1
+      #     - description: ucsdom1-1 UCS Chassis Profile
+      #       name: ucsdom1-1
       #       serial_number: unknown
       #   thermal_policy: 'TP_9508'
       - action: No-op
@@ -19,7 +19,7 @@ ABC:
         power_policy: Pol_power_9508
         snmp_policy: Pol_SNMP_snmp
         targets:
-          - description: ucsdom1-1-2 UCS Chassis Profile
-            name: Prof_chass_ucsdom2
+          - description: ucsdom1-1 UCS Chassis Profile
+            name: Prof_chass_ucsdom1-1
             serial_number: unknown
         thermal_policy: 'Pol_Thermal_9508'

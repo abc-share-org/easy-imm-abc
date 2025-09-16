@@ -7,12 +7,12 @@ ABC:
     domain:
       - create_template: true
         description: UCS Domain Profile Template
-        name: Templ_Dom_r143e
+        name: Templ_Dom_ucsdom1
         network_connectivity_policy: Pol_NetCon_dns
         ntp_policy: Pol_NTP_ntp
         port_policies:
-          - Pol_port_r143e-1-a
-          - Pol_port_r143e-1-b
+          - Pol_port_ucsdom1-a
+          - Pol_port_ucsdom1-b
         snmp_policy: Pol_SNMP_snmp
         switch_control_policy: Pol_SwCtl_sw-ctrl
         system_qos_policy: Pol_QOS_qos
