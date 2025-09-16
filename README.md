@@ -94,7 +94,9 @@ When defining Identity reservations under a server profile, see example in `prof
 
 If you would like to utilize Autocomple, Help Context, and Error Validation, `(HIGHLY RECOMMENDED)` make sure the files all utilize the `.ezi.yaml` file extension.
 
-Add the Following to `YAML: Schemas`.  In Visual Studio Code: Settings > Settings > Search for `YAML: Schema`: Click edit in `settings.json`.  In the `yaml.schemas` section:
+First install the `Redhat: YAML` exension to Visual Studio Code or VSCodium: https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml
+
+Then, in Visual Studio Code: Settings > Settings > Search for `YAML: Schema`: Click edit in `settings.json`.  In the `yaml.schemas` section, paste:
 
 ```bash
 "https://raw.githubusercontent.com/terraform-cisco-modules/easy-imm/main/yaml_schema/easy-imm.json": "*.ezi.yaml"
