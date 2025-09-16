@@ -41,16 +41,30 @@ ABC:                                            # ABC replace with your organiza
           - firmware_version: 5.2(2.240053)            # ABC change this to your desired firmware version
             server_models:
               - UCSX-210C-M7
-    # firmware_authenticate:
-    #    cco_password: 1
-    #    cco_user: 1
-# Policies below here can be left as is with default values
+    firmware_authenticate:
+       cco_password: 1
+       cco_user: 1
+###############
+# BIOS Policies
+# Intersight has predefined BIOS templates for different server models
+# These can be used as is or modified with overrides as needed
+# The example below shows two BIOS policies based on predefined templates
+# The first policy is based on the M6-intel-virtual template with overrides
+# The second policy is based on the M6-intel-virtual-tpm template with no overrides
+# The policies below can be copied and modified as needed
+# Note that the BIOS templates are updated by Cisco from time to time
+# It is recommended to check the templates in Intersight to ensure they meet your requirements
+# The BIOS templates can be found in Intersight when creating a BIOS Policy
+# Further information on BIOS Policies and Tokens can be seen here:
+# https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/Intersight/IMM_BIOS_Tokens_Guide/b_IMM_Server_BIOS_Tokens_Guide/b_UCS_BIOS_Tokens_Guide_chapter_01.html
+# https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/Intersight/IMM_BIOS_Tokens_Guide/b_IMM_Server_BIOS_Tokens_Guide.html
+#
     bios:
-      - baud_rate: '115200'
-        name: Pol_BIOS_example                            # ABC this is the policy name
-        description: M5-intel-virtual BIOS Policy with policy overrides
+      - name: Pol_BIOS_example                            # ABC this is the policy name
+        description: M6-intel-virtual BIOS Policy with policy overrides
+        bios_template: M6-intel-virtual                   # ABC these are predefined templates in Intersight
+        baud_rate: '115200'
         latency_optimized_mode: enabled
-        bios_template: M5-intel-virtual                   # ABC these are predefined templates in Intersight
         boot_performance_mode: Max Performance
         console_redirection: com-0
         serial_port_aenable: enabled
@@ -61,12 +75,13 @@ ABC:                                            # ABC replace with your organiza
         pop_support: platform-default
         cdn_support: enabled
         intel_vt_for_directed_io: enabled
-      - baud_rate: '115200'
+#
+      - name: Pol_BIOS_M6-intel-virtual-tpm             # ABC this is the name of the policy
+        description: M6-intel-virtual-tpm BIOS Policy   # ABC this is the description
         bios_template: M6-intel-virtual-tpm             # ABC these are predefined templates in Intersight
+        baud_rate: '115200'
         boot_performance_mode: Max Performance
         console_redirection: com-0
-        description: M6-intel-virtual-tpm BIOS Policy   # ABC this is the description
-        name: Pol_BIOS_M6-intel-virtual-tpm             # ABC this is the name of the policy
         serial_port_aenable: enabled
         terminal_type: vt100
         txt_support: enabled
