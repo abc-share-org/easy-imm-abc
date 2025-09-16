@@ -14,6 +14,7 @@ ABC:
       #       name: ucsdom1-1
       #       serial_number: unknown
       #   thermal_policy: 'TP_9508'
+# DC1 chassis
       - action: No-op
         imc_access_policy: Pol_mgmt_IMC_access_aci-kvm
         power_policy: Pol_power_9508
@@ -21,5 +22,15 @@ ABC:
         targets:
           - description: ucsdom1-1 UCS Chassis Profile
             name: Prof_chass_ucsdom1-1
+            serial_number: unknown
+        thermal_policy: 'Pol_Thermal_9508'
+# DC2 Chassis
+      - action: No-op
+        imc_access_policy: Pol_mgmt_IMC_access_aci-kvm
+        power_policy: Pol_power_9508
+        snmp_policy: Pol_SNMP_snmp
+        targets:
+          - description: ucsdom2-1 UCS Chassis Profile
+            name: Prof_chass_ucsdom2-1
             serial_number: unknown
         thermal_policy: 'Pol_Thermal_9508'
