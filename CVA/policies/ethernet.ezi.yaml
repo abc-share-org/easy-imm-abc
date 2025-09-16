@@ -7,46 +7,46 @@ ABC:
     ethernet_adapter:
       - adapter_template: Win-AzureStack
         description: Win-AzureStack Ethernet Adapter
-        name: Pol_eth_adapter_Win-AzureStack
+        name: Pol_EthAdapt_Win-AzureStack
       - adapter_template: VMware
         description: VMware Ethernet Adapter
-        name: Pol_eth_adapter_VMware
+        name: Pol_EthAdapt_VMware
     ethernet_network_control:
       - cdp_enable: true
         description: cdp Ethernet Network Control Policy
         lldp_enable_receive: true
         lldp_enable_transmit: true
-        name: Pol_eth_net_ctrl_both
+        name: Pol_EthNetCtl_both
       - cdp_enable: true
         description: cdp Ethernet Network Control Policy
-        name: Pol_eth_net_ctrl_cdp
+        name: Pol_EthNetCtl_cdp
       - description: lldp Ethernet Network Control Policy
         lldp_enable_receive: true
         lldp_enable_transmit: true
-        name: Pol_eth_net_ctrl_lldp
+        name: Pol_EthNetCtl_lldp
     ethernet_network_group:
       - allowed_vlans: 101-103,1000-1199
         name: Pol_EthNetGroup_aci-uplink
       - allowed_vlans: '101'
-        name: Pol_eth_net_group_aci-mgmt
+        name: Pol_EthNetGrp_aci-mgmt
         native_vlan: 101
       - allowed_vlans: '102'
-        name: Pol_eth_net_group_aci-migration
+        name: Pol_EthNetGrp_aci-migration
         native_vlan: 102
       - allowed_vlans: '103'
-        name: Pol_eth_net_group_aci-storage
+        name: Pol_EthNetGrp_aci-storage
         native_vlan: 103
       - allowed_vlans: 101-103,1000-1199
-        name: Pol_eth_net_group_aci-dvs
+        name: Pol_EthNetGrp_aci-dvs
         native_vlan: 1
 # r143c
       - allowed_vlans: 125-131,1000-1002,1013-1015
         description: all_vlans Ethernet Network Group Policy
-        name: Pol_eth_net_group_all_vlans
+        name: Pol_EthNetGrp_all_vlans
         native_vlan: 1
       - allowed_vlans: '1001'
         description: mgmt Ethernet Network Group Policy
-        name: Pol_eth_net_group_mgmt
+        name: Pol_EthNetGrp_mgmt
         native_vlan: 1001
     ethernet_qos:
       - description: Best Effort Ethernet QoS Policy

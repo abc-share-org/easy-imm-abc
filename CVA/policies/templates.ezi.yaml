@@ -16,10 +16,10 @@ ABC:
       - allow_override: true
         description: vnic0 template
         enable_failover: true
-        ethernet_adapter_policy:  Pol_eth_adapter_Win-AzureStack
-        ethernet_network_control_policy: Pol_eth_net_ctrl_both
+        ethernet_adapter_policy:  Pol_EthAdapt_Win-AzureStack
+        ethernet_network_control_policy: Pol_EthNetCtl_both
         ethernet_network_group_policies:
-          - Pol_eth_net_group_aci-mgmt
+          - Pol_EthNetGrp_aci-mgmt
         ethernet_qos_policy: Pol_EthQoS_best-effort
         mac_address_pool: Pool_mac_dual-fabric
         name: Pol_template_vnic0
