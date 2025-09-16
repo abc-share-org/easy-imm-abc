@@ -69,7 +69,7 @@ ABC:
     #    cco_user: 1
     memory:
       - dimm_blocklisting: false
-        name: Pol_memory_default
+        name: Pol_Mem_default
     scrub:
       - bios: false
         disk: false

@@ -6,7 +6,7 @@ ABC:
   policies:
     san_connectivity:
       - description: scp SAN Connectivity Policy
-        name: Pol_SAN_connectivity_scp
+        name: Pol_SANConn_scp
         target_platform: FIAttached
         vhbas:
           - fibre_channel_adapter_policy: Pol_FCIniAdap_fc-adapter-Initiator

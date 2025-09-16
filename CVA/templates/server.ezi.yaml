@@ -16,7 +16,7 @@ ABC:
         local_user_policy: Pol_LocalUser_users
         name: Templ_Serv_aci-M5-intel-virtual-M2-pxe
         power_policy: Pol_power_server
-        san_connectivity_policy: Pol_SAN_connectivity_scp
+        san_connectivity_policy: Pol_SANConn_scp
         serial_over_lan_policy: Pol_SerialOverLAN_sol
         snmp_policy: Pol_SNMP_snmp
         storage_policy: Pol_Storage_M2-Raid
@@ -36,7 +36,7 @@ ABC:
         local_user_policy: Pol_LocalUser_users
         name: Templ_Serv_aci-M5-intel-virtual-tpm-M2-pxe
         power_policy: Pol_power_server
-        san_connectivity_policy: Pol_SAN_connectivity_scp
+        san_connectivity_policy: Pol_SANConn_scp
         serial_over_lan_policy: Pol_SerialOverLAN_sol
         snmp_policy: Pol_SNMP_snmp
         storage_policy: Pol_Storage_M2-Raid
@@ -54,10 +54,10 @@ ABC:
         ipmi_over_lan_policy: Pol_IPMI_ipmi
         lan_connectivity_policy: Pol_LanConn_aci-lcp
         local_user_policy: Pol_LocalUser_users
-        memory_policy: Pol_memory_default
+        memory_policy: Pol_Mem_default
         name: Templ_Serv_aci-M6-intel-virtual-tpm-M2-pxe
         power_policy: Pol_power_server
-        san_connectivity_policy: Pol_SAN_connectivity_scp
+        san_connectivity_policy: Pol_SANConn_scp
         scrub_policy: Pol_scrub_default
         serial_over_lan_policy: Pol_SerialOverLAN_sol
         snmp_policy: Pol_SNMP_snmp
