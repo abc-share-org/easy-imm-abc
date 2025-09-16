@@ -21,9 +21,9 @@ ABC:
 #  #         chassis:
 #  #           - ucsdom1-1
 #  #         blades:
-#  #           - FCH213271VU #ucsdom2-1-3
-#  #           - FCH222974YZ #ucsdom2-1-4
-#  #           - FLM250803J8 #ucsdom2-1-6
+#  #           - FCH213271VU #ucsdom2-3
+#  #           - FCH222974YZ #ucsdom2-4
+#  #           - FLM250803J8 #ucsdom2-6
 #  #         fabric_interconnects:
 #  #           - ucsdom1-1-A
 #  #           - ucsdom1-1-B

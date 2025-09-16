@@ -27,15 +27,15 @@ ABC:
           - Pol_vsan_vsan-a
           - Pol_vsan_vsan-b
 # UCS Domain #2 at DC2
-      - name: Prof_Dom_dom2-1
-        description: dom2-1 UCS Domain Profile
+      - name: Prof_Dom_ucsdom2
+        description: dom2 UCS Domain Profile
         action: No-op
         ldap_policy: Pol_LDAP_RICH
         network_connectivity_policy: Pol_NetCon_dns
         ntp_policy: Pol_NTP_ntp
         port_policies:
-          - Pol_port_dom2-1-a
-          - Pol_port_dom2-1-b
+          - Pol_port_ucsdom2-a
+          - Pol_port_ucsdom2-b
         serial_numbers:
           - unknown
           - unknown

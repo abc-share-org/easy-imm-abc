@@ -7,7 +7,7 @@ ABC:
     domain:
       - create_template: true
         description: UCS Domain Profile Template
-        name: Templ_Dom_ucsdom1
+        name: Templ_Dom_ucsdomaintemplate1
         network_connectivity_policy: Pol_NetCon_dns
         ntp_policy: Pol_NTP_ntp
         port_policies:
