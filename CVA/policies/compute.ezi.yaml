@@ -7,7 +7,7 @@
 # Nutanix will create most of these policies when the server(s) are added to a cluster
 # The policies below are provided as examples and can be modified as needed
 #
-ABC:                                            # ABC replace with your organization name 
+ABC:                                           # ABC replace with your organization name in each ezi.yaml file
   policies:
     scrub:
       - bios: true                             # ABC disk scrub policy: set this to true
@@ -55,11 +55,24 @@ ABC:                                            # ABC replace with your organiza
 # Note that the BIOS templates are updated by Cisco from time to time
 # It is recommended to check the templates in Intersight to ensure they meet your requirements
 # The BIOS templates can be found in Intersight when creating a BIOS Policy
-# Further information on BIOS Policies and Tokens can be seen here:
+# Further information on BIOS Policies can be seen here:
+# https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/performance-tuning-guide-ucs-m6-servers.html
+# https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/ucs-m7-platforms-wp.html
+# Further information on BIOS Tokens can be seen here:
 # https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/Intersight/IMM_BIOS_Tokens_Guide/b_IMM_Server_BIOS_Tokens_Guide/b_UCS_BIOS_Tokens_Guide_chapter_01.html
 # https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/Intersight/IMM_BIOS_Tokens_Guide/b_IMM_Server_BIOS_Tokens_Guide.html
 #
     bios:
+      - name: Pol_BIOS_M6-Nutanix
+        description: M6-intel-virtual BIOS Policy for Nutanix
+        bios_template: M6-intel-virtual                   
+        baud_rate: '115200'
+        latency_optimized_mode: enabled
+        boot_performance_mode: Max Performance
+        console_redirection: com-0
+        intel_vt_for_directed_io: enabled
+        
+#
       - name: Pol_BIOS_example                            # ABC this is the policy name
         description: M6-intel-virtual BIOS Policy with policy overrides
         bios_template: M6-intel-virtual                   # ABC these are predefined templates in Intersight

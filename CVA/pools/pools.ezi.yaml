@@ -5,7 +5,8 @@
 ABC:
   pools:
     ip:
-      - ipv4_blocks:
+      - name: Pool_ip_inband          # ABC this is the IP Pool name
+        ipv4_blocks:
           - from: 198.18.101.64
             size: 32
         ipv4_configuration:
@@ -13,8 +14,8 @@ ABC:
           netmask: 255.255.255.0
           primary_dns: 10.101.128.15
           secondary_dns: 10.101.128.16
-        name: Pool_ip_inband          # ABC this is the IP Pool name
-      - ipv4_blocks:
+      - name: Pool_ip_kvm-ooband  
+        ipv4_blocks:
           - from: 192.168.64.160
             size: 64
         ipv4_configuration:
@@ -22,7 +23,6 @@ ABC:
           netmask: 255.255.254.0
           primary_dns: 10.101.128.15
           secondary_dns: 10.101.128.16
-        name: Pool_ip_kvm-ooband  
     mac:
       - mac_blocks:
           - from: 00:25:B5:C1:10:00
