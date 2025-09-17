@@ -7,17 +7,17 @@ ABC:
     fibre_channel_adapter:
       - adapter_template: Initiator
         description: Initiator Fibre-Channel Adapter Policy # ABC this is a description of the Initiator Fibre-Channel Adapter Policy
-        name: Pol_FCIniAdap_fc-adapter-Initiator # ABC this is the name of the Initiator Fibre-Channel Adapter Policy
+        name: Pol_FCIniAdap_fc-adapter-Initiator            # ABC this is the name of the Initiator Fibre-Channel Adapter Policy
     fibre_channel_network:
-      - description: vsan-a Fibre-Channel Network Policy # ABC this is a description of the vsan-a Fibre-Channel Network Policy
-        name: Pol_FCNetw_vsan-a # ABC this is the name of the vsan-a Fibre-Channel Network Policy
+      - description: vsan-a Fibre-Channel Network Policy    # ABC this is a description of the vsan-a Fibre-Channel Network Policy
+        name: Pol_FCNetw_vsan-a                             # ABC this is the name of the vsan-a Fibre-Channel Network Policy
         vsan_id: 100
-      - description: vsan-b Fibre-Channel Network Policy # ABC this is a description of the vsan-b Fibre-Channel Network Policy
-        name: Pol_FCNetw_vsan-b # ABC this is the name of the vsan-b Fibre-Channel Network Policy
+      - description: vsan-b Fibre-Channel Network Policy    # ABC this is a description of the vsan-b Fibre-Channel Network Policy
+        name: Pol_FCNetw_vsan-b                             # ABC this is the name of the vsan-b Fibre-Channel Network Policy
         vsan_id: 200
     fibre_channel_qos:
-      - description: fc-qos Fibre-Channel QoS Policy # ABC this is a description of the fc-qos Fibre-Channel QoS Policy
-        name: Pol_FCQoS_fc-qos # ABC this is the name of the fc-qos Fibre-Channel QoS Policy
+      - description: fc-qos Fibre-Channel QoS Policy        # ABC this is a description of the fc-qos Fibre-Channel QoS Policy
+        name: Pol_FCQoS_fc-qos                              # ABC this is the name of the fc-qos Fibre-Channel QoS Policy
 # Infrastructure:
 #   policies:
 #     fc_zone:

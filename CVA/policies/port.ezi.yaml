@@ -8,8 +8,8 @@ ABC:
       - device_model: UCS-FI-6454
         description: Ports Policy for DC1 UCS Domain ucsdom1 # ABC this is a description of the Port Policy
         names:
-          - Pol_port_ucsdom1-a # ABC this is the Port Policy name
-          - Pol_port_ucsdom1-b # ABC this is the Port Policy name
+          - Pol_port_ucsdom1-a                               # ABC this is the Port Policy name
+          - Pol_port_ucsdom1-b                               # ABC this is the Port Policy name
         port_channel_ethernet_uplinks:
           - admin_speed: Auto
             ethernet_network_group_policies:
@@ -43,9 +43,9 @@ ABC:
           - port_list: 37,38
 # DC2
       - device_model: UCS-FI-6454
-        description: Ports Policy for DC2 UCS Domain ucsdom2  # ABC this is a description of the Port Policy
+        description: Ports Policy for DC2 UCS Domain ucsdom2 # ABC this is a description of the Port Policy
         names:
-          - Pol_port_ucsdom2-a # ABC this is the Port Policy name
+          - Pol_port_ucsdom2-a                               # ABC this is the Port Policy name
           - Pol_port_ucsdom2-b # ABC this is the Port Policy name
         port_channel_ethernet_uplinks:
           - admin_speed: Auto
