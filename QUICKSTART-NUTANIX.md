@@ -1,17 +1,32 @@
 <!-- BEGIN_TF_DOCS -->
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Developed by: Cisco](https://img.shields.io/badge/Developed%20by-Cisco-blue)](https://developer.cisco.com)
 
-# Easy IMM Quickstart guide
-A guide to deploy easyimm, and configure the ABC organisation using two UCS domains.
-* Domain 1 - This UCS X-Series Domain is representing the equipment housed in DC1
-* Domain 2 - This UCS X-Series Domain is representing the equipment housed in DC2
+# Easy IMM Quickstart guide for Nutanix
+A guide to deploy easyimm, and configure an Intersight Organisation using two UCS domains.
+The default parameters are as follows;
+* Organization is named ABC
+* UCS Domain 1 - This UCS X-Series Domain is representing the equipment housed in DC1
+* UCS Domain 2 - This UCS X-Series Domain is representing the equipment housed in DC2
 
 Pools
-* All pools
+* Only MAC and IP Pools are created, to support the Nutanix cluster creation.  WWPN, WWNN Pools are not created.
+* IP Pools are created per DC
+* MAC Pools are created per DC
   
+Policies
+* Nutanix will create the majority of the Server Policies including BIOS, Boot, Firmware, Storage, LAN Connectivity etc
+* Domain and Chassis policies are created, ie NTP, Syslog, LDAP, Ports
 
-## Table of Content
+Profiles
+* Domain Profiles for DC1 and DC2 are created, which consumes the above NTP, Syslog, LDAP and Ports policies
 
+Templates
+* Templates are mostly unused
+
+
+## Table of Contents
+
+* [Organization name](#organization-name)
 * [Examples](#examples-for-using-the-easy-imm-terraform-modules)
 * [Important Notes](#important-notes)
 * [YAML Schema Notes](#yaml-schema-notes-for-auto-completion-help-and-error-validation)
@@ -33,11 +48,19 @@ This codebase contains examples on how to configure an Intersight CVA or PVA.
 There are examples within this codebase that can be modified or deleted as needed.
 
 ## Organization name
+This codebase can use a single Organisation (Org) name, or multiple Orgs.
+In this example it is a single org named `ABC`.  To change the Org name, it will need to be updated in the file `organizations/organizations.ezi.yaml` and each of the `*.ezi.yaml` files in each subdirectory.
 
-To begin, choose an Organisation (Org) name.  In this example it is `ABC`. To change the Org name, it will need to be updated in the file `organizations/organizations.ezi.yaml` as well as each of the other `*.ezi.yaml` files in all subdirectories at the beginning of the file, all policies are created under the Organization name, as an example;
-
+#### Creating the Org in `organizations/organizations.ezi.yaml`
 ```yaml
-ABC:                             <-- This must be changed in all files to match the Org
+ABC:                        <-- Org name defined here
+  create_organization: true
+  description: ABC org
+```
+
+#### Updating the `*.ezi.yaml` files in sub directories example
+```yaml
+ABC:                        <-- This must be changed in all files
   policies:
     scrub:
       - bios: true
@@ -45,24 +68,23 @@ ABC:                             <-- This must be changed in all files to match 
         name: Pol_scrub_default
 ```
 
+
 ### [<ins>Back to Top<ins>](#easy-imm)
+
 
 
 ## Examples for Using the Easy IMM Terraform Modules
 
 Examples are shown in the following directories:
+|Directory|Module|Note |
+|--|--|--|
+|organizations|Organization(s)|Can define individual or multiple Orgs
+| policies | Policies | Defines Domain, Chassis and Server policies |
+| pools | Pools | Defines MAC, UUID, IP, WWPN, WWNN Pools. Only MAC and IP are used with Nutanix |
+| profiles | Profiles | Defines Domain, Chassis and Server profiles |
+| templates | Templates | Defines Domain, Chassis and Server templates. Server Templates are unused with Nutanix.|
 
-  * `organizations`
-  * `policies`
-  * `pools`
-  * `profiles`
-  * `recommended_firmware` - This is used to get the latest recommended firmware releases from Intersight
-  * `templates`
-  * `Wakanda` - To Show profiles using pools/policies/templates as Data Sources (Mostly)
 
-`organizations/policies/pools/profiles/templates` Folders are the `common/default/Asgard` organizations in our lab environment.
-
-`Wakanda` Folder is the Wakanda organization in our lab environment.  It is not using the organizations module.
 
 ### [<ins>Back to Top<ins>](#easy-imm)
 
@@ -74,9 +96,10 @@ The Structure of the YAML files is very flexible.  You can have all the YAML Dat
 
 When defining Identity reservations under a server profile, see example in `profiles` folder, note the flag in the example with `ignore_reservations`.  Reservation records are ephimeral.  Meaning that as soon as the reservation is assigned to a server profile, the identity reservation record is removed from the API.  Thus, after you run the first plan and the identities are created, this flag should be configured to `true` or you need to remove the reservations from the `server_profiles`.  Either way the reservations will only work on the first apply.  Subsequent applies with the reservations defined will cause the plan/apply to fail due to the identity being consumed.
 
+
 ## YAML Schema Notes for auto-completion, Help, and Error Validation:
 
-If you would like to utilize Autocomple, Help Context, and Error Validation, `(HIGHLY RECOMMENDED)` make sure the files all utilize the `.ezi.yaml` file extension.
+If you would like to utilize Autocomplete, Help Context, and Error Validation, `(HIGHLY RECOMMENDED)` make sure the files all utilize the `.ezi.yaml` file extension.
 
 First install the `Redhat: YAML` exension to Visual Studio Code or VSCodium: https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml
 
@@ -86,73 +109,7 @@ Then, in Visual Studio Code: Settings > Settings > Search for `YAML: Schema`: Cl
 "https://raw.githubusercontent.com/terraform-cisco-modules/easy-imm/main/yaml_schema/easy-imm.json": "*.ezi.yaml"
 ```
 
-Soon the Schema for these YAML Files have been registered with [*SchemaStore*](https://github.com/SchemaStore/schemastore/blob/master/src/api/json/catalog.json) via utilizing this `.ezi.yaml` file extension.  But until that is complete, need to still add to settings.
 
-### Modify `global_settings.ezi.yaml` for SaaS versus CVA/PVA FQDN
-
-`global_settings.ezi.yamls` contains variable `intersight_fqdn`.
-
-#### Notes for the `global_settings.ezi.yamls`
-
-  * `intersight_fqdn`:  SaaS will by default be `intersight.com`.  Available in the event of CVA or PVA deployments.
-  * `tags`:  Not Required, but by default the version of the script is being flagged here.
-
-#### Note: Modules can be added or removed dependent on the use case.  The primary example in this repository is consuming/showing a full environment deployment.
-
-### [<ins>Back to Top<ins>](#easy-imm)
-
-## [<ins>Cloud Posse `tfenv`<ins>](https://github.com/cloudposse/tfenv)
-
-Command line utility to transform environment variables for use with Terraform. (e.g. HOSTNAME → TF_VAR_hostname)
-
-Recently I adopted the `tfenv` runner to standardize environment variables with multiple orchestration tools.  tfenv makes it so you don't need to add TF_VAR_ to the variables when you add them to the environment.  But it doesn't work for windows would be the caveat.
-
-In the export examples below, for the Linux Example, the 'TF_VAR_' is excluded because Cloud Posse tfenv is used to insert it during the run.
-
-### Make sure you have already installed go
-
-## [go](https://go.dev/doc/install)
-
-```bash
-go install github.com/cloudposse/tfenv@latest
-```
-
-### Add go/bin to PATH
-
-```bash
-GOPATH="$HOME/go"
-PATH="$GOPATH/bin:$PATH"
-```
-
-### Aliases for `.bashrc`
-
-Additionally to Save time on typing commands I use the following aliases by editing the `.bashrc` for my environment.
-
-```bash
-alias tfa='tfenv terraform apply main.plan'
-alias tfap='tfenv terraform apply -parallelism=1 main.plan'
-alias tfd='tfenv terraform destroy'
-alias tff='terraform fmt'
-alias tfi='terraform init'
-alias tfim='tfenv terraform import'
-alias tfp='tfenv terraform plan -out=main.plan'
-alias tfu='terraform init -upgrade'
-alias tfv='terraform validate'
-```
-
-### [<ins>Back to Top<ins>](#easy-imm)
-
-## Recommended Firmware
-
-In the `recommended_firmware` folder is a simple terraform setup that you can use to query Intersight for the latest recommended firmware for servers.  Following is an example output:
-
-## Creating Server Profiles from Templates or Attaching Server Profiles to Templates
-
-If you want to create server profiles from templates use the flag `create_from_template` under the server profile in <org>:profiles:server.  See examples in `./profiles`.
-
-Do not create from template if you want to assign identity reservations to a server profile.  Instead set the `attach_template` flag in the server profile.  This will also attach the template to the profile but will reserve the identities to the profile prior to template attachement.
-
-### [<ins>Back to Top<ins>](#easy-imm)
 
 ## Environment Variables
 
@@ -175,51 +132,40 @@ The Reason to add these variables as maps of string is to allow the flexibility 
 
 In example, if you needed to add 100 iterations of the `certificate_management` variables you can do that, and simply reference the index in the map of the iteration that will consume that instance.
 
+
+
+## Sensitive Variables:
+
+Take note of the `locals.tf` that currently has all the sensitive variables mapped.
+This is the default sensitive variable mappings.
+
+
+#### Linux
+
+```bash
+export TF_VAR_intersight_api_key_id="<your-api-key>"
+export TF_VAR_intersight_secret_key="<secret-key-file-contents>"
+```
+
+#### Terraform Enterprise
+
+```bash
+intersight_api_key_id="<your-api-key>"
+intersight_secret_key="<secret-key-file-contents>"
+```
+
+
 ### Terraform Cloud/Enterprise - Workspace Variables
 
 - Add variable `intersight_api_key_id` with the value of <ins>your-intersight-api-key</ins>
-- Add variable `intersight_secret_key` with the value of <ins>your-intersight-secret-file-content</ins>
+- Add variable `intersight_secret_key` with the value of <ins>your-intersight-secret-file-contents</ins>
 - Add additional variables as required for the sensitive policy values
 
 #### Add Other Variables as discussed below based on use cases.
 
-## Sensitive Variables for the Policies Module:
-
-Take note of the `locals.tf` that currently has all the sensitive variables mapped.
-
-This is the default sensitive variable mappings.  You can add or remove to these according to the needs of your environment.
-
-The important point is that if you need more than is added by default you can expand the locals.tf and variables.tf to accomodate your environment.
-
-### IMPORTANT: 
-
-ALL EXAMPLES BELOW ASSUME USING `tfenv` in LINUX
-If you are not using `tfenv` then you must add TF_VAR_ to the beginning of your env vars, ie ```intersight_api_key_id``` becomes ```TF_VAR_intersight_api_key_id```
 
 
 
-#### Linux - without tfenv
-
-```bash
-export TF_VAR_intersight_api_key_id="<your-api-key>"
-export TF_VAR_intersight_secret_key="<secret-key-file-location>"
-```
-
-#### Linux - with tfenv
-
-```bash
-export intersight_api_key_id="<your-api-key>"
-export intersight_secret_key="<secret-key-file-location>"
-```
-
-#### Windows
-
-```powershell
-$env:TF_VAR_intersight_api_key_id="<your-api-key>"
-$env:TF_VAR_intersight_secret_key="<secret-key-file-location>"
-```
-
-#### To Assign any of these values for consumption you can define them as discussed below.
 
 ### Certificate Management
 
@@ -235,14 +181,6 @@ export cert_mgmt_certificate_1='<cert_mgmt_certificate_file_location>'
 export cert_mgmt_private_key_1='<cert_mgmt_private_key_file_location>'
 ```
 
-#### Windows
-
-```powershell
-$env:TF_VAR_cert_mgmt_certificate_1='<cert_mgmt_certificate_file_location>'
-```
-```powershell
-$env:TF_VAR_cert_mgmt_private_key_1='<cert_mgmt_private_key_file_location>'
-```
 
 ### Drive Security - KMIP Sensitive Variables
   * `drive_security_current_security_key_passphrase`: Used by Manual and Remote Key Management, if the server has a previous passphrase configured.
@@ -254,18 +192,7 @@ $env:TF_VAR_cert_mgmt_private_key_1='<cert_mgmt_private_key_file_location>'
 
 ```bash
 export drive_security_authentication_password='<drive_security_authentication_password>'
-```
-```bash
 export drive_security_server_ca_certificate='<drive_security_server_ca_certificate_file_location>'
-```
-
-#### Windows
-
-```powershell
-$env:drive_security_authentication_password='<drive_security_authentication_password>'
-```
-```powershell
-$env:TF_VAR_drive_security_server_ca_certificate='<drive_security_server_ca_certificate_file_location>'
 ```
 
 ### Firmware - CCO  Credentials
