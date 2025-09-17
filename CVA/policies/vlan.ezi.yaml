@@ -60,7 +60,7 @@ ABC:
             vlan_list: 2000-2003
       # Example detailed VLAN policy for specific use case
       # Naming each VLAN ID in a list
-      - name: Pol_vlan_example-named-vlans
+      - name: Pol_VLAN_example-named-vlans
         description: vlans VLAN Policy
         vlans:
           - auto_allow_on_uplinks: true
