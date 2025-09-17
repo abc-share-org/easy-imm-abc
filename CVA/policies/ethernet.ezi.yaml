@@ -6,48 +6,66 @@ ABC:
   policies:
     ethernet_adapter:
       - adapter_template: Win-AzureStack
-        description: Win-AzureStack Ethernet Adapter          # ABC this is the description
-        name: Pol_EthAdapt_Win-AzureStack                     # ABC this is the name of the policy
+        description: Win-AzureStack Ethernet Adapter
+        name: Pol_EthAdapt_Win-AzureStack
       - adapter_template: VMware
-        description: VMware Ethernet Adapter                  # ABC this is the description
-        name: Pol_EthAdapt_VMware                             # ABC this is the name of the policy 
+        description: VMware Ethernet Adapter
+        name: Pol_EthAdapt_VMware
     ethernet_network_control:
       - cdp_enable: true
-        description: cdp Ethernet Network Control Policy      # ABC this is the description
+        description: cdp Ethernet Network Control Policy
         lldp_enable_receive: true
         lldp_enable_transmit: true
-        name: Pol_EthNetCtl_both                              # ABC this is the name of the policy
+        name: Pol_EthNetCtl_both
       - cdp_enable: true
-        description: cdp Ethernet Network Control Policy      # ABC this is the description  
-        name: Pol_EthNetCtl_cdp                               # ABC this is the name of the policy
-      - description: lldp Ethernet Network Control Policy     # ABC this is the description
+        description: cdp Ethernet Network Control Policy
+        name: Pol_EthNetCtl_cdp
+      - description: lldp Ethernet Network Control Policy
         lldp_enable_receive: true
         lldp_enable_transmit: true
-        name: Pol_EthNetCtl_lldp                              # ABC this is the name of the policy
+        name: Pol_EthNetCtl_lldp
     ethernet_network_group:
-      - allowed_vlans: 101-103,1000-1199
-        name: Pol_EthNetGroup_aci-uplink                      # ABC this is the name of the policy
-      - allowed_vlans: '101'
-        name: Pol_EthNetGrp_aci-mgmt                          # ABC this is the name of the policy
-        native_vlan: 101
-      - allowed_vlans: '102'
-        name: Pol_EthNetGrp_aci-migration                     # ABC this is the name of the policy
-        native_vlan: 102
-      - allowed_vlans: '103'
-        name: Pol_EthNetGrp_aci-storage                       # ABC this is the name of the policy
-        native_vlan: 103
-      - allowed_vlans: 101-103,1000-1199
-        name: Pol_EthNetGrp_aci-dvs                           # ABC this is the name of the policy
+      # DC1 Ethernet Network Group Policies
+      - name: Pol_EthNetGroup_DC1-VLANs-mgmt                      # ABC this is the name of the policy
+        description: DC1 VLANs for Management
+        allowed_vlans: 100-103                                    # ABC change these VLANs
         native_vlan: 1
-# r143c
-      - allowed_vlans: 125-131,1000-1002,1013-1015
-        description: all_vlans Ethernet Network Group Policy  # ABC this is the description
-        name: Pol_EthNetGrp_all_vlans                         # ABC this is the name of the policy
+      - name: Pol_EthNetGroup_DC1-VLANs-ntnx                      # ABC this is the name of the policy
+        description: DC1 VLANs for Nutanix
+        allowed_vlans: 1000-1003                                  # ABC change these VLANs
         native_vlan: 1
-      - allowed_vlans: '1001'
-        description: mgmt Ethernet Network Group Policy       # ABC this is the description
-        name: Pol_EthNetGrp_mgmt                              # ABC this is the name of the policy
-        native_vlan: 1001
+      - name: Pol_EthNetGroup_DC1-VLANs-wkl                       # ABC this is the name of the policy
+        description: DC1 VLANs for Workloads
+        allowed_vlans: 2000-2003                                  # ABC change these VLANs
+        native_vlan: 1
+      # DC2 Ethernet Network Group Policies
+      - name: Pol_EthNetGroup_DC2-VLANs-mgmt                      # ABC this is the name of the policy
+        description: DC2 VLANs for Management
+        allowed_vlans: 100-103                                    # ABC change these VLANs
+        native_vlan: 1
+      - name: Pol_EthNetGroup_DC2-VLANs-ntnx                      # ABC this is the name of the policy
+        description: DC2 VLANs for Nutanix
+        allowed_vlans: 1000-1003                                  # ABC change these VLANs
+        native_vlan: 1
+      - name: Pol_EthNetGroup_DC2-VLANs-wkl                       # ABC this is the name of the policy
+        description: DC1 VLANs for Workloads
+        allowed_vlans: 2000-2003                                  # ABC change these VLANs
+        native_vlan: 1
+
+      # - allowed_vlans: 101-103,1000-1199
+      #   name: Pol_EthNetGroup_aci-uplink                      # ABC this is the name of the policy
+      # - allowed_vlans: '101'
+      #   name: Pol_EthNetGrp_aci-mgmt                          # ABC this is the name of the policy
+      #   native_vlan: 101
+      # - allowed_vlans: '102'
+      #   name: Pol_EthNetGrp_aci-migration                     # ABC this is the name of the policy
+      #   native_vlan: 102
+      # - allowed_vlans: '103'
+      #   name: Pol_EthNetGrp_aci-storage                       # ABC this is the name of the policy
+      #   native_vlan: 103
+      # - allowed_vlans: 101-103,1000-1199
+      #   name: Pol_EthNetGrp_aci-dvs                           # ABC this is the name of the policy
+      #   native_vlan: 1
     ethernet_qos:
       - description: Best Effort Ethernet QoS Policy          # ABC this is the description
         mtu: 9000
