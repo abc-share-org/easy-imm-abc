@@ -2,27 +2,27 @@
 #================================================
 #   Policies -> SAN Connectivity - Variables
 #================================================
-ABC:
-  policies:
-    san_connectivity:
-      - description: scp SAN Connectivity Policy  # ABC this is a description of the SAN Connectivity Policy
-        name: Pol_SANConn_scp # ABC this is the SAN Connectivity Policy name
-        target_platform: FIAttached
-        vhbas:
-          - fibre_channel_adapter_policy: Pol_FCIniAdap_fc-adapter-Initiator
-            fibre_channel_network_policies:
-              - Pol_FCNetw_vsan-a
-              - Pol_FCNetw_vsan-b
-            fibre_channel_qos_policy: Pol_FCQoS_fc-qos
-            names:
-              - vhba-a    # ABC this is the vHBA name
-              - vhba-b    # ABC this is the vHBA name
-            placement:
-              pci_order:
-                - 0
-                - 1
-            vhba_type: fc-initiator
-            wwpn_pools:
-              - Pool_wwpn_wwpn-a   # ABC this is the WWPN Pool name
-              - Pool_wwpn_wwpn-b   # ABC this is the WWPN Pool name
-        wwnn_pool: Pool_wwnn_wwnn
+# ABC:
+#   policies:
+#     san_connectivity:
+#       - description: scp SAN Connectivity Policy  # ABC this is a description of the SAN Connectivity Policy
+#         name: Pol_SANConn_scp # ABC this is the SAN Connectivity Policy name
+#         target_platform: FIAttached
+#         vhbas:
+#           - fibre_channel_adapter_policy: Pol_FCIniAdap_fc-adapter-Initiator
+#             fibre_channel_network_policies:
+#               - Pol_FCNetw_vsan-a
+#               - Pol_FCNetw_vsan-b
+#             fibre_channel_qos_policy: Pol_FCQoS_fc-qos
+#             names:
+#               - vhba-a    # ABC this is the vHBA name
+#               - vhba-b    # ABC this is the vHBA name
+#             placement:
+#               pci_order:
+#                 - 0
+#                 - 1
+#             vhba_type: fc-initiator
+#             wwpn_pools:
+#               - Pool_wwpn_wwpn-a   # ABC this is the WWPN Pool name
+#               - Pool_wwpn_wwpn-b   # ABC this is the WWPN Pool name
+#         wwnn_pool: Pool_wwnn_wwnn
