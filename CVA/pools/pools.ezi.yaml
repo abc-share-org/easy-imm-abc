@@ -5,85 +5,110 @@
 ABC:
   pools:
     ip:
-      - name: Pool_ip_inband          # ABC this is the IP Pool name
+      - name: Pool_IP_oob-DC1          # ABC this is the IP Pool name for DC1
+        description: Out-of-Band Management IP for NTNX
         ipv4_blocks:
-          - from: 198.18.101.64
+          - from: 10.10.100.10
             size: 32
         ipv4_configuration:
-          gateway: 198.18.101.254
+          gateway: 10.10.100.1
           netmask: 255.255.255.0
           primary_dns: 10.101.128.15
           secondary_dns: 10.101.128.16
-      - name: Pool_ip_kvm-ooband  
+      - name: Pool_IP_oob-DC2          # ABC this is the IP Pool name for DC2
+        description: Out-of-Band Management IP for NTNX
         ipv4_blocks:
-          - from: 192.168.64.160
-            size: 64
+          - from: 10.10.200.10
+            size: 32
         ipv4_configuration:
-          gateway: 192.168.64.1
-          netmask: 255.255.254.0
+          gateway: 10.10.200.1
+          netmask: 255.255.255.0
           primary_dns: 10.101.128.15
           secondary_dns: 10.101.128.16
+    uuid:
+      - description: uuid UUID Pool   # ABC this is a description of the UUID Pool
+        name: Pool_UUID_uuid          # ABC this is the UUID Pool name
+        prefix: 000025B5-C15C-0000
+        uuid_blocks:
+          - from: 25B5-000000000000
+            size: 255
     mac:
-      - mac_blocks:
-          - from: 00:25:B5:C1:10:00
-            size: 255
-        name: Pool_mac_dvs-a        # ABC this is the MAC Pool name
-      - mac_blocks:
-          - from: 00:25:B5:C1:20:00
-            size: 255
-        name: Pool_mac_dvs-b        # ABC this is the MAC Pool name 
-      - mac_blocks:
-          - from: 00:25:B5:C1:A0:00
-            size: 255
-        name: Pool_mac_mgmt-a       # ABC this is the MAC Pool name
-      - mac_blocks:
-          - from: 00:25:B5:C1:B0:00
-            size: 255
-        name: Pool_mac_mgmt-b      # ABC this is the MAC Pool name
-      - mac_blocks:
-          - from: 00:25:B5:C1:C0:00
-            size: 255
-        name: Pool_mac_migration-a  # ABC this is the MAC Pool name
-      - mac_blocks:
-          - from: 00:25:B5:C1:D0:00
-            size: 255
-        name: Pool_mac_migration-b  # ABC this is the MAC Pool name
-      - mac_blocks:
-          - from: 00:25:B5:C1:E0:00
-            size: 255
-        name: Pool_mac_storage-a     # ABC this is the MAC Pool name  
-      - mac_blocks:
-          - from: 00:25:B5:C1:F0:00
-            size: 255
-        name: Pool_mac_storage-b    # ABC this is the MAC Pool name 
-      - mac_blocks:
-          - from: 00:25:B5:C1:00:00
-            size: 255
-        name: Pool_mac_dual-fabric  # ABC this is the MAC Pool name
+      - name: Pool_MAC_DC1         # ABC MAC Pool for DC1
+        mac_blocks:
+          - from: 00:25:B5:D1:00:00
+            size: 1024
+      - name: Pool_MAC_DC2         # ABC MAC Pool for DC2
+        mac_blocks:
+          - from: 00:25:B5:D2:00:00
+            size: 1024
+#######
+# The following IP Pools are not used in this design and are left here as an example only
+      # - name: Pool_ip_kvm-ooband
+      #   ipv4_blocks:
+      #     - from: 192.168.64.160
+      #       size: 64
+      #   ipv4_configuration:
+      #     gateway: 192.168.64.1
+      #     netmask: 255.255.254.0
+      #     primary_dns: 10.101.128.15
+      #     secondary_dns: 10.101.128.16
+# The following MAC Pools are not used in this design and are left here as an example only
+      # - mac_blocks:
+      #     - from: 00:25:B5:C1:10:00
+      #       size: 255
+      #   name: Pool_mac_dvs-a        # ABC this is the MAC Pool name
+      # - mac_blocks:
+      #     - from: 00:25:B5:C1:20:00
+      #       size: 255
+      #   name: Pool_mac_dvs-b        # ABC this is the MAC Pool name 
+      # - mac_blocks:
+      #     - from: 00:25:B5:C1:A0:00
+      #       size: 255
+      #   name: Pool_mac_mgmt-a       # ABC this is the MAC Pool name
+      # - mac_blocks:
+      #     - from: 00:25:B5:C1:B0:00
+      #       size: 255
+      #   name: Pool_mac_mgmt-b      # ABC this is the MAC Pool name
+      # - mac_blocks:
+      #     - from: 00:25:B5:C1:C0:00
+      #       size: 255
+      #   name: Pool_mac_migration-a  # ABC this is the MAC Pool name
+      # - mac_blocks:
+      #     - from: 00:25:B5:C1:D0:00
+      #       size: 255
+      #   name: Pool_mac_migration-b  # ABC this is the MAC Pool name
+      # - mac_blocks:
+      #     - from: 00:25:B5:C1:E0:00
+      #       size: 255
+      #   name: Pool_mac_storage-a     # ABC this is the MAC Pool name  
+      # - mac_blocks:
+      #     - from: 00:25:B5:C1:F0:00
+      #       size: 255
+      #   name: Pool_mac_storage-b    # ABC this is the MAC Pool name 
+      # - mac_blocks:
+      #     - from: 00:25:B5:C1:00:00
+      #       size: 255
+      #   name: Pool_mac_dual-fabric  # ABC this is the MAC Pool name
+#### Server Pool Qualification - not used in Nutanix design
     # resource:
     #   - description: SPQ-Blade
     #     name: SPQ-Blade
     #     server_pool_qualification_policies:
     #       - SPQ-Blade
     #     target_platform: FIAttached
-    uuid:
-      - description: uuid UUID Pool   # ABC this is a description of the UUID Pool
-        name: Pool_uuid_uuid          # ABC this is the UUID Pool name
-        prefix: 000025B5-C15C-0000
-        uuid_blocks:
-          - from: 25B5-000000000000
-            size: 255
-    wwnn:
-      - id_blocks:
-          - from: 20:00:00:25:B5:C1:00:00
-            size: 255
-        name: Pool_wwnn_wwnn          # ABC this is the WWNN Pool name
-    wwpn:
-      - id_blocks:
-          - from: 20:00:00:25:B5:C1:A0:00
-            size: 255
-        name: Pool_wwpn_wwpn-a       # ABC this is the WWPN Pool name
-      - id_blocks:
-          - from: 20:00:00:25:B5:C1:B0:00
-            size: 255
-        name: Pool_wwpn_wwpn-b       # ABC this is the WWPN Pool name
+####
+    # FC, WWNN and WWPNs are not used by the Nutanix Design
+    # wwnn:
+    #   - id_blocks:
+    #       - from: 20:00:00:25:B5:C1:00:00
+    #         size: 255
+    #     name: Pool_wwnn_wwnn          # ABC this is the WWNN Pool name
+    # wwpn:
+    #   - id_blocks:
+    #       - from: 20:00:00:25:B5:C1:A0:00
+    #         size: 255
+    #     name: Pool_wwpn_wwpn-a       # ABC this is the WWPN Pool name
+    #   - id_blocks:
+    #       - from: 20:00:00:25:B5:C1:B0:00
+    #         size: 255
+    #     name: Pool_wwpn_wwpn-b       # ABC this is the WWPN Pool name
