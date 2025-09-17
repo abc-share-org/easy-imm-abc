@@ -11,7 +11,7 @@ ABC:
         action: No-op
         ldap_policy: Pol_LDAP_RICH
         network_connectivity_policy: Pol_NetCon_dns
-        ntp_policy: Pol_NTP_ntp123
+        ntp_policy: Pol_NTP_ntp
         port_policies:
           - Pol_port_ucsdom1-a
           - Pol_port_ucsdom1-b
