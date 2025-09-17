@@ -5,6 +5,8 @@
 ABC:
   policies:
     port:
+      ##############
+      # DC1 ucsdom1 Ports Policy
       - device_model: UCS-FI-6454
         description: Ports Policy for DC1 UCS Domain ucsdom1 # ABC this is a description of the Port Policy
         names:
@@ -13,7 +15,7 @@ ABC:
         port_channel_ethernet_uplinks:
           - admin_speed: Auto
             ethernet_network_group_policies:
-              - Pol_EthNetGroup_aci-uplink
+              - Pol_EthNetGroup_DC1-VLANs
             flow_control_policy: Pol_FlowCtl_flow-ctrl
             interfaces:
               - port_id: 53
@@ -41,7 +43,8 @@ ABC:
               - 8
         port_role_servers:
           - port_list: 37,38
-# DC2
+      ##############
+      # DC2 ucsdom2 Ports Policy
       - device_model: UCS-FI-6454
         description: Ports Policy for DC2 UCS Domain ucsdom2 # ABC this is a description of the Port Policy
         names:
@@ -50,7 +53,7 @@ ABC:
         port_channel_ethernet_uplinks:
           - admin_speed: Auto
             ethernet_network_group_policies:
-              - Pol_EthNetGroup_aci-uplink
+              - Pol_EthNetGroup_DC2-VLANs
             flow_control_policy: Pol_FlowCtl_flow-ctrl
             interfaces:
               - port_id: 53
