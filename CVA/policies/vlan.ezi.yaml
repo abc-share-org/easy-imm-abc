@@ -58,37 +58,37 @@ ABC:
             auto_allow_on_uplinks: true
             multicast_policy: Pol_Multicast_mcast
             vlan_list: 2000-2003
-      # Example detailed VLAN policy for specific use case
-      # Naming each VLAN ID in a list
-      - name: Pol_VLAN_example-named-vlans
-        description: vlans VLAN Policy
-        vlans:
-          - auto_allow_on_uplinks: true
-            multicast_policy: Pol_Multicast_mcast
-            name: default
-            native_vlan: true
-            vlan_list: '1'
-          - auto_allow_on_uplinks: false
-            multicast_policy: Pol_Multicast_mcast
-            name: OOB-MGMT
-            vlan_list: '64'
-          - auto_allow_on_uplinks: false
-            multicast_policy: Pol_Multicast_mcast
-            name: OOB-MGMT
-            vlan_list: '1000'
-          - auto_allow_on_uplinks: false
-            multicast_policy: Pol_Multicast_mcast
-            name: IB-MGMT
-            vlan_list: '1001'
-          - auto_allow_on_uplinks: false
-            multicast_policy: Pol_Multicast_mcast
-            name: vMotion
-            vlan_list: '1002'
-          - auto_allow_on_uplinks: false
-            multicast_policy: Pol_Multicast_mcast
-            name: iSCSI-A
-            vlan_list: '1011'
-          - auto_allow_on_uplinks: false
-            multicast_policy: Pol_Multicast_mcast
-            name: iSCSI-B
-            vlan_list: '1012'
+      # # Example detailed VLAN policy for specific use case
+      # # Naming each VLAN ID in a list
+      # - name: Pol_VLAN_example-named-vlans
+      #   description: vlans VLAN Policy
+      #   vlans:
+      #     - auto_allow_on_uplinks: true
+      #       multicast_policy: Pol_Multicast_mcast
+      #       name: default
+      #       native_vlan: true
+      #       vlan_list: '1'
+      #     - auto_allow_on_uplinks: false
+      #       multicast_policy: Pol_Multicast_mcast
+      #       name: OOB-MGMT
+      #       vlan_list: '64'
+      #     - auto_allow_on_uplinks: false
+      #       multicast_policy: Pol_Multicast_mcast
+      #       name: OOB-MGMT
+      #       vlan_list: '1000'
+      #     - auto_allow_on_uplinks: false
+      #       multicast_policy: Pol_Multicast_mcast
+      #       name: IB-MGMT
+      #       vlan_list: '1001'
+      #     - auto_allow_on_uplinks: false
+      #       multicast_policy: Pol_Multicast_mcast
+      #       name: vMotion
+      #       vlan_list: '1002'
+      #     - auto_allow_on_uplinks: false
+      #       multicast_policy: Pol_Multicast_mcast
+      #       name: iSCSI-A
+      #       vlan_list: '1011'
+      #     - auto_allow_on_uplinks: false
+      #       multicast_policy: Pol_Multicast_mcast
+      #       name: iSCSI-B
+      #       vlan_list: '1012'
