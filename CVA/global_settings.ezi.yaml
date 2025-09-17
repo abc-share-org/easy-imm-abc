@@ -3,7 +3,7 @@
 #   Global Settings
 #========================================
 global_settings:
-  intersight_fqdn: cg-ia-test-1.lab16.mel.ciscolabs.com # rebuilt new CVA
+  intersight_fqdn: cg-ia-test-1.lab16.mel.ciscolabs.com # CBA this is the Intersight CVA hostname
   tags:
     - key: "Module"
       value: "easy-imm"
