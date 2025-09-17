@@ -1,195 +1,195 @@
----
-#=======================================
-#   Policies -> Compute - Variables
-#=======================================
-#
-# Most of the policies below can be left as is with default values
-# Nutanix will create most of these policies when the server(s) are added to a cluster
-# The policies below are provided as examples and can be modified as needed
-#
-ABC:                                           # ABC replace with your organization name in each ezi.yaml file
-  policies:
-    scrub:
-      - bios: true                             # ABC disk scrub policy: set this to true
-        disk: true                             # ABC disk scrub policy: set this to true
-        name: Pol_scrub_default                # ABC this is the policy name
-        description: Default Scrub Policy   # ABC this is the description
-    # Boot Policies are created by Nutanix as part of Cluster Creation
-    # boot_order:
-    #   - name: Pol_Boot_M2-pxe
-    #     boot_devices:                          # ABC change the boot devices as needed by adding device_name entries
-    #       - device_name: KVM-DVD
-    #         device_type: virtual_media
-    #         subtype: kvm-mapped-dvd
-    #       - device_name: M2
-    #         device_type: local_disk
-    #         slot: MSTOR-RAID
-    #       - device_name: PXE
-    #         device_type: pxe_boot
-    #         interface_name: Pool_mac_mgmt-a
-    #         slot: MLOM
-    #       - device_name: UEFI
-    #         device_type: uefi_shell
-    #     boot_mode: Uefi
-    #     enable_secure_boot: true
-    firmware:
-      - name: Pol_Firmware_fw-domain-servers           # ABC this is the policy name. This example uses a single Firmware Policy for all servers.
-        description: Firmware Policy for all servers   # ABC this is the description
-        target_platform: FIAttached
-        model_bundle_version:
-          - firmware_version: 5.2(2.240053)            # ABC change this to your desired firmware version
-            server_models:
-              - UCSX-210C-M6
-          - firmware_version: 5.2(2.240053)            # ABC change this to your desired firmware version
-            server_models:
-              - UCSX-210C-M7
-    firmware_authenticate:
-       cco_password: 1
-       cco_user: 1
-###############
-# BIOS Policies
-# Intersight has predefined BIOS templates for different server models
-# These can be used as is or modified with overrides as needed
-# The example below shows two BIOS policies based on predefined templates
-# The first policy is based on the M6-intel-virtual template with overrides
-# The second policy is based on the M6-intel-virtual-tpm template with no overrides
-# The policies below can be copied and modified as needed
-# Note that the BIOS templates are updated by Cisco from time to time
-# It is recommended to check the templates in Intersight to ensure they meet your requirements
-# The BIOS templates can be found in Intersight when creating a BIOS Policy
-# Further information on BIOS Policies can be seen here:
-# https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/performance-tuning-guide-ucs-m6-servers.html
-# https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/ucs-m7-platforms-wp.html
-# Further information on BIOS Tokens can be seen here:
-# https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/Intersight/IMM_BIOS_Tokens_Guide/b_IMM_Server_BIOS_Tokens_Guide/b_UCS_BIOS_Tokens_Guide_chapter_01.html
-# https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/Intersight/IMM_BIOS_Tokens_Guide/b_IMM_Server_BIOS_Tokens_Guide.html
-#
-    bios:
-      - name: Pol_BIOS_example                            # ABC this is the policy name
-        description: M6-intel-virtual BIOS Policy with policy overrides
-        bios_template: M6-intel-virtual                   # ABC these are predefined templates in Intersight
-        baud_rate: '115200'
-        latency_optimized_mode: enabled
-        boot_performance_mode: Max Performance
-        console_redirection: com-0
-        serial_port_aenable: enabled
-        terminal_type: vt100
-        txt_support: enabled
-        boot_option_num_retry: '5'
-        network_stack: platform-default
-        pop_support: platform-default
-        cdn_support: enabled
-        intel_vt_for_directed_io: enabled
-#
-      - name: Pol_BIOS_M6-intel-virtual-tpm             # ABC this is the name of the policy
-        description: M6-intel-virtual-tpm BIOS Policy   # ABC this is the description
-        bios_template: M6-intel-virtual-tpm             # ABC these are predefined templates in Intersight
-        baud_rate: '115200'
-        boot_performance_mode: Max Performance
-        console_redirection: com-0
-        serial_port_aenable: enabled
-        terminal_type: vt100
-        txt_support: enabled
-    memory:
-      - dimm_blocklisting: false
-        name: Pol_Mem_default                           # ABC this is the policy name
-    virtual_media:
-      - description: vmedia Virtual Media Policy        # ABC this is the description
-        enable_low_power_usb: true
-        enable_virtual_media_encryption: true
-        name: Pol_media_vmedia                          # ABC this is the name of the policy
-#############
-# Example Policies - policies below are examples only
-# These can be copied and modified as needed
-#
-# The policies below boot from different devices:
-# * Boot Policy:   Raid-pxe - boots from KVM, Local Disk, then PXE
-# * Boot Policy:   examples - example with all boot device types including SAN Boot
-# * vMedia Policy: vmedia - boots from https virtual media using the blade CIMC, different to http_boot
-#
-# Infrastructure:
+# ---
+# #=======================================
+# #   Policies -> Compute - Variables
+# #=======================================
+# #
+# # Most of the policies below can be left as is with default values
+# # Nutanix will create most of these policies when the server(s) are added to a cluster
+# # The policies below are provided as examples and can be modified as needed
+# #
+# ABC:                                           # ABC replace with your organization name in each ezi.yaml file
 #   policies:
-#     boot_order:
-#       - boot_devices:
-#           - device_name: 0_KVM-DVD
-#             device_type: virtual_media
-#             subtype: kvm-mapped-dvd
-#           - device_name: 1_Raid1
-#             device_type: local_disk
-#             slot: MRAID
-#           - device_name: 2_PXE
-#             device_type: pxe_boot
-#             interface_name: Pool_mac_mgmt-a
-#             slot: MLOM
-#         boot_mode: Uefi
-#         enable_secure_boot: false
-#         name: Raid-pxe
-#       - boot_devices:
-#           - device_name: 00_KVM-DVD
-#             device_type: virtual_media
-#             subtype: kvm-mapped-dvd
-#           - device_name: 01_CIMC-DVD
-#             device_type: virtual_media
-#             subtype: cimc-mapped-dvd
-#           - device_name: 02_M2
-#             device_type: local_disk
-#             slot: MSTOR-RAID
-#           - device_name: 03_Raid1
-#             device_type: local_disk
-#             slot: MRAID
-#           - device_name: 04_PXE
-#             device_type: pxe_boot
-#             interface_name: Pool_mac_mgmt-a
-#             slot: MLOM
-#           - device_name: 05_iSCSI
-#             device_type: iscsi_boot
-#             interface_name: iSCSI-A
-#             slot: MLOM
-#           - device_name: 06_Primary-A
-#             device_type: san_boot
-#             interface_name: vHBA-A
-#             lun: 0
-#             slot: MLOM
-#             target_wwpn: 50:00:00:25:B5:0A:00:01
-#           - device_name: 07_Primary-B
-#             device_type: san_boot
-#             interface_name: vHBA-B
-#             lun: 0
-#             slot: MLOM
-#             target_wwpn: 50:00:00:25:B5:0B:00:01
-#           - device_name: 08_Secondary-A
-#             device_type: san_boot
-#             interface_name: vHBA-A
-#             lun: 0
-#             slot: MLOM
-#             target_wwpn: 50:00:00:25:B5:0A:00:02
-#           - device_name: 09_Secondary-B
-#             device_type: san_boot
-#             interface_name: vHBA-B
-#             lun: 0
-#             slot: MLOM
-#             target_wwpn: 50:00:00:25:B5:0B:00:02
-#           - device_name: 10_HTTP
-#             device_type: http_boot
-#             interface_name: vnic0
-#             ip_config_type: Static
-#             ipv4_config:
-#               dns_ip: 208.67.220.220
-#               gateway_ip: 198.18.0.1
-#               network_mask: 255.255.255.0
-#               static_ip: 198.18.0.10
-#             uri: https://server.example.com/vmware.iso
-#         boot_mode: Uefi
-#         enable_secure_boot: false
-#         name: examples
+#     scrub:
+#       - bios: true                             # ABC disk scrub policy: set this to true
+#         disk: true                             # ABC disk scrub policy: set this to true
+#         name: Pol_scrub_default                # ABC this is the policy name
+#         description: Default Scrub Policy   # ABC this is the description
+#     # Boot Policies are created by Nutanix as part of Cluster Creation
+#     # boot_order:
+#     #   - name: Pol_Boot_M2-pxe
+#     #     boot_devices:                          # ABC change the boot devices as needed by adding device_name entries
+#     #       - device_name: KVM-DVD
+#     #         device_type: virtual_media
+#     #         subtype: kvm-mapped-dvd
+#     #       - device_name: M2
+#     #         device_type: local_disk
+#     #         slot: MSTOR-RAID
+#     #       - device_name: PXE
+#     #         device_type: pxe_boot
+#     #         interface_name: Pool_mac_mgmt-a
+#     #         slot: MLOM
+#     #       - device_name: UEFI
+#     #         device_type: uefi_shell
+#     #     boot_mode: Uefi
+#     #     enable_secure_boot: true
+#     firmware:
+#       - name: Pol_Firmware_fw-domain-servers           # ABC this is the policy name. This example uses a single Firmware Policy for all servers.
+#         description: Firmware Policy for all servers   # ABC this is the description
+#         target_platform: FIAttached
+#         model_bundle_version:
+#           - firmware_version: 5.2(2.240053)            # ABC change this to your desired firmware version
+#             server_models:
+#               - UCSX-210C-M6
+#           - firmware_version: 5.2(2.240053)            # ABC change this to your desired firmware version
+#             server_models:
+#               - UCSX-210C-M7
+#     firmware_authenticate:
+#        cco_password: 1
+#        cco_user: 1
+# ###############
+# # BIOS Policies
+# # Intersight has predefined BIOS templates for different server models
+# # These can be used as is or modified with overrides as needed
+# # The example below shows two BIOS policies based on predefined templates
+# # The first policy is based on the M6-intel-virtual template with overrides
+# # The second policy is based on the M6-intel-virtual-tpm template with no overrides
+# # The policies below can be copied and modified as needed
+# # Note that the BIOS templates are updated by Cisco from time to time
+# # It is recommended to check the templates in Intersight to ensure they meet your requirements
+# # The BIOS templates can be found in Intersight when creating a BIOS Policy
+# # Further information on BIOS Policies can be seen here:
+# # https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/performance-tuning-guide-ucs-m6-servers.html
+# # https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/ucs-m7-platforms-wp.html
+# # Further information on BIOS Tokens can be seen here:
+# # https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/Intersight/IMM_BIOS_Tokens_Guide/b_IMM_Server_BIOS_Tokens_Guide/b_UCS_BIOS_Tokens_Guide_chapter_01.html
+# # https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/Intersight/IMM_BIOS_Tokens_Guide/b_IMM_Server_BIOS_Tokens_Guide.html
+# #
+#     bios:
+#       - name: Pol_BIOS_example                            # ABC this is the policy name
+#         description: M6-intel-virtual BIOS Policy with policy overrides
+#         bios_template: M6-intel-virtual                   # ABC these are predefined templates in Intersight
+#         baud_rate: '115200'
+#         latency_optimized_mode: enabled
+#         boot_performance_mode: Max Performance
+#         console_redirection: com-0
+#         serial_port_aenable: enabled
+#         terminal_type: vt100
+#         txt_support: enabled
+#         boot_option_num_retry: '5'
+#         network_stack: platform-default
+#         pop_support: platform-default
+#         cdn_support: enabled
+#         intel_vt_for_directed_io: enabled
+# #
+#       - name: Pol_BIOS_M6-intel-virtual-tpm             # ABC this is the name of the policy
+#         description: M6-intel-virtual-tpm BIOS Policy   # ABC this is the description
+#         bios_template: M6-intel-virtual-tpm             # ABC these are predefined templates in Intersight
+#         baud_rate: '115200'
+#         boot_performance_mode: Max Performance
+#         console_redirection: com-0
+#         serial_port_aenable: enabled
+#         terminal_type: vt100
+#         txt_support: enabled
+#     memory:
+#       - dimm_blocklisting: false
+#         name: Pol_Mem_default                           # ABC this is the policy name
 #     virtual_media:
-#       - add_virtual_media:
-#           - device_type: cdd
-#             file_location: https://198.18.1.1/vmware.iso
-#             mount_options: noauto
-#             name: https-map
-#             protocol: https
-#         description: vmedia Virtual Media Policy
+#       - description: vmedia Virtual Media Policy        # ABC this is the description
 #         enable_low_power_usb: true
 #         enable_virtual_media_encryption: true
-#         name: vmedia
+#         name: Pol_media_vmedia                          # ABC this is the name of the policy
+# #############
+# # Example Policies - policies below are examples only
+# # These can be copied and modified as needed
+# #
+# # The policies below boot from different devices:
+# # * Boot Policy:   Raid-pxe - boots from KVM, Local Disk, then PXE
+# # * Boot Policy:   examples - example with all boot device types including SAN Boot
+# # * vMedia Policy: vmedia - boots from https virtual media using the blade CIMC, different to http_boot
+# #
+# # Infrastructure:
+# #   policies:
+# #     boot_order:
+# #       - boot_devices:
+# #           - device_name: 0_KVM-DVD
+# #             device_type: virtual_media
+# #             subtype: kvm-mapped-dvd
+# #           - device_name: 1_Raid1
+# #             device_type: local_disk
+# #             slot: MRAID
+# #           - device_name: 2_PXE
+# #             device_type: pxe_boot
+# #             interface_name: Pool_mac_mgmt-a
+# #             slot: MLOM
+# #         boot_mode: Uefi
+# #         enable_secure_boot: false
+# #         name: Raid-pxe
+# #       - boot_devices:
+# #           - device_name: 00_KVM-DVD
+# #             device_type: virtual_media
+# #             subtype: kvm-mapped-dvd
+# #           - device_name: 01_CIMC-DVD
+# #             device_type: virtual_media
+# #             subtype: cimc-mapped-dvd
+# #           - device_name: 02_M2
+# #             device_type: local_disk
+# #             slot: MSTOR-RAID
+# #           - device_name: 03_Raid1
+# #             device_type: local_disk
+# #             slot: MRAID
+# #           - device_name: 04_PXE
+# #             device_type: pxe_boot
+# #             interface_name: Pool_mac_mgmt-a
+# #             slot: MLOM
+# #           - device_name: 05_iSCSI
+# #             device_type: iscsi_boot
+# #             interface_name: iSCSI-A
+# #             slot: MLOM
+# #           - device_name: 06_Primary-A
+# #             device_type: san_boot
+# #             interface_name: vHBA-A
+# #             lun: 0
+# #             slot: MLOM
+# #             target_wwpn: 50:00:00:25:B5:0A:00:01
+# #           - device_name: 07_Primary-B
+# #             device_type: san_boot
+# #             interface_name: vHBA-B
+# #             lun: 0
+# #             slot: MLOM
+# #             target_wwpn: 50:00:00:25:B5:0B:00:01
+# #           - device_name: 08_Secondary-A
+# #             device_type: san_boot
+# #             interface_name: vHBA-A
+# #             lun: 0
+# #             slot: MLOM
+# #             target_wwpn: 50:00:00:25:B5:0A:00:02
+# #           - device_name: 09_Secondary-B
+# #             device_type: san_boot
+# #             interface_name: vHBA-B
+# #             lun: 0
+# #             slot: MLOM
+# #             target_wwpn: 50:00:00:25:B5:0B:00:02
+# #           - device_name: 10_HTTP
+# #             device_type: http_boot
+# #             interface_name: vnic0
+# #             ip_config_type: Static
+# #             ipv4_config:
+# #               dns_ip: 208.67.220.220
+# #               gateway_ip: 198.18.0.1
+# #               network_mask: 255.255.255.0
+# #               static_ip: 198.18.0.10
+# #             uri: https://server.example.com/vmware.iso
+# #         boot_mode: Uefi
+# #         enable_secure_boot: false
+# #         name: examples
+# #     virtual_media:
+# #       - add_virtual_media:
+# #           - device_type: cdd
+# #             file_location: https://198.18.1.1/vmware.iso
+# #             mount_options: noauto
+# #             name: https-map
+# #             protocol: https
+# #         description: vmedia Virtual Media Policy
+# #         enable_low_power_usb: true
+# #         enable_virtual_media_encryption: true
+# #         name: vmedia
