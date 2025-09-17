@@ -7,7 +7,7 @@ ABC:
     chassis:
 # DC1 chassis
       - action: No-op
-        imc_access_policy: Pol_IMCAccess_aci-kvm
+        imc_access_policy: Pol_IMCAccess_ucsdom1
         power_policy: Pol_power_9508
         snmp_policy: Pol_SNMP_snmp
         targets:
@@ -17,7 +17,7 @@ ABC:
         thermal_policy: 'Pol_Thermal_9508'
 # DC2 Chassis
       - action: No-op
-        imc_access_policy: Pol_IMCAccess_aci-kvm
+        imc_access_policy: Pol_IMCAccess_ucsdom2
         power_policy: Pol_power_9508
         snmp_policy: Pol_SNMP_snmp
         targets:

@@ -1,14 +1,14 @@
----
-#========================================
-#   Templates -> Chassis - Variables
-#========================================
-ABC:
-  templates:
-    chassis:
-      - create_template: true
-        description: 9508 Chassis Profile Template    # ABC this is a description of the template
-        imc_access_policy: Pol_IMCAccess_aci-kvm
-        name: 'Templ_chass_9508'                     # ABC this is the template name  
-        power_policy: 'Pol_power_9508'
-        snmp_policy: 'Pol_SNMP_snmp'
-        thermal_policy: 'Pol_Thermal_9508'
+# ---
+# #========================================
+# #   Templates -> Chassis - Variables
+# #========================================
+# ABC:
+#   templates:
+#     chassis:
+#       - create_template: true
+#         description: 9508 Chassis Profile Template    # ABC this is a description of the template
+#         imc_access_policy: Pol_IMCAccess_aci-kvm
+#         name: 'Templ_chass_9508'                     # ABC this is the template name  
+#         power_policy: 'Pol_power_9508'
+#         snmp_policy: 'Pol_SNMP_snmp'
+#         thermal_policy: 'Pol_Thermal_9508'
