@@ -1,46 +1,46 @@
-# ---
+---
 # #==========================================
 # #   Policies -> Management - Variables
 # #==========================================
-# ABC:
-#   policies:
-#     imc_access:
-#       - description: aci-kvm IMC Access Policy  # ABC this is a description of the IMC Access Policy
-#         inband_ip_pool: Pool_ip_inband
-#         inband_vlan_id: 101
-#         ipv4_address_configuration: true
-#         name: Pol_IMCAccess_aci-kvm # ABC this is the IMC Access Policy name
-#         out_of_band_ip_pool: Pool_ip_kvm-ooband
+ABC:
+  policies:
+    imc_access:
+      - description: aci-kvm IMC Access Policy  # ABC this is a description of the IMC Access Policy
+        inband_ip_pool: Pool_IP_inband
+        inband_vlan_id: 101                     # ABC change this to reflect the Inband IP VLAN
+        ipv4_address_configuration: true
+        name: Pol_IMCAccess_aci-kvm             # ABC this is the IMC Access Policy name
+        out_of_band_ip_pool: Pool_ip_kvm-ooband
 #     ipmi_over_lan:
 #       - description: ipmi IPMI over LAN Policy # ABC this is a description of the IPMI over LAN Policy
 #         name: Pol_IPMI_ipmi # ABC this is the IPMI over LAN Policy name
 #         privilege: admin
-#     ldap:
-#       - base_settings:
-#           domain: rich.ciscolabs.com
-#         binding_parameters:
-#           bind_dn: CN=Rob Moss,OU=Cisco Employees,DC=rich,DC=ciscolabs,DC=com
-#           bind_method: ConfiguredCredentials
-#         description: RICH LDAP Policy # ABC this is a description of the LDAP Policy
-#         enable_group_authorization: false
-#         ldap_groups:
-#           - end_point_role: admin
-#             group_dn: CN=Domain Admins,OU=Users,DC=rich,DC=ciscolabs,DC=com
-#             name: Domain Admins
-#         ldap_servers:
-#           - port: 389
-#             server: 10.101.128.15
-#             vendor: MSAD
-#           - port: 389
-#             server: 10.101.128.16
-#             vendor: MSAD
-#         name: Pol_LDAP_RICH # ABC this is the LDAP Policy name
-#         nested_group_search_depth: 128
-#         search_parameters:
-#           attribute: memberof
-#           filter: sAMAccountName=$userid
-#           group_attribute: memberof
-#         user_search_precedence: LocalUserDb
+    ldap:
+      - base_settings:
+          domain: rich.ciscolabs.com
+        binding_parameters:
+          bind_dn: CN=Rob Moss,OU=Cisco Employees,DC=rich,DC=ciscolabs,DC=com
+          bind_method: ConfiguredCredentials
+        description: RICH LDAP Policy # ABC this is a description of the LDAP Policy
+        enable_group_authorization: false
+        ldap_groups:
+          - end_point_role: admin
+            group_dn: CN=Domain Admins,OU=Users,DC=rich,DC=ciscolabs,DC=com
+            name: Domain Admins
+        ldap_servers:
+          - port: 389
+            server: 10.101.128.15
+            vendor: MSAD
+          - port: 389
+            server: 10.101.128.16
+            vendor: MSAD
+        name: Pol_LDAP_RICH # ABC this is the LDAP Policy name
+        nested_group_search_depth: 128
+        search_parameters:
+          attribute: memberof
+          filter: sAMAccountName=$userid
+          group_attribute: memberof
+        user_search_precedence: LocalUserDb
 #     local_user:
 #       - description: users Local User Policy # ABC this is a description of the Local User Policy
 #         name: Pol_LocalUser_users # ABC this is the Local User Policy name
@@ -57,43 +57,43 @@
 #             password: 1
 #             role: admin
 #             username: admin
-#     network_connectivity:
-#       - description: dns Network Connectivity Policy # ABC this is a description of the Network Connectivity Policy
-#         dns_servers_v4:
-#           - 10.101.128.15
-#           - 10.101.128.16
-#         name: Pol_NetCon_dns # ABC this is the Network Connectivity Policy name
-#     ntp:
-#       - description: ntp NTP Policy # ABC this is a description of the NTP Policy
-#         enabled: true
-#         name: Pol_NTP_ntp # ABC this is the NTP Policy name
-#         ntp_servers:
-#           - 10.101.128.15
-#           - 10.101.128.16
-#         timezone: America/New_York
+    network_connectivity:
+      - description: dns Network Connectivity Policy    # ABC this is a description of the Network Connectivity Policy
+        dns_servers_v4:
+          - 10.101.128.15
+          - 10.101.128.16
+        name: Pol_NetCon_dns                            # ABC this is the Network Connectivity Policy name
+    ntp:
+      - description: ntp NTP Policy                     # ABC this is a description of the NTP Policy
+        enabled: true
+        name: Pol_NTP_ntp                               # ABC this is the NTP Policy name
+        ntp_servers:
+          - 10.101.128.15
+          - 10.101.128.16
+        timezone: Australia/Melbourne
 #     serial_over_lan:
 #       - baud_rate: 115200
 #         com_port: com0
-#         description: sol Serial over LAN Policy # ABC this is a description of the Serial over LAN Policy
-#         name: Pol_SerialOverLAN_sol # ABC this is the Serial over LAN Policy name
+#         description: sol Serial over LAN Policy       # ABC this is a description of the Serial over LAN Policy
+#         name: Pol_SerialOverLAN_sol                   # ABC this is the Serial over LAN Policy name
 #         ssh_port: 2400
-#     snmp:
-#       - description: snmp SNMP Policy # ABC this is a description of the SNMP Policy
-#         name: 'Pol_SNMP_snmp' # ABC this is the SNMP Policy name
-#         snmp_port: 161
-#         snmp_trap_destinations:
-#           - destination_address: 10.101.128.25 #rich lab linux host
-#             port: 162
-#             user: snmpadmin
-#         snmp_users:
-#           - auth_password: 1
-#             auth_type: SHA
-#             name: snmpadmin # ABC this is the SNMP user name
-#             privacy_password: 1
-#             privacy_type: AES
-#             security_level: AuthPriv
-#         system_contact: admin@example.com
-#         system_location: Example Corporation
+    snmp:
+      - description: snmp SNMP Policy                   # ABC this is a description of the SNMP Policy
+        name: 'Pol_SNMP_snmp'                           # ABC this is the SNMP Policy name
+        snmp_port: 161
+        snmp_trap_destinations:
+          - destination_address: 10.101.128.25          # ABC change this to reflect your SNMP Trap destination
+            port: 162
+            user: snmpadmin                             # ABC SNMP user name
+        snmp_users:
+          - auth_password: 1                            # ABC defined in var $snmp_auth_password_1
+            auth_type: SHA
+            name: snmpadmin                             # ABC this is the SNMP user name
+            privacy_password: 1                         # ABC defined in var $snmp_privacy_password_1
+            privacy_type: AES
+            security_level: AuthPriv
+        system_contact: admin@example.com
+        system_location: Example Corporation
 #     virtual_kvm:
 #       - allow_tunneled_vkvm: true
 #         description: vkvm Virtual KVM Policy # ABC this is a description of the Virtual KVM Policy
