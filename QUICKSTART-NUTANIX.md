@@ -5,8 +5,8 @@
 A guide to deploy easyimm, and configure an Intersight Organisation using two UCS domains.
 The default parameters are as follows;
 * Organization is named ABC
-* UCS Domain 1 - This UCS X-Series Domain is representing the equipment housed in DC1
-* UCS Domain 2 - This UCS X-Series Domain is representing the equipment housed in DC2
+* UCS Domain 1 - This UCS X-Series Domain named ucsdom1 is representing the equipment housed in DC1
+* UCS Domain 2 - This UCS X-Series Domain named ucsdom2 is representing the equipment housed in DC2
 
 Pools
 * Only MAC and IP Pools are created, to support the Nutanix cluster creation.  WWPN, WWNN Pools are not created.
@@ -49,7 +49,7 @@ There are examples within this codebase that can be modified or deleted as neede
 
 ## Organization name
 This codebase can use a single Organisation (Org) name, or multiple Orgs.
-In this example it is a single org named `ABC`.  To change the Org name, it will need to be updated in the file `organizations/organizations.ezi.yaml` and each of the `*.ezi.yaml` files in each subdirectory.
+In this example it is a single Org named `ABC`.  To change the Org name, it will need to be updated in the file `organizations/organizations.ezi.yaml` and each of the `*.ezi.yaml` files in each subdirectory.
 
 #### Creating the Org in `organizations/organizations.ezi.yaml`
 ```yaml
@@ -80,9 +80,9 @@ Examples are shown in the following directories:
 |--|--|--|
 |organizations|Organization(s)|Can define individual or multiple Orgs
 | policies | Policies | Defines Domain, Chassis and Server policies |
-| pools | Pools | Defines MAC, UUID, IP, WWPN, WWNN Pools. Only MAC and IP are used with Nutanix |
-| profiles | Profiles | Defines Domain, Chassis and Server profiles |
-| templates | Templates | Defines Domain, Chassis and Server templates. Server Templates are unused with Nutanix.|
+| pools | Pools | Defines MAC, UUID, IP, WWPN, WWNN Pools. Only MAC and IP are used with Nutanix. |
+| profiles | Profiles | Defines Domain, Chassis and Server profiles. Only Domain and Chassis profiles are used with Nutanix. |
+| templates | Templates | Defines Domain, Chassis and Server templates. Server Templates are not used with Nutanix.|
 
 
 
@@ -134,25 +134,32 @@ In example, if you needed to add 100 iterations of the `certificate_management` 
 
 
 
-## Sensitive Variables:
+## Sensitive Variables and API keys
 
 Take note of the `locals.tf` that currently has all the sensitive variables mapped.
 This is the default sensitive variable mappings.
 
+The first environment variables that must be defined are the Intersight API key and secret keys, as below.  These are created in Intersight and will inherit the current user's privileges.  
+To create a key open Intersight and browse to `Settings > Keys` then generate an API v3 Key. This will provide the API Key ID and the Secret Key file.
 
+The API Key ID looks similar to this `68be5dca75sadf1ee546ab/68be669d75sdf61301ea23d74/68bf6sadf756461301ea24198`
+The API Secret Key looks similar to this
+```
+-----BEGIN EC PRIVATE KEY-----
+MIGHAgEAMBMGByqGSM49AgEGC5sad7ffAwEHBG0wawIBAQQgtHmOy6mwOAhR2zvh
+MKYnEyosdf788asetP02x8BCKoGhRANCAARAtcW97o3sadf7a+B2grdjkuBTNZdsLbu
+7pQ7+SddHe912QEQLHrZKE6HAeRlGvlqQNssdaff44ftf9hH/ah3RMQrY
+-----END EC PRIVATE KEY-----
+```
+
+
+To set the Intersight API Key and Secret, use the environment variables as below
 #### Linux
-
 ```bash
 export TF_VAR_intersight_api_key_id="<your-api-key>"
 export TF_VAR_intersight_secret_key="<secret-key-file-contents>"
 ```
 
-#### Terraform Enterprise
-
-```bash
-intersight_api_key_id="<your-api-key>"
-intersight_secret_key="<secret-key-file-contents>"
-```
 
 
 ### Terraform Cloud/Enterprise - Workspace Variables
@@ -172,13 +179,13 @@ intersight_secret_key="<secret-key-file-contents>"
   * `cert_mgmt_certificate`: Options are by default 1-5 for Up to 5 Certificates.  Variable Should Point to the File Location of the PEM Certificate or be the value of the PEM certificate.
   * `cert_mgmt_private_key`: Options are by default 1-5 for Up to 5 Private Keys.  Variable Should Point to the File Location of the PEM Private Key or be the value of the PEM Private Key.
 
-#### Linux - with tfenv
+#### Linux
 
 ```bash
-export cert_mgmt_certificate_1='<cert_mgmt_certificate_file_location>'
+export TF_VAR_cert_mgmt_certificate_1='<cert_mgmt_certificate_file_location>'
 ```
 ```bash
-export cert_mgmt_private_key_1='<cert_mgmt_private_key_file_location>'
+export TF_VAR_cert_mgmt_private_key_1='<cert_mgmt_private_key_file_location>'
 ```
 
 
@@ -188,15 +195,14 @@ export cert_mgmt_private_key_1='<cert_mgmt_private_key_file_location>'
   * `drive_security_authentication_password`: If Authentication is supported/used by the KMIP Server, This is the User Password to Configure.
   * `drive_security_server_ca_certificate`: KMIP Server CA Certificate Contents.
 
-#### Linux - with tfenv
-
+#### Linux
 ```bash
-export drive_security_authentication_password='<drive_security_authentication_password>'
-export drive_security_server_ca_certificate='<drive_security_server_ca_certificate_file_location>'
+export TF_VAR_drive_security_authentication_password='<drive_security_authentication_password>'
+export TF_VAR_drive_security_server_ca_certificate='<drive_security_server_ca_certificate_file_location>'
 ```
 
 ### Firmware - CCO  Credentials
-
+These variables are used in Intersight to retrieve UCS Firmware recommendations and download the Firmware bundles.
   * `cco_user`: If Configuring Firmware Policies, the CCO User for Firmware Downloads.
   * `cco_password`: If Configuring Firmware Policies, the CCO Password for Firmware Downloads.
 
@@ -206,16 +212,10 @@ export TF_VAR_cco_user='<cco_user>'
 export TF_VAR_cco_password='<cco_password>'
 ```
 
-#### Linux - with tfenv
+#### TFE
 ```bash
-export cco_user='<cco_user>'
-export cco_password='<cco_password>'
-```
-
-#### Windows
-```powershell
-$env:TF_VAR_cco_user='<cco_user>'
-$env:TF_VAR_cco_password='<cco_password>'
+cco_user='<cco_user>'
+cco_password='<cco_password>'
 ```
 
 ### [<ins>Back to Top<ins>](#easy-imm)
@@ -225,6 +225,7 @@ $env:TF_VAR_cco_password='<cco_password>'
 ### Terraform Cloud
 
 When running in Terraform Cloud with VCS Integration the first Plan will need to be run from the UI but subsiqent runs should trigger automatically
+
 
 ### Terraform CLI
 
@@ -237,21 +238,13 @@ terraform plan -out="main.plan"
 terraform apply "main.plan"
 ```
 
-* Execute the Plan - Windows
-
-```powershell
-# First time execution requires initialization.  Not needed on subsequent runs.
-terraform.exe init
-terraform.exe plan -out="main.plan"
-terraform.exe apply "main.plan"
-```
 
 ## Requirements
 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.3.0 |
-| <a name="requirement_intersight"></a> [intersight](#requirement\_intersight) | 1.0.64 |
+| <a name="requirement_intersight"></a> [intersight](#requirement\_intersight) | 1.0.61 |
 | <a name="requirement_time"></a> [time](#requirement\_time) | 0.9.1 |
 | <a name="requirement_utils"></a> [utils](#requirement\_utils) | >= 0.1.3 |
 
@@ -347,6 +340,7 @@ terraform.exe apply "main.plan"
 | <a name="input_vmedia_password_5"></a> [vmedia\_password\_5](#input\_vmedia\_password\_5) | Virtual Media Policy -> Mapping Target Password when authentication is enabled.  Allowed Characters are:<br>  - Any non-white space character<br>  - Be between 6 and 255 Characters in Length. | `string` | `""` | no |
 
 ### [<ins>Back to Top<ins>](#easy-imm)
+
 
 ## Outputs
 
