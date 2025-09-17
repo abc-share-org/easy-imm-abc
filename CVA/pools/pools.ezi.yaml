@@ -31,7 +31,7 @@ ABC:
         prefix: 000025B5-C15C-0000
         uuid_blocks:
           - from: 25B5-000000000000
-            size: 255
+            size: 1024
     mac:
       - name: Pool_MAC_DC1         # ABC MAC Pool for DC1
         mac_blocks:
