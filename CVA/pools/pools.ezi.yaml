@@ -25,6 +25,28 @@ ABC:
           netmask: 255.255.255.0
           primary_dns: 10.101.128.15
           secondary_dns: 10.101.128.16
+# Inband
+      - name: Pool_IP_inband-DC1          # ABC this is the IP Pool name for DC1
+        description: Out-of-Band Management IP for NTNX
+        ipv4_blocks:
+          - from: 10.20.100.10
+            size: 32
+        ipv4_configuration:
+          gateway: 10.20.100.1
+          netmask: 255.255.255.0
+          primary_dns: 10.101.128.15
+          secondary_dns: 10.101.128.16
+      - name: Pool_IP_inband-DC2          # ABC this is the IP Pool name for DC2
+        description: Out-of-Band Management IP for NTNX
+        ipv4_blocks:
+          - from: 10.20.200.10
+            size: 32
+        ipv4_configuration:
+          gateway: 10.20.200.1
+          netmask: 255.255.255.0
+          primary_dns: 10.101.128.15
+          secondary_dns: 10.101.128.16
+#
     uuid:
       - description: uuid UUID Pool   # ABC this is a description of the UUID Pool
         name: Pool_UUID_uuid          # ABC this is the UUID Pool name
