@@ -2,4 +2,6 @@
 .terraform.lock.hcl
 .terraform/
 .vscode/
-env-vars.sh
+*.tfstate
+*.tfstate.backup
+.env

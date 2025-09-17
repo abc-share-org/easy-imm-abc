@@ -13,23 +13,25 @@ ABC:                                           # ABC replace with your organizat
       - bios: true                             # ABC disk scrub policy: set this to true
         disk: true                             # ABC disk scrub policy: set this to true
         name: Pol_scrub_default                # ABC this is the policy name
-    boot_order:
-      - name: Pol_Boot_M2-pxe
-        boot_devices:                          # ABC change the boot devices as needed by adding device_name entries
-          - device_name: KVM-DVD
-            device_type: virtual_media
-            subtype: kvm-mapped-dvd
-          - device_name: M2
-            device_type: local_disk
-            slot: MSTOR-RAID
-          - device_name: PXE
-            device_type: pxe_boot
-            interface_name: Pool_mac_mgmt-a
-            slot: MLOM
-          - device_name: UEFI
-            device_type: uefi_shell
-        boot_mode: Uefi
-        enable_secure_boot: true
+        description: Default Scrub Policy   # ABC this is the description
+    # Boot Policies are created by Nutanix as part of Cluster Creation
+    # boot_order:
+    #   - name: Pol_Boot_M2-pxe
+    #     boot_devices:                          # ABC change the boot devices as needed by adding device_name entries
+    #       - device_name: KVM-DVD
+    #         device_type: virtual_media
+    #         subtype: kvm-mapped-dvd
+    #       - device_name: M2
+    #         device_type: local_disk
+    #         slot: MSTOR-RAID
+    #       - device_name: PXE
+    #         device_type: pxe_boot
+    #         interface_name: Pool_mac_mgmt-a
+    #         slot: MLOM
+    #       - device_name: UEFI
+    #         device_type: uefi_shell
+    #     boot_mode: Uefi
+    #     enable_secure_boot: true
     firmware:
       - name: Pol_Firmware_fw-domain-servers           # ABC this is the policy name. This example uses a single Firmware Policy for all servers.
         description: Firmware Policy for all servers   # ABC this is the description
@@ -63,16 +65,6 @@ ABC:                                           # ABC replace with your organizat
 # https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/Intersight/IMM_BIOS_Tokens_Guide/b_IMM_Server_BIOS_Tokens_Guide.html
 #
     bios:
-      - name: Pol_BIOS_M6-Nutanix
-        description: M6-intel-virtual BIOS Policy for Nutanix
-        bios_template: M6-intel-virtual                   
-        baud_rate: '115200'
-        latency_optimized_mode: enabled
-        boot_performance_mode: Max Performance
-        console_redirection: com-0
-        intel_vt_for_directed_io: enabled
-        
-#
       - name: Pol_BIOS_example                            # ABC this is the policy name
         description: M6-intel-virtual BIOS Policy with policy overrides
         bios_template: M6-intel-virtual                   # ABC these are predefined templates in Intersight

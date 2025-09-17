@@ -1,15 +1,20 @@
 <!-- BEGIN_TF_DOCS -->
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Developed by: Cisco](https://img.shields.io/badge/Developed%20by-Cisco-blue)](https://developer.cisco.com)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Developed by: Cisco](https://img.shields.io/badge/Developed%20by-Cisco-blue)](https://developer.cisco.com)
 
-# Easy IMM
+# Easy IMM Quickstart guide
+A guide to deploy easyimm, and configure the ABC organisation using two UCS domains.
+* Domain 1 - This UCS X-Series Domain is representing the equipment housed in DC1
+* Domain 2 - This UCS X-Series Domain is representing the equipment housed in DC2
+
+Pools
+* All pools
+  
 
 ## Table of Content
 
 * [Examples](#examples-for-using-the-easy-imm-terraform-modules)
 * [Important Notes](#important-notes)
 * [YAML Schema Notes](#yaml-schema-notes-for-auto-completion-help-and-error-validation)
-* [Cloud Posse `tfenv`](#cloud-posse-tfenv)
 * [Recommended Firmware](#recommended-firmware)
 * [Environment Variables](#environment-variables)
 * [Sensitive Variables for the Policies Module](#sensitive-variables-for-the-policies-module)
@@ -21,16 +26,18 @@
 * [Terraform Outputs](#outputs)
 * [Sub Modules - Terraform Registry](#sub-modules---terraform-registry)
 
-
 # Overview
+
 This codebase contains examples on how to configure an Intersight CVA or PVA.
+
 There are examples within this codebase that can be modified or deleted as needed.
 
-To begin, choose an Organisation name. In this example it is ```ABC```. This will need to be updated in the file
-```organizations/organizations.ezi.yaml```
-And also in all of the other files in this example at the beginning of the file, all policies are created under the Organization, as an example;
-```
-ABC:                             <-- This must be changed in all files to your desired Org
+## Organization name
+
+To begin, choose an Organisation (Org) name.  In this example it is `ABC`. To change the Org name, it will need to be updated in the file `organizations/organizations.ezi.yaml` as well as each of the other `*.ezi.yaml` files in all subdirectories at the beginning of the file, all policies are created under the Organization name, as an example;
+
+```yaml
+ABC:                             <-- This must be changed in all files to match the Org
   policies:
     scrub:
       - bios: true
@@ -39,6 +46,7 @@ ABC:                             <-- This must be changed in all files to your d
 ```
 
 ### [<ins>Back to Top<ins>](#easy-imm)
+
 
 ## Examples for Using the Easy IMM Terraform Modules
 
