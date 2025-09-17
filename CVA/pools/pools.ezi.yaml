@@ -5,23 +5,23 @@
 ABC:
   pools:
     ip:
-      - name: Pool_IP_oob-dc1          # ABC this is the IP Pool name for DC1
+      - name: Pool_IP_oob-DC1          # ABC this is the IP Pool name for DC1
         description: Out-of-Band Management IP for NTNX
         ipv4_blocks:
-          - from: 10.100.100.10
+          - from: 10.10.100.10
             size: 32
         ipv4_configuration:
-          gateway: 10.100.100.1
+          gateway: 10.10.100.1
           netmask: 255.255.255.0
           primary_dns: 10.101.128.15
           secondary_dns: 10.101.128.16
-      - name: Pool_IP_oob-dc2          # ABC this is the IP Pool name for DC2
+      - name: Pool_IP_oob-DC2          # ABC this is the IP Pool name for DC2
         description: Out-of-Band Management IP for NTNX
         ipv4_blocks:
-          - from: 10.200.200.10
+          - from: 10.10.200.10
             size: 32
         ipv4_configuration:
-          gateway: 10.200.200.1
+          gateway: 10.10.200.1
           netmask: 255.255.255.0
           primary_dns: 10.101.128.15
           secondary_dns: 10.101.128.16
