@@ -26,35 +26,35 @@ ABC:
         name: Pol_EthNetCtl_lldp
     ethernet_network_group:
       # DC1 Ethernet Network Group Policies
-      - name: Pol_EthNetGroup_DC1-VLANs                             # ABC Ethernet Network Group Policy - allowed VLANs on uplinks
+      - name: Pol_EthNetGroup_DC1-VLANs                       # ABC Ethernet Network Group Policy - allowed VLANs on uplinks
         description: DC1 VLANs
-        allowed_vlans: 100-103,1000-1003,2000-2003                  # ABC change these VLANs to match the Pol_VLAN_dc1-vlans
+        allowed_vlans: 100-103,1000-1003,2000-2003            # ABC change these VLANs to match the Pol_VLAN_dc1-vlans
         native_vlan: 1
       # DC2 Ethernet Network Group Policies
-      - name: Pol_EthNetGroup_DC2-VLANs                           # ABC this is the name of the policy
+      - name: Pol_EthNetGroup_DC2-VLANs                       # ABC this is the name of the policy
         description: DC2 VLANs
-        allowed_vlans: 100-103,1000-1003,2000-2003                # ABC change these VLANs to match the Pol_VLAN_dc2-vlans
+        allowed_vlans: 100-103,1000-1003,2000-2003            # ABC change these VLANs to match the Pol_VLAN_dc2-vlans
         native_vlan: 1
     ethernet_qos:
-      - description: Best Effort Ethernet QoS Policy          # ABC this is the description
+      - description: Best Effort Ethernet QoS Policy
         mtu: 9000
-        name: Pol_EthQoS_best-effort                          # ABC this is the name of the policy
+        name: Pol_EthQoS_best-effort
         priority: Best Effort
-      - description: Bronze Ethernet QoS Policy               # ABC this is the description
+      - description: Bronze Ethernet QoS Policy
         mtu: 9000
-        name: Pol_EthQoS_bronze                               # ABC this is the name of the policy
+        name: Pol_EthQoS_bronze
         priority: Bronze
-      - description: Gold Ethernet QoS Policy                 # ABC this is the description
+      - description: Gold Ethernet QoS Policy
         mtu: 9000
-        name: Pol_EthQoS_gold                                 # ABC this is the name of the policy
+        name: Pol_EthQoS_gold
         priority: Gold
-      - description: Platinum Ethernet QoS Policy             # ABC this is the description
+      - description: Platinum Ethernet QoS Policy
         mtu: 9000
-        name: Pol_EthQoS_platinum                             # ABC this is the name of the policy
+        name: Pol_EthQoS_platinum
         priority: Platinum
-      - description: Silver Ethernet QoS Policy               # ABC this is the description
+      - description: Silver Ethernet QoS Policy
         mtu: 9000
-        name: Pol_EthQoS_silver                               # ABC this is the name of the policy
+        name: Pol_EthQoS_silver
         priority: Silver
 
 

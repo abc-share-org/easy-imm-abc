@@ -6,29 +6,29 @@ ABC:
   profiles:
     domain:
 # UCS Domain #1 at DC1
-      - name: Prof_Dom_ucsdom1                            # ABC this is a domain profile name 
-        description: dom1 UCS Domain Profile              # ABC this is a description of the domain profile
+      - name: Prof_Dom_ucsdom1                             # ABC this is the UCS Domain profile for DC1
+        description: ucsdom1 UCS Domain Profile
         action: No-op
         ldap_policy: Pol_LDAP_RICH
         network_connectivity_policy: Pol_NetCon_dns
         ntp_policy: Pol_NTP_ntp
         port_policies:
-          - Pol_port_ucsdom1-a
+          - Pol_port_ucsdom1-a                             # ABC Port Policy from port.ezi.yaml
           - Pol_port_ucsdom1-b
         serial_numbers:
+          - unknown                                        # ABC replace unknown with the actual serial numbers of the Fabric Interconnects
           - unknown
-          - unknown
-        snmp_policy: Pol_SNMP_snmp
+        snmp_policy: Pol_SNMP_snmp                         # ABC from snmp.ezi.yaml edit for your environment
         switch_control_policy: Pol_SwCtl_sw-ctrl
         system_qos_policy: Pol_QOS_qos
         vlan_policies:
-          - Pol_VLAN_dc1-vlans
+          - Pol_VLAN_dc1-vlans                              # ABC DC1 VLANs list from vlan.ezi.yaml
         vsan_policies:
-          - Pol_vsan_vsan-a
+          - Pol_vsan_vsan-a                                 # ABC from vsan.ezi.yaml -- most likely unused
           - Pol_vsan_vsan-b
 # UCS Domain #2 at DC2
-      - name: Prof_Dom_ucsdom2                            # ABC this is a domain profile name 
-        description: dom2 UCS Domain Profile              # ABC this is a description of the domain profile
+      - name: Prof_Dom_ucsdom2                              # ABC this is the UCS Domain profile for DC2
+        description: dom2 UCS Domain Profile
         action: No-op
         ldap_policy: Pol_LDAP_RICH
         network_connectivity_policy: Pol_NetCon_dns

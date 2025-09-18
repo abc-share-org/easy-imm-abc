@@ -7,14 +7,14 @@ ABC:
     chassis:
 # DC1 chassis
       - action: No-op
-        imc_access_policy: Pol_IMCAccess_ucsdom1
-        power_policy: Pol_power_9508
-        snmp_policy: Pol_SNMP_snmp
+        imc_access_policy: Pol_IMCAccess_ucsdom1  # ABC from imc.ezi.yaml edit for your environment
+        power_policy: Pol_power_9508              # ABC from power.ezi.yaml edit for your environment
+        snmp_policy: Pol_SNMP_snmp                # ABC from snmp.ezi.yaml edit for your environment
         targets:
           - description: ucsdom1-1 UCS Chassis Profile
-            name: Prof_chass_ucsdom1-1        # ABC this is the chassis profile name  
-            serial_number: unknown
-        thermal_policy: 'Pol_Thermal_9508'
+            name: Prof_chass_ucsdom1-1            # ABC this is the chassis profile name
+            serial_number: unknown                # ABC replace unknown with the actual serial number of the Chassis
+        thermal_policy: 'Pol_Thermal_9508'        # ABC from thermal.ezi.yaml edit for your environment
 # DC2 Chassis
       - action: No-op
         imc_access_policy: Pol_IMCAccess_ucsdom2
@@ -22,6 +22,6 @@ ABC:
         snmp_policy: Pol_SNMP_snmp
         targets:
           - description: ucsdom2-1 UCS Chassis Profile
-            name: Prof_chass_ucsdom2-1        # ABC this is the chassis profile name
-            serial_number: unknown
+            name: Prof_chass_ucsdom2-1
+            serial_number: unknown                # ABC replace unknown with the actual serial number of the Chassis
         thermal_policy: 'Pol_Thermal_9508'

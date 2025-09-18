@@ -2,6 +2,9 @@
 # #======================================
 # #   Profiles -> Server - Variables
 # #======================================
+#
+# The Server Profiles are commented out as they are not used in the Nutanix design
+#
 # ABC:
 #   profiles:
 #     server:

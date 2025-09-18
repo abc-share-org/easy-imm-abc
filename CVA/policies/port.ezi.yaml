@@ -7,7 +7,7 @@ ABC:
     port:
       ##############
       # DC1 ucsdom1 Ports Policy
-      - device_model: UCS-FI-6454
+      - device_model: UCS-FI-6536
         description: Ports Policy for DC1 UCS Domain ucsdom1 # ABC this is a description of the Port Policy
         names:
           - Pol_port_ucsdom1-a                               # ABC from port.ezi.yaml
@@ -45,7 +45,7 @@ ABC:
           - port_list: 37,38
       ##############
       # DC2 ucsdom2 Ports Policy
-      - device_model: UCS-FI-6454
+      - device_model: UCS-FI-6536
         description: Ports Policy for DC2 UCS Domain ucsdom2
         names:
           - Pol_port_ucsdom2-a                               # ABC from port.ezi.yaml

@@ -2,6 +2,9 @@
 # #========================================
 # #   Templates -> Chassis - Variables
 # #========================================
+#
+# The Chassis Templates are commented out as they are not used in the Nutanix design
+#
 # ABC:
 #   templates:
 #     chassis:

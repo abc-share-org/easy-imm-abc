@@ -5,17 +5,18 @@
 ABC:
   pools:
     ip:
-      - name: Pool_IP_oob-DC1          # ABC this is the IP Pool name for DC1
+# Out-of-Band IP pools
+      - name: Pool_IP_oob-DC1           # ABC this is the IP Pool name for DC1
         description: Out-of-Band Management IP for NTNX
         ipv4_blocks:
-          - from: 10.10.100.10
-            size: 32
+          - from: 10.10.100.10          # ABC change this range to match your environment
+            size: 32                    # ABC how many IPs to allocate in this block. Range 1-1024
         ipv4_configuration:
-          gateway: 10.10.100.1
-          netmask: 255.255.255.0
-          primary_dns: 10.101.128.15
-          secondary_dns: 10.101.128.16
-      - name: Pool_IP_oob-DC2          # ABC this is the IP Pool name for DC2
+          gateway: 10.10.100.1          # ABC change this to your gateway
+          netmask: 255.255.255.0        # ABC change this range to match your environment
+          primary_dns: 10.101.128.15    # ABC change this range to match your environment
+          secondary_dns: 10.101.128.16  # ABC change this range to match your environment
+      - name: Pool_IP_oob-DC2
         description: Out-of-Band Management IP for NTNX
         ipv4_blocks:
           - from: 10.10.200.10
@@ -25,19 +26,19 @@ ABC:
           netmask: 255.255.255.0
           primary_dns: 10.101.128.15
           secondary_dns: 10.101.128.16
-# Inband
-      - name: Pool_IP_inband-DC1          # ABC this is the IP Pool name for DC1
-        description: Out-of-Band Management IP for NTNX
+# Inband IP Pools
+      - name: Pool_IP_inband-DC1
+        description: In-Band Management IP for NTNX
         ipv4_blocks:
-          - from: 10.20.100.10
+          - from: 10.20.100.10          # ABC change this range to match your environment
             size: 32
         ipv4_configuration:
           gateway: 10.20.100.1
           netmask: 255.255.255.0
           primary_dns: 10.101.128.15
           secondary_dns: 10.101.128.16
-      - name: Pool_IP_inband-DC2          # ABC this is the IP Pool name for DC2
-        description: Out-of-Band Management IP for NTNX
+      - name: Pool_IP_inband-DC2
+        description: In-Band Management IP for NTNX
         ipv4_blocks:
           - from: 10.20.200.10
             size: 32
@@ -48,18 +49,20 @@ ABC:
           secondary_dns: 10.101.128.16
 #
     uuid:
-      - description: uuid UUID Pool   # ABC this is a description of the UUID Pool
-        name: Pool_UUID_uuid          # ABC this is the UUID Pool name
-        prefix: 000025B5-C15C-0000
+      - description: UUID Pool - global
+        name: Pool_UUID_uuid
+        prefix: 000025B5-C15C-ABC0  # ABC These UUIDs can be changed or left as is
         uuid_blocks:
-          - from: 25B5-000000000000
+          - from: 25B5-000000000000 # This UUID block can be changed or left as is
             size: 1024
     mac:
       - name: Pool_MAC_DC1         # ABC MAC Pool for DC1
+        description: DC1 MAC Pool
         mac_blocks:
-          - from: 00:25:B5:D1:00:00
+          - from: 00:25:B5:D1:00:00 # These MAC addresses can be changed or left as is
             size: 1024
       - name: Pool_MAC_DC2         # ABC MAC Pool for DC2
+        description: DC2 MAC Pool
         mac_blocks:
           - from: 00:25:B5:D2:00:00
             size: 1024
