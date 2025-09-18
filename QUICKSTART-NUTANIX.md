@@ -1,7 +1,8 @@
 <!-- BEGIN_TF_DOCS -->
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Developed by: Cisco](https://img.shields.io/badge/Developed%20by-Cisco-blue)](https://developer.cisco.com)
 
-# Easy IMM Quickstart guide for Nutanix
+# Easy IMM
+### Quickstart guide for Nutanix
 A guide to deploy easyimm, and configure an Intersight Organisation using two UCS domains in two availability zones (In this example named DC1 and DC2)
 
 
