@@ -404,7 +404,7 @@ If you want to see documentation on Variables for Submodules use the links below
 
 #### * [<ins>Profiles<ins>](https://registry.terraform.io/modules/terraform-cisco-modules/profiles/intersight/latest)
 
-https://registry.terraform.io/modules/terraform-cisco-modules/imm/intersight/latest
+#### * [<ins>Intersight IMM<ins>](https://registry.terraform.io/modules/terraform-cisco-modules/imm/intersight/latest)
 
 
 
