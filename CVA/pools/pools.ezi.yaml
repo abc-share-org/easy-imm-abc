@@ -5,7 +5,8 @@
 ABC:
   pools:
     ip:
-# Out-of-Band IP pools
+      # Out-of-Band IP pools
+      # OOB uses the 1Gbit OOB Management ports on the FIs
       - name: Pool_IP_oob-DC1           # ABC this is the IP Pool name for DC1
         description: Out-of-Band Management IP for NTNX
         ipv4_blocks:
@@ -26,7 +27,8 @@ ABC:
           netmask: 255.255.255.0
           primary_dns: 10.101.128.15
           secondary_dns: 10.101.128.16
-# Inband IP Pools
+      # Inband IP Pools
+      # Inband uses the 100Gbit Ethernet Fabric ports on the FIs
       - name: Pool_IP_inband-DC1
         description: In-Band Management IP for NTNX
         ipv4_blocks:
@@ -54,14 +56,14 @@ ABC:
         prefix: 000025B5-C15C-ABC0  # ABC These UUIDs can be changed or left as is
         uuid_blocks:
           - from: 25B5-000000000000 # This UUID block can be changed or left as is
-            size: 1024
+            size: 1024              # Block size range 1-1024
     mac:
       - name: Pool_MAC_DC1         # ABC MAC Pool for DC1
         description: DC1 MAC Pool
         mac_blocks:
           - from: 00:25:B5:D1:00:00 # These MAC addresses can be changed or left as is
-            size: 1024
-      - name: Pool_MAC_DC2         # ABC MAC Pool for DC2
+            size: 1024              # Block size range 1-1024
+      - name: Pool_MAC_DC2          # ABC MAC Pool for DC2
         description: DC2 MAC Pool
         mac_blocks:
           - from: 00:25:B5:D2:00:00
@@ -114,7 +116,7 @@ ABC:
       #     - from: 00:25:B5:C1:00:00
       #       size: 255
       #   name: Pool_mac_dual-fabric  # ABC this is the MAC Pool name
-#### Server Pool Qualification - not used in Nutanix design
+#### Server Pool Qualification - not used in this design
     # resource:
     #   - description: SPQ-Blade
     #     name: SPQ-Blade
