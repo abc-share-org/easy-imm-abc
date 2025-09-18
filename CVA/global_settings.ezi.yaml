@@ -4,6 +4,8 @@
 #========================================
 global_settings:
   intersight_fqdn: cg-ia-test-1.lab16.mel.ciscolabs.com         # CBA change this hostname to your Intersight Appliance FQDN
+  # ABC Tags below are optional - you can add your own or remove them
+  # These tags will be applied to all Intersight objects created by easy-imm
   tags:
     - key: "Module"
       value: "easy-imm"
