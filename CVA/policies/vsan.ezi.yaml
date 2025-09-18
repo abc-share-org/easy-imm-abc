@@ -27,6 +27,6 @@ ABC:
         uplink_trunking: false
         vsans:
           - fcoe_vlan_id: 200
-            name: vsan-200  # ABC this is the VSAN name
+            name: vsan-200                # ABC this is the VSAN name
             vsan_id: 200
             vsan_scope: Storage

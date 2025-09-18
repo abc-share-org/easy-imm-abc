@@ -5,20 +5,20 @@
 ABC:
   policies:
     multicast:
-      - name: Pol_Multicast_mcast
+      - name: Pol_Multicast_mcast                     # ABC this is the name of the multicast policy
     vlan:
       # Group of VLANs definned in vlan_list that can be shared across all UCS Domains
       # VLANs can be defined individually or as a range
       # Example of "native" VLAN is defining an individual VLAN ID
       # Example of "vl_mgmt" VLAN is defining a range of VLAN IDs
-      - name: Pol_VLAN_dc1-vlans
+      - name: Pol_VLAN_dc1-vlans                            # ABC this is the name of the policy
         description: VLANs for DC1 cluster
         vlans:
-          - name: native
+          - name: native                                    # ABC this is the name of the VLAN  
             auto_allow_on_uplinks: true
-            multicast_policy: Pol_Multicast_mcast
+            multicast_policy: Pol_Multicast_mcast           # ABC this is the multicast policy from above
             native_vlan: true
-            vlan_list: '1'
+            vlan_list: '1'                                  # ABC this is the VLAN List - single VLAN ID in quotes
           - name: vl_mgmt
             description: Management VLANs
             auto_allow_on_uplinks: true

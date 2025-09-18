@@ -7,27 +7,27 @@ ABC:
     imc_access:
       - name: Pol_IMCAccess_ucsdom1             # ABC this is the IMC Access Policy name
         description: IMC Access Policy DC1      # ABC this is a description of the IMC Access Policy
-        inband_ip_pool: Pool_IP_inband-DC1
+        inband_ip_pool: Pool_IP_inband-DC1      # ABC this is the Inband IP Pool name from pools.ezi.yaml
         inband_vlan_id: 101                     # ABC change this to reflect the Inband IP VLAN
         ipv4_address_configuration: true
-        out_of_band_ip_pool: Pool_IP_oob-DC1
+        out_of_band_ip_pool: Pool_IP_oob-DC1    # ABC this is the Out of Band IP Pool name from pools.ezi.yaml
       - name: Pol_IMCAccess_ucsdom2             # ABC this is the IMC Access Policy name
         description: IMC Access Policy DC2      # ABC this is a description of the IMC Access Policy
-        inband_ip_pool: Pool_IP_inband-DC2
+        inband_ip_pool: Pool_IP_inband-DC2      # ABC this is the Inband IP Pool name from pools.ezi.yaml
         inband_vlan_id: 201                     # ABC change this to reflect the Inband IP VLAN
         ipv4_address_configuration: true
-        out_of_band_ip_pool: Pool_IP_oob-DC2
+        out_of_band_ip_pool: Pool_IP_oob-DC2    # ABC this is the Out of Band IP Pool name from pools.ezi.yaml
 #     ipmi_over_lan:
 #       - description: ipmi IPMI over LAN Policy # ABC this is a description of the IPMI over LAN Policy
 #         name: Pol_IPMI_ipmi # ABC this is the IPMI over LAN Policy name
 #         privilege: admin
     ldap:
       - base_settings:
-          domain: rich.ciscolabs.com
+          domain: rich.ciscolabs.com.           # ABC change this to reflect your LDAP domain
         binding_parameters:
-          bind_dn: CN=Rob Moss,OU=Cisco Employees,DC=rich,DC=ciscolabs,DC=com
+          bind_dn: CN=Rob Moss,OU=Cisco Employees,DC=rich,DC=ciscolabs,DC=com   # ABC change this to reflect your LDAP bind DN
           bind_method: ConfiguredCredentials
-        description: RICH LDAP Policy # ABC this is a description of the LDAP Policy
+        description: RICH LDAP Policy           # ABC this is a description of the LDAP Policy
         enable_group_authorization: false
         ldap_groups:
           - end_point_role: admin
@@ -36,7 +36,7 @@ ABC:
         ldap_servers:
           - port: 389
             server: 10.101.128.15
-            vendor: MSAD
+            vendor: MSAD                        # ABC this is an MS Active Directory LDAP server
           - port: 389
             server: 10.101.128.16
             vendor: MSAD

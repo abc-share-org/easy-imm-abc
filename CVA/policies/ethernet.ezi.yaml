@@ -7,23 +7,23 @@ ABC:
     ethernet_adapter:
       - adapter_template: Win-AzureStack
         description: Win-AzureStack Ethernet Adapter
-        name: Pol_EthAdapt_Win-AzureStack
+        name: Pol_EthAdapt_Win-AzureStack                     # ABC this is the name of the Win-AzureStack Ethernet Adapter Policy
       - adapter_template: VMware
         description: VMware Ethernet Adapter
-        name: Pol_EthAdapt_VMware
+        name: Pol_EthAdapt_VMware                             # ABC this is the name of the VMware Ethernet Adapter Policy
     ethernet_network_control:
       - cdp_enable: true
         description: cdp Ethernet Network Control Policy
         lldp_enable_receive: true
         lldp_enable_transmit: true
-        name: Pol_EthNetCtl_both
+        name: Pol_EthNetCtl_both                              # ABC this is the name of the cdp and lldp enabled Ethernet Network Control Policy
       - cdp_enable: true
         description: cdp Ethernet Network Control Policy
-        name: Pol_EthNetCtl_cdp
+        name: Pol_EthNetCtl_cdp                               # ABC this is the name of the cdp only Ethernet Network Control Policy
       - description: lldp Ethernet Network Control Policy
         lldp_enable_receive: true
         lldp_enable_transmit: true
-        name: Pol_EthNetCtl_lldp
+        name: Pol_EthNetCtl_lldp                              # ABC this is the name of the lldp only Ethernet Network Control Policy
     ethernet_network_group:
       # DC1 Ethernet Network Group Policies
       - name: Pol_EthNetGroup_DC1-VLANs                       # ABC Ethernet Network Group Policy - allowed VLANs on uplinks

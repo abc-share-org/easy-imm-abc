@@ -10,12 +10,12 @@ ABC:
       - device_model: UCS-FI-6536
         description: Ports Policy for DC1 UCS Domain ucsdom1 # ABC this is a description of the Port Policy
         names:
-          - Pol_port_ucsdom1-a                               # ABC from port.ezi.yaml
-          - Pol_port_ucsdom1-b                               # ABC from port.ezi.yaml
+          - Pol_port_ucsdom1-a                               # ABC from policies/port.ezi.yaml
+          - Pol_port_ucsdom1-b                               # ABC from policies/port.ezi.yaml
         port_channel_ethernet_uplinks:
           - admin_speed: Auto
             ethernet_network_group_policies:
-              - Pol_EthNetGroup_DC1-VLANs                     # ABC from ethernet.ezi.yaml 
+              - Pol_EthNetGroup_DC1-VLANs                     # ABC from policies/ethernet.ezi.yaml 
             flow_control_policy: Pol_FlowCtl_flow-ctrl
             interfaces:
               - port_id: 53
@@ -48,7 +48,7 @@ ABC:
       - device_model: UCS-FI-6536
         description: Ports Policy for DC2 UCS Domain ucsdom2
         names:
-          - Pol_port_ucsdom2-a                               # ABC from port.ezi.yaml
+          - Pol_port_ucsdom2-a                               # ABC from policies/port.ezi.yaml
           - Pol_port_ucsdom2-b                               # ABC from port.ezi.yaml
         port_channel_ethernet_uplinks:
           - admin_speed: Auto
