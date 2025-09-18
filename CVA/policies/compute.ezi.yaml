@@ -7,11 +7,11 @@
 # Nutanix will create most of these policies when the server(s) are added to a cluster
 # The policies below are provided as examples and can be modified as needed
 #
-ABC:                                           # ABC replace with your organization name in each ezi.yaml file
-  policies:
-    firmware_authenticate:
-       cco_password: 1
-       cco_user: 1
+# ABC:                                           # ABC replace with your organization name in each ezi.yaml file
+#   policies:
+#     firmware_authenticate:
+#        cco_password: 1
+#        cco_user: 1
 #
 #     scrub:
 #       - bios: true                             # ABC disk scrub policy: set this to true
