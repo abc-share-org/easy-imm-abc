@@ -52,6 +52,9 @@ The default parameters are as follows;
 * Templates are mostly unused
 
 
+### [<ins>Back to Top<ins>](#easy-imm)
+
+
 ## Deployment steps
 
 1. Deploy and configure Intersight CVA networking and licensing
@@ -69,6 +72,9 @@ VLANs:
 9. Chassis: Chassis Profiles are set in profiles/chassis.ezi.yaml
 10. Domain: Domain Profiles are set in profiles/domain.ezi.yaml
 
+
+
+### [<ins>Back to Top<ins>](#easy-imm)
 
 
 ## Organization name
@@ -121,6 +127,8 @@ The Structure of the YAML files is very flexible.  You can have all the YAML Dat
 When defining Identity reservations under a server profile, see example in `profiles` folder, note the flag in the example with `ignore_reservations`.  Reservation records are ephimeral.  Meaning that as soon as the reservation is assigned to a server profile, the identity reservation record is removed from the API.  Thus, after you run the first plan and the identities are created, this flag should be configured to `true` or you need to remove the reservations from the `server_profiles`.  Either way the reservations will only work on the first apply.  Subsequent applies with the reservations defined will cause the plan/apply to fail due to the identity being consumed.
 
 
+### [<ins>Back to Top<ins>](#easy-imm)
+
 ## YAML Schema Notes for auto-completion, Help, and Error Validation:
 
 If you would like to utilize Autocomplete, Help Context, and Error Validation, `(HIGHLY RECOMMENDED)` make sure the files all utilize the `.ezi.yaml` file extension.
@@ -134,6 +142,7 @@ Then, in Visual Studio Code: Settings > Settings > Search for `YAML: Schema`: Cl
 ```
 
 
+### [<ins>Back to Top<ins>](#easy-imm)
 
 ## Environment Variables
 
@@ -157,6 +166,7 @@ The Reason to add these variables as maps of string is to allow the flexibility 
 In example, if you needed to add 100 iterations of the `certificate_management` variables you can do that, and simply reference the index in the map of the iteration that will consume that instance.
 
 
+### [<ins>Back to Top<ins>](#easy-imm)
 
 ## Sensitive Variables and API keys
 
@@ -261,6 +271,10 @@ terraform init
 terraform plan -out="main.plan"
 terraform apply "main.plan"
 ```
+
+
+### [<ins>Back to Top<ins>](#easy-imm)
+
 
 
 ## Requirements
@@ -377,6 +391,7 @@ terraform apply "main.plan"
 
 ### [<ins>Back to Top<ins>](#easy-imm)
 
+
 ## Sub Modules - Terraform Registry
 
 If you want to see documentation on Variables for Submodules use the links below:
@@ -388,6 +403,11 @@ If you want to see documentation on Variables for Submodules use the links below
 #### * [<ins>Pools<ins>](https://registry.terraform.io/modules/terraform-cisco-modules/pools/intersight/latest)
 
 #### * [<ins>Profiles<ins>](https://registry.terraform.io/modules/terraform-cisco-modules/profiles/intersight/latest)
+
+https://registry.terraform.io/modules/terraform-cisco-modules/imm/intersight/latest
+
+
+
 
 ### [<ins>Back to Top<ins>](#easy-imm)
 <!-- END_TF_DOCS -->
