@@ -2,30 +2,12 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Developed by: Cisco](https://img.shields.io/badge/Developed%20by-Cisco-blue)](https://developer.cisco.com)
 
 # Easy IMM Quickstart guide for Nutanix
-A guide to deploy easyimm, and configure an Intersight Organisation using two UCS domains.
-The default parameters are as follows;
-* Organization is named ABC
-* UCS Domain 1 - This UCS X-Series Domain named ucsdom1 is representing the equipment housed in DC1
-* UCS Domain 2 - This UCS X-Series Domain named ucsdom2 is representing the equipment housed in DC2
-
-Pools
-* Only MAC and IP Pools are created, to support the Nutanix cluster creation.  WWPN, WWNN Pools are not created.
-* IP Pools are created per DC
-* MAC Pools are created per DC
-  
-Policies
-* Nutanix will create the majority of the Server Policies including BIOS, Boot, Firmware, Storage, LAN Connectivity etc
-* Domain and Chassis policies are created, ie NTP, Syslog, LDAP, Ports
-
-Profiles
-* Domain Profiles for DC1 and DC2 are created, which consumes the above NTP, Syslog, LDAP and Ports policies
-
-Templates
-* Templates are mostly unused
+A guide to deploy easyimm, and configure an Intersight Organisation using two UCS domains in two availability zones (In this example named DC1 and DC2)
 
 
 ## Table of Contents
 
+* [Deployment Steps](#deployment-steps)
 * [Organization name](#organization-name)
 * [Examples](#examples-for-using-the-easy-imm-terraform-modules)
 * [Important Notes](#important-notes)
@@ -46,6 +28,47 @@ Templates
 This codebase contains examples on how to configure an Intersight CVA or PVA.
 
 There are examples within this codebase that can be modified or deleted as needed.
+
+The default parameters are as follows;
+* Organization is named ABC
+* UCS Domain 1 - This UCS X-Series Domain named ucsdom1 is representing the equipment housed in DC1
+* UCS Domain 2 - This UCS X-Series Domain named ucsdom2 is representing the equipment housed in DC2
+
+#### Pools
+* Only MAC and IP Pools are created, to support the Nutanix cluster creation.  WWPN, WWNN Pools are not created.
+* IP Pools are created per DC
+* MAC Pools are created per DC
+
+
+#### Policies
+* Nutanix will create the majority of the Server Policies including BIOS, Boot, Firmware, Storage, LAN Connectivity etc
+* Domain and Chassis policies are created, ie NTP, Syslog, LDAP, Ports
+
+#### Profiles
+* Domain Profiles for DC1 and DC2 are created, which consumes the above NTP, Syslog, LDAP and Ports policies
+
+#### Templates
+* Templates are mostly unused
+
+
+## Deployment steps
+
+1. Deploy and configure Intersight CVA networking and licensing
+2. Log in to CVA, create API Key with admin role
+3. Set up TFE with API Key and Secret, and all relevant variables
+4. Modify global_settings.ezi.yaml - update the intersight_fqdn setting with the ABC CVA FQDN
+5. Configure the Intersight Organization name (as below)
+6. Configure site-specific details, such as
+Pools: pools/pools.ezi.yaml
+VLANs: 
+  Set the VLANs in policies/vlan.ezi.yaml
+  Set the VLANs in policies/ethernet.ezi.yaml
+7. NTP, DNS, SNMP, IMC, LDAP are all set in policies/management.ezi.yaml
+8. Port Policies and Port-Channels are all defined in policies/ports.ezi.yaml
+9. Chassis: Chassis Profiles are set in profiles/chassis.ezi.yaml
+10. Domain: Domain Profiles are set in profiles/domain.ezi.yaml
+
+
 
 ## Organization name
 This codebase can use a single Organisation (Org) name, or multiple Orgs.

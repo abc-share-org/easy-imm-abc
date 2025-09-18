@@ -2,63 +2,77 @@
 #==================================
 #   Pools -> Pools - Variables
 #==================================
+#
+# The Organization name defined here must be updated in all other files.
+# As part of the easyimm deployment, it will ingest all of these YAML files and run a map() function to
+# combine all of the parameters into a single file for processing.
+#
+ABC:                                      # ABC Change this name to your org name
+  create_organization: true
+  description: ABC org                    # ABC Change this name to your org description
+  
 
-# Shared:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+# Shared:                                     # Shared Org
 #   create_organization: true
 #   description: Shared tenant - all policies/profiles/templates
 #   organizations_to_share_with:
 #     - ConsumerOrg1
 #     - ConsumerOrg2
+# ConsumerOrg1:
+#   description: Consumer Org 1
+#   create_organization: true
+# ConsumerOrg2:
+#   description: Consumer Org 2
+#   create_organization: true
 
 
-ABC:                                      # ABC Change this name to your org name
-  create_organization: true
-  description: ABC org                    # ABC Change this name to your org description
-  # resource_groups:
-  #   - name: ABC_RG
-  #     resources:
-  #       targets:
-  #           - ucsdom1-1
-  #           - ucsdom2-1
-  #           - ucsdom1-A
-  #           - ucsdom1-B
-#  #         blades:
-#  #           - FCH213271VU #ucsdom2-3
-#  #           - FCH222974YZ #ucsdom2-4
-#  #           - FLM250803J8 #ucsdom2-6
-#  #         # service_profiles:
-#  #         #   - sp-test-01
-#  #         #   - sp-test-02
-#  #         #   - sp-test-03
-#  #         #   - sp-test-04
-#  #         #   - sp-test-05
-#  #         #   - sp-test-06
-#  #         #   - sp-test-07
-#  #         #   - sp-test-08
-#  #         #   - sp-test-09
-#  #         #   - sp-test-10
 
-
-#  #     resources:
-#  #       sub_targets:
-#  #         chassis:
-#  #           - ucsdom1-1
-#  #         blades:
-#  #           - FCH213271VU #ucsdom2-3
-#  #           - FCH222974YZ #ucsdom2-4
-#  #           - FLM250803J8 #ucsdom2-6
-#  #         fabric_interconnects:
-#  #           - ucsdom1-1-A
-#  #           - ucsdom1-1-B
-#  #         # service_profiles:
-#  #         #   - sp-test-01
-#  #         #   - sp-test-02
-#  #         #   - sp-test-03
-#  #         #   - sp-test-04
-#  #         #   - sp-test-05
-#  #         #   - sp-test-06
-#  #         #   - sp-test-07
-#  #         #   - sp-test-08
-#  #         #   - sp-test-09
-#  #         #   - sp-test-10
-
+# Test: 
+#   create_organization: true
+#   description: Test org with targets in RG
+#   resource_groups:
+#     - name: Test_RG
+#       resources:
+#         targets:
+#             - ucsdom1-1
+#             - ucsdom2-1
+#             - ucsdom1-A
+#             - ucsdom1-B
+#           blades:
+#             - FCH213271VU
+#             - FCH222974YZ
+#             - FLM250803J8
+#           service_profiles:
+#             - sp-test-01
+#             - sp-test-02
+#             - sp-test-03
+#             - sp-test-04
+#             - sp-test-05
+#             - sp-test-06
+#             - sp-test-07
+#             - sp-test-08
+#             - sp-test-09
+#             - sp-test-10

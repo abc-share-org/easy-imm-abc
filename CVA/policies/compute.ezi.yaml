@@ -7,6 +7,30 @@
 # Nutanix will create most of these policies when the server(s) are added to a cluster
 # The policies below are provided as examples and can be modified as needed
 #
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # ABC:                                           # ABC replace with your organization name in each ezi.yaml file
 #   policies:
 #     firmware_authenticate:

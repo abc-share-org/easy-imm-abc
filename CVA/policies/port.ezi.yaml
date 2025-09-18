@@ -10,22 +10,22 @@ ABC:
       - device_model: UCS-FI-6536
         description: Ports Policy for DC1 UCS Domain ucsdom1 # ABC this is a description of the Port Policy
         names:
-          - Pol_port_ucsdom1-a                               # ABC from policies/port.ezi.yaml
-          - Pol_port_ucsdom1-b                               # ABC from policies/port.ezi.yaml
+          - Pol_port_ucsdom1-a                               # ABC Port Policy names for UCS Domain FI-A
+          - Pol_port_ucsdom1-b                               # ABC Port Policy names for UCS Domain FI-B
         port_channel_ethernet_uplinks:
           - admin_speed: Auto
             ethernet_network_group_policies:
               - Pol_EthNetGroup_DC1-VLANs                     # ABC from policies/ethernet.ezi.yaml 
             flow_control_policy: Pol_FlowCtl_flow-ctrl
             interfaces:
-              - port_id: 53
-              - port_id: 54
+              - port_id: 53                                   # ABC First interface in the Port Channel
+              - port_id: 54                                   # ABC Second interface in the Port Channel
             link_aggregation_policy: Pol_LinkAgg_link-agg
             link_control_policy: Pol_LinkCtl_link-ctrl
             pc_ids:
+              - 53                                            # ABC Port Channel IDs - must be the same for both interfaces
               - 53
-              - 53
-        port_channel_fc_uplinks:
+        port_channel_fc_uplinks:                              # ABC This is for FC uplinks, unused in this design
           - admin_speed: 32Gbps
             interfaces:
               - port_id: 1
@@ -48,16 +48,16 @@ ABC:
       - device_model: UCS-FI-6536
         description: Ports Policy for DC2 UCS Domain ucsdom2
         names:
-          - Pol_port_ucsdom2-a                               # ABC from policies/port.ezi.yaml
-          - Pol_port_ucsdom2-b                               # ABC from port.ezi.yaml
+          - Pol_port_ucsdom2-a
+          - Pol_port_ucsdom2-b
         port_channel_ethernet_uplinks:
           - admin_speed: Auto
             ethernet_network_group_policies:
               - Pol_EthNetGroup_DC2-VLANs
             flow_control_policy: Pol_FlowCtl_flow-ctrl
             interfaces:
-              - port_id: 53                                   # ABC First interface in the Port Channel                
-              - port_id: 54                                   # ABC Second interface in the Port Channel  
+              - port_id: 53                                   # ABC First interface in the Port Channel
+              - port_id: 54                                   # ABC Second interface in the Port Channel
             link_aggregation_policy: Pol_LinkAgg_link-agg
             link_control_policy: Pol_LinkCtl_link-ctrl
             pc_ids:
