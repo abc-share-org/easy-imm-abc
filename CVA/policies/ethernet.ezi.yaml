@@ -26,55 +26,15 @@ ABC:
         name: Pol_EthNetCtl_lldp
     ethernet_network_group:
       # DC1 Ethernet Network Group Policies
-      - name: Pol_EthNetGroup_DC1-VLANs                             # ABC this is the name of the policy
+      - name: Pol_EthNetGroup_DC1-VLANs                             # ABC Ethernet Network Group Policy - allowed VLANs on uplinks
         description: DC1 VLANs
         allowed_vlans: 100-103,1000-1003,2000-2003                  # ABC change these VLANs to match the Pol_VLAN_dc1-vlans
         native_vlan: 1
-      # - name: Pol_EthNetGroup_DC1-VLANs-mgmt                      # ABC this is the name of the policy
-      #   description: DC1 VLANs for Management
-      #   allowed_vlans: 100-103                                    # ABC change these VLANs
-      #   native_vlan: 1
-      # - name: Pol_EthNetGroup_DC1-VLANs-ntnx                      # ABC this is the name of the policy
-      #   description: DC1 VLANs for Nutanix
-      #   allowed_vlans: 1000-1003                                  # ABC change these VLANs
-      #   native_vlan: 1
-      # - name: Pol_EthNetGroup_DC1-VLANs-wkl                       # ABC this is the name of the policy
-      #   description: DC1 VLANs for Workloads
-      #   allowed_vlans: 2000-2003                                  # ABC change these VLANs
-      #   native_vlan: 1
       # DC2 Ethernet Network Group Policies
       - name: Pol_EthNetGroup_DC2-VLANs                           # ABC this is the name of the policy
         description: DC2 VLANs
         allowed_vlans: 100-103,1000-1003,2000-2003                # ABC change these VLANs to match the Pol_VLAN_dc2-vlans
         native_vlan: 1
-
-      # - name: Pol_EthNetGroup_DC2-VLANs-mgmt                      # ABC this is the name of the policy
-      #   description: DC2 VLANs for Management
-      #   allowed_vlans: 100-103                                    # ABC change these VLANs
-      #   native_vlan: 1
-      # - name: Pol_EthNetGroup_DC2-VLANs-ntnx                      # ABC this is the name of the policy
-      #   description: DC2 VLANs for Nutanix
-      #   allowed_vlans: 1000-1003                                  # ABC change these VLANs
-      #   native_vlan: 1
-      # - name: Pol_EthNetGroup_DC2-VLANs-wkl                       # ABC this is the name of the policy
-      #   description: DC1 VLANs for Workloads
-      #   allowed_vlans: 2000-2003                                  # ABC change these VLANs
-      #   native_vlan: 1
-
-      # - allowed_vlans: 101-103,1000-1199
-      #   name: Pol_EthNetGroup_aci-uplink                      # ABC this is the name of the policy
-      # - allowed_vlans: '101'
-      #   name: Pol_EthNetGrp_aci-mgmt                          # ABC this is the name of the policy
-      #   native_vlan: 101
-      # - allowed_vlans: '102'
-      #   name: Pol_EthNetGrp_aci-migration                     # ABC this is the name of the policy
-      #   native_vlan: 102
-      # - allowed_vlans: '103'
-      #   name: Pol_EthNetGrp_aci-storage                       # ABC this is the name of the policy
-      #   native_vlan: 103
-      # - allowed_vlans: 101-103,1000-1199
-      #   name: Pol_EthNetGrp_aci-dvs                           # ABC this is the name of the policy
-      #   native_vlan: 1
     ethernet_qos:
       - description: Best Effort Ethernet QoS Policy          # ABC this is the description
         mtu: 9000

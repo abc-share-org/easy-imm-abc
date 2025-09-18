@@ -10,12 +10,12 @@ ABC:
       - device_model: UCS-FI-6454
         description: Ports Policy for DC1 UCS Domain ucsdom1 # ABC this is a description of the Port Policy
         names:
-          - Pol_port_ucsdom1-a                               # ABC this is the Port Policy name
-          - Pol_port_ucsdom1-b                               # ABC this is the Port Policy name
+          - Pol_port_ucsdom1-a                               # ABC from port.ezi.yaml
+          - Pol_port_ucsdom1-b                               # ABC from port.ezi.yaml
         port_channel_ethernet_uplinks:
           - admin_speed: Auto
             ethernet_network_group_policies:
-              - Pol_EthNetGroup_DC1-VLANs
+              - Pol_EthNetGroup_DC1-VLANs                     # ABC from ethernet.ezi.yaml 
             flow_control_policy: Pol_FlowCtl_flow-ctrl
             interfaces:
               - port_id: 53
@@ -46,18 +46,18 @@ ABC:
       ##############
       # DC2 ucsdom2 Ports Policy
       - device_model: UCS-FI-6454
-        description: Ports Policy for DC2 UCS Domain ucsdom2 # ABC this is a description of the Port Policy
+        description: Ports Policy for DC2 UCS Domain ucsdom2
         names:
-          - Pol_port_ucsdom2-a                               # ABC this is the Port Policy name
-          - Pol_port_ucsdom2-b                               # ABC this is the Port Policy name
+          - Pol_port_ucsdom2-a                               # ABC from port.ezi.yaml
+          - Pol_port_ucsdom2-b                               # ABC from port.ezi.yaml
         port_channel_ethernet_uplinks:
           - admin_speed: Auto
             ethernet_network_group_policies:
               - Pol_EthNetGroup_DC2-VLANs
             flow_control_policy: Pol_FlowCtl_flow-ctrl
             interfaces:
-              - port_id: 53
-              - port_id: 54
+              - port_id: 53                                   # ABC First interface in the Port Channel                
+              - port_id: 54                                   # ABC Second interface in the Port Channel  
             link_aggregation_policy: Pol_LinkAgg_link-agg
             link_control_policy: Pol_LinkCtl_link-ctrl
             pc_ids:
